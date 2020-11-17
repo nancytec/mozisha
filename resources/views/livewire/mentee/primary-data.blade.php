@@ -57,16 +57,18 @@
                         <div class="row form-row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
-                                    <label>Note:</label><br>
-                                    <hr>
-                                    <small>Not all fields are required; "address_2, zipcode and profile photo" are not required for the this form
-                                    to be processed, but all supplied data will validated before processing in order for us to provide
-                                        the best experience for you on this platform.</small>
+                                    <div class="change-avatar">
+                                        <div class="upload-img">
+                                            <h4>Basic Information</h4>
+                                            <hr>
+                                            <small>This section contains your basic information that will be accessible to mentors, Not all fields are required; "address_2, zipcode and profile photo" are not required for the this form
+                                                to be processed, but all supplied data will be validated before processing in order for us to provide
+                                                the best experience for you on this platform.</small>
+                                            <hr>
+                                        </div>
+                                    </div>
                                 </div>
-                                <hr>
                             </div>
-
-
 
                             <div class="col-12 col-md-12">
                                 <div class="form-group">

@@ -23,8 +23,13 @@
                             <div class="change-avatar">
                                 <div class="upload-img">
                                     <h4>Add Experience</h4>
-                                    <small class="form-text text-muted">Share any work experience that a mentor might find relevant.</small>
-
+                                    <hr>
+                                    <small class="form-text text-muted">Share any work experience that a mentor might find relevant.<br>
+                                        All fields in this section are required for this form
+                                        to be processed, we strongly advice you to supply valid information about your work experience, you can add other work experience as much as possible,
+                                        they are necessary for your profile to look more attractive and authentic to mentors.
+                                    </small>
+                                    <hr>
                                 </div>
                             </div>
                         </div>
@@ -339,7 +344,7 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <input type="checkbox" wire:model.lazy="status" value="Active" >
-                            <label>I am currently working in this role</label>
+                            <label>I am currently working in this role (<span style="color: #420175;">Not required</span>)</label>
                         </div>
                     </div>
                 </div>

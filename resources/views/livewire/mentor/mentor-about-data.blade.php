@@ -29,12 +29,18 @@
                                 <div class="form-group">
                                     <div class="change-avatar">
                                         <div class="upload-img">
-                                            <h2>About</h2>
+                                            <h4>About</h4>
                                             <small class="form-text text-muted">Tell your apprentice about your company and what you're looking to get from an apprentice.</small>
+                                            <hr>
+                                            <small>None of the field in this section is required for this form
+                                                to be processed, but we strongly advice you to supply them, they are necessary in order for your business profile to be attractive to apprentices.
+                                                The information supplied will also be used to match you with suitable apprentices that corresponds with your business profile. </small>
+                                            <hr>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Biography (Max: 1000 chars)</label>

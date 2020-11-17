@@ -29,8 +29,13 @@
                                 <div class="form-group">
                                     <div class="change-avatar">
                                         <div class="upload-img">
-                                            <h2>About</h2>
+                                            <h4>About</h4>
                                             <small class="form-text text-muted">Tell your mentor about yourself and what you're looking to learn from an apprenticeship.</small>
+                                            <hr>
+                                            <small>None of the field in this section is required for this form
+                                                to be processed, but we strongly advice you to supply them, they are necessary in order for your profile to be attractive to mentors.
+                                            The information supplied will also be used to match you with suitable mentors that corresponds with your profile. </small>
+                                        <hr>
                                         </div>
                                     </div>
                                 </div>

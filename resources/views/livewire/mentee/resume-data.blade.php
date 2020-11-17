@@ -32,6 +32,28 @@
                     <!-- Profile Settings Form -->
                     <form wire:submit.prevent="updateProfile">
                         <div class="row form-row">
+                            @if(Auth::user()->hasRole('mentee'))
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Note:</label><br>
+                                    <hr>
+                                    <small>"Resume, language and your military status" are not required for this form
+                                        to be processed, but we advice you to provide them, they are necessary in order for your profile to be attractive to mentors.</small>
+                                </div>
+                                <hr>
+                            </div>
+                            @endif
+                                @if(Auth::user()->hasRole('mentor'))
+                                    <div class="col-12 col-md-12">
+                                        <div class="form-group">
+                                            <label>Note:</label><br>
+                                            <hr>
+                                            <small>"Business information Document, language and your military status" are not required for this form
+                                                to be processed, but we advice you to provide them, they are necessary in order for your business profile to look authentic to prospective apprentices.</small>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                @endif
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <div class="change-avatar">
@@ -83,7 +105,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Current Location</label>
+                                    <label>Current Location<span style="color: red">* </span> (Required)</label>
                                     <input type="text" class="form-control {{$errors->has('location')? 'is-invalid' : '' }}" wire:model.lazy="location">
                                     @error('location') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>

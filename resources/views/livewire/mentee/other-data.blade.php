@@ -6,24 +6,18 @@
             <!-- Profile Settings Form -->
             <form wire:submit.prevent="updateProfile">
                 <div class="row form-row">
-                    <div class="col-12 col-md-12">
-                        <div class="form-group">
-                            <div class="change-avatar">
-                                <div class="upload-img">
-                                    <h4>Tell Mentors about you</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-12">
                         <div class="form-group">
                             <label>Reviews</label>
                             <small class="form-text text-muted">Reviews from your apprenticeships will automatically appear here.</small>
                         </div>
+                        <hr>
                     </div>
                 </div>
 
                 <div class="row form-row">
+
                     <div class="col-12 col-md-12">
                         <div class="form-group">
                             <div class="change-avatar">
@@ -34,6 +28,14 @@
                         </div>
                     </div>
 
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <small>All fields in this section are required for this form
+                                to be processed, we strongly advice you to supply valid information about your education, you can add other educations as much as possible,
+                                they are necessary for your profile to look more attractive and authentic to mentors. </small>
+                        </div>
+                        <hr>
+                    </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label>School</label>

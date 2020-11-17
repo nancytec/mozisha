@@ -17,10 +17,10 @@
     <div class="custom-sidebar-nav">
         <ul>
             <li><a href="{{route('mentor.dashboard')}}"><i class="fas fa-home"></i>Dashboard <span><i class="fas fa-chevron-right"></i></span></a></li>
-            <li><a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fas fa-clock"></i>New Apprentiship <span><i class="fas fa-chevron-right"></i></span></a></li>
+            <li><a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fas fa-clock"></i>New Apprenticeship <span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a href="{{route('mentor.dashboard')}}"><i class="fas fa-users"></i>Apprentices <span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a target="_blank" href="{{route('chat')}}"><i class="fas fa-comments"></i>Messages <span><i class="fas fa-chevron-right"></i></span></a></li>
-            <li><a href="{{route('mentor.profile')}}"><i class="fas fa-user-cog"></i>Profile <span><i class="fas fa-chevron-right"></i></span></a></li>
+            <li><a href="{{route('mentor.profile.update')}}"><i class="fas fa-user-cog"></i>Update profile <span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout <span><i class="fas fa-chevron-right"></i></span></a></li>
         </ul>
     </div>

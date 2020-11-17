@@ -38,7 +38,11 @@
                                     <div class="change-avatar">
                                         <div class="upload-img">
                                             <h4>Company's Achievements</h4>
-                                            <small class="form-text text-muted">Tell your apprentice about your company's achievements, if there's any.</small>
+                                            <small class="form-text text-muted">Tell your apprentice about your company's achievements your personal interest, if there's any.</small>
+                                            <hr>
+                                            <small>None of the field in this section is mandatory but we highly recommend you supply all for prospective apprentices to know
+                                            more about your company's accomplishment and things you're interested in.</small>
+                                            <hr>
                                         </div>
                                     </div>
                                 </div>

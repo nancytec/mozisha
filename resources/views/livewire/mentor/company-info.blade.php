@@ -6,33 +6,31 @@
             <!-- Profile Settings Form -->
                 <form wire:submit.prevent="updateProfile">
                     <div class="row form-row">
-                        <div class="col-12 col-md-12">
-                            <div class="form-group">
-                                <div class="change-avatar">
-                                    <div class="upload-img">
-                                        <h4>Tell Apprentices about you</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Reviews</label>
                                 <small class="form-text text-muted">Reviews from your apprentices will automatically appear here.</small>
                             </div>
+                            <hr>
                         </div>
-                    </div>
-
-                    <div class="row form-row">
                         <div class="col-12 col-md-12">
                             <div class="form-group">
                                 <div class="change-avatar">
                                     <div class="upload-img">
-                                        <h4>Company Info</h4>
+                                        <h4>Tell Apprentices about your company</h4>
+                                        <small class="form-text text-muted">Let your apprentices know more about your business.</small>
+                                        <hr>
+                                        <small>None of the field in this section is required for this form
+                                            to be processed, but we strongly advice you to supply them, they are necessary  for your business profile to be attractive to apprentices.
+                                            The information supplied will also be used to match you with prospective apprentices that corresponds with your profile. </small>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row form-row">
 
                         <div class="col-12">
                             <div class="form-group">

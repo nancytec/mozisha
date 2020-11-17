@@ -16,9 +16,9 @@
         <ul>
             <li><a href="{{route('mentee.dashboard')}}"><i class="fas fa-home"></i>Dashboard <span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a href="{{route('mentee.apprenticeship.find')}}" ><i class="fas fa-clock"></i>Find Apprenticeship <span><i class="fas fa-chevron-right"></i></span></a></li>
-            <li><a href="{{route('mentee.profile.settings')}}"><i class="fas fa-hourglass-start"></i>Update profile <span><i class="fas fa-chevron-right"></i></span></a></li>
+            <li><a href="{{route('mentee.dashboard')}}"><i class="fas fa-user-md"></i>Mentors <span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a href="{{route('chat')}}" target="_blank" ><i class="fas fa-comments"></i>Messages <span><i class="fas fa-chevron-right"></i></span></a></li>
-            <li><a href="{{route('mentee.profile')}}"><i class="fas fa-user-cog"></i>Profile <span><i class="fas fa-chevron-right"></i></span></a></li>
+            <li><a href="{{route('mentee.profile.settings')}}"><i class="fas fa-user-cog"></i>Update profile<span><i class="fas fa-chevron-right"></i></span></a></li>
             <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout <span><i class="fas fa-chevron-right"></i></span></a></li>
         </ul>
     </div>

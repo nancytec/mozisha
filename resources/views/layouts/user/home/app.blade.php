@@ -421,7 +421,7 @@
     <div class="footerbottom">
         <div class="container">
             <div class="row justify-content-center justify-content-md-between align-items-center">
-                <p class="m-0 copy-right">&copy; Copyright 2020 | <a href="index.html">Mozisha</a> Powered by <a href="https://fluxtheme.com/" target="_blank">Mozisha International</a> | All Rights Reserved</p>
+                <p class="m-0 copy-right">&copy; Copyright 2020 | <a href="index.html">Mozisha</a> Powered by <a href="https://mozisha.com/" target="_blank">Mozisha International</a> | All Rights Reserved</p>
 
                 <!-- social-media -->
                 <ul class="social-media-list d-flex flex-wrap m-0 p-0 list-unstyled">

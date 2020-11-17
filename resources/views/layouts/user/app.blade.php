@@ -88,8 +88,9 @@
 
             </div>
             <div class="main-menu-wrapper">
+                @if(Auth::user()->hasRole('mentee'))
                 <div class="menu-header">
-                    <a href="{{route('homepage')}}" class="menu-logo">
+                    <a href="{{route('mentee.dashboard')}}" class="menu-logo">
                         <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive"  alt="Logo">
                         <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
                     </a>
@@ -97,6 +98,18 @@
                         <i class="fas fa-times"></i>
                     </a>
                 </div>
+                @endif
+                @if(Auth::user()->hasRole('mentor'))
+                        <div class="menu-header">
+                            <a href="{{route('mentor.dashboard')}}" class="menu-logo">
+                                <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive"  alt="Logo">
+                                <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
+                            </a>
+                            <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </div>
+                 @endif
                 @if(Auth::user()->hasRole('mentor'))
                     <ul class="main-nav">
                         <!-- <li class="">
@@ -230,12 +243,12 @@
                             </div>
                             @if(Auth::user()->hasRole('mentor'))
                                 <a class="dropdown-item" href="{{route('mentor.dashboard')}}">Dashboard</a>
-                                <a class="dropdown-item" href="{{route('mentor.profile.settings')}}">Profile Settings</a>
+                                <a class="dropdown-item" href="{{route('mentor.profile')}}">Profile</a>
                                 <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                             @endif
                             @if(Auth::user()->hasRole('mentee'))
                                 <a class="dropdown-item" href="{{route('mentee.dashboard')}}">Dashboard</a>
-                                <a class="dropdown-item" href="{{route('mentee.profile.settings')}}">Profile Settings</a>
+                                <a class="dropdown-item" href="{{route('mentee.profile')}}">Profile</a>
                                 <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                             @endif
 

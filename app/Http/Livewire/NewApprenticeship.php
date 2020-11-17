@@ -119,8 +119,6 @@ class NewApprenticeship extends Component
             $this->emit('alert', ['type' => 'warning', 'message' => 'Apprenticeship already posted.']);
         }
 
-
-
     }
 
 
