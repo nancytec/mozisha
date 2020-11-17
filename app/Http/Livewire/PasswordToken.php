@@ -8,6 +8,6 @@ class PasswordToken extends Component
 {
     public function render()
     {
-        return view('livewire.password-token');
+        return view('livewire.auth.password-token');
     }
 }

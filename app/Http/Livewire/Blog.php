@@ -46,12 +46,12 @@ class Blog extends Component
     public function render()
     {
         if($this->category == 'all' || $this->category == ''){
-            return view('livewire.blog', [
+            return view('livewire.guest.blog', [
                 'blogs' => Blogs::Where('status', 'Active')->orderBy('created_at','desc')->paginate(20),
                 'randBlogs' => Blogs::Where('status', 'Active')->inRandomOrder()->orderBy('created_at','desc')->limit(5)->get(),
             ]);
         }else{
-            return view('livewire.blog', [
+            return view('livewire.guest.blog', [
                 'blogs' => Blogs::Where(['status' => 'Active', 'category' => $this->category])->orderBy('created_at','desc')->paginate(20),
                 'randBlogs' => Blogs::Where('status', 'Active')->inRandomOrder()->orderBy('created_at','desc')->limit(5)->get(),
             ]);

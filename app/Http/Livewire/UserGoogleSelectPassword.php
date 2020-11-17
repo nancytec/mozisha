@@ -86,6 +86,6 @@ class UserGoogleSelectPassword extends Component
 
     public function render()
     {
-        return view('livewire.user-google-select-password');
+        return view('livewire.auth.user-google-select-password');
     }
 }

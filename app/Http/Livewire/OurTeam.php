@@ -38,6 +38,6 @@ class OurTeam extends Component
 
     public function render()
     {
-        return view('livewire.our-team');
+        return view('livewire.guest.our-team');
     }
 }

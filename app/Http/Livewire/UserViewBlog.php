@@ -14,6 +14,6 @@ class UserViewBlog extends Component
 
     public function render()
     {
-        return view('livewire.user-view-blog');
+        return view('livewire.guest.user-view-blog');
     }
 }

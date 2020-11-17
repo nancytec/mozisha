@@ -16,6 +16,6 @@ class Homepage extends Component
 
     public function render()
     {
-        return view('livewire.homepage');
+        return view('livewire.guest.homepage');
     }
 }

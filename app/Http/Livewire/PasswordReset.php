@@ -138,6 +138,6 @@ class PasswordReset extends Component
 
     public function render()
     {
-        return view('livewire.password-reset');
+        return view('livewire.auth.password-reset');
     }
 }

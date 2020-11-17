@@ -82,6 +82,6 @@ class UserLogin extends Component
 
     public function render()
     {
-        return view('livewire.user-login');
+        return view('livewire.auth.user-login');
     }
 }
