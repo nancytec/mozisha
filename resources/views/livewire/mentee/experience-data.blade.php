@@ -33,14 +33,14 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" wire:model.lazy="title" class="form-control" placeholder="Example: Sales rep.">
+                            <input type="text" wire:model.lazy="title" class="form-control {{$errors->has('title')? 'is-invalid' : '' }}" placeholder="Example: Sales rep.">
                             @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Employment type</label>
-                            <select wire:model.lazy="type" class="form-control">
+                            <select wire:model.lazy="type" class="form-control {{$errors->has('type')? 'is-invalid' : '' }}">
                                 <option value="">Select type</option>
                                 <option value="Full-time">Full-time</option>
                                 <option value="Part-time">Part-time</option>
@@ -54,21 +54,21 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label>Company</label>
-                            <input type="text" wire:model.lazy="company" class="form-control" placeholder="Example: Mozisha International.">
+                            <input type="text" wire:model.lazy="company" class="form-control {{$errors->has('company')? 'is-invalid' : '' }}" placeholder="Example: Mozisha International.">
                             @error('company') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label>Location</label>
-                            <input type="text" wire:model.lazy="location" class="form-control" placeholder="Example: Lagos, Nigeria.">
+                            <input type="text" wire:model.lazy="location" class="form-control {{$errors->has('location')? 'is-invalid' : '' }}" placeholder="Example: Lagos, Nigeria.">
                             @error('location') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label>Role description</label>
-                            <textarea class="form-control" wire:model.lazy="description" placeholder="Say something about your at this role."></textarea>
+                            <textarea class="form-control {{$errors->has('description')? 'is-invalid' : '' }}" wire:model.lazy="description" placeholder="Say something about your at this role."></textarea>
                             @error('description') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <label>Start month</label>
                             <small class="form-text text-muted">Share the month you started this role.</small>
-                            <select class="form-control" wire:model.lazy="start_month" name="language">
+                            <select class="form-control {{$errors->has('start_month')? 'is-invalid' : '' }}" wire:model.lazy="start_month" name="language">
                                 <option value="">Select month</option>
                                 <option value="January">January</option>
                                 <option value="Febuary">Febuary</option>
@@ -107,7 +107,7 @@
                         <div class="form-group">
                             <label>Start year</label>
                             <small class="form-text text-muted">Share the year you started this role.</small>
-                            <select class="form-control" wire:model.lazy="start_year" name="language">
+                            <select class="form-control {{$errors->has('start_year')? 'is-invalid' : '' }}" wire:model.lazy="start_year" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -216,7 +216,7 @@
                         <div class="form-group">
                             <label>End month</label>
                             <small class="form-text text-muted">Share the month you ended this role.</small>
-                            <select class="form-control" wire:model.lazy="end_month">
+                            <select class="form-control {{$errors->has('end_month')? 'is-invalid' : '' }}" wire:model.lazy="end_month">
                                 <option value="">Select month</option>
                                 <option value="January">January</option>
                                 <option value="Febuary">Febuary</option>
@@ -239,7 +239,7 @@
                         <div class="form-group">
                             <label>End year</label>
                             <small class="form-text text-muted">Share the year you ended this role.</small>
-                            <select class="form-control" wire:model.lazy="end_year" name="language">
+                            <select class="form-control {{$errors->has('end_year')? 'is-invalid' : '' }}" wire:model.lazy="end_year" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -333,7 +333,7 @@
                                 <option value="1931">1931</option>
                                 <option value="1930">1930</option>
                             </select>
-                            @error('start_month') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                            @error('end_year') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -383,14 +383,14 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input type="text" wire:model.lazy="new_title" class="form-control" placeholder="Example: Sales rep.">
+                                    <input type="text" wire:model.lazy="new_title" class="form-control {{$errors->has('new_title')? 'is-invalid' : '' }}" placeholder="Example: Sales rep.">
                                     @error('new_title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Employment type</label>
-                                    <select wire:model.lazy="new_type" class="form-control">
+                                    <select wire:model.lazy="new_type" class="form-control {{$errors->has('new_type')? 'is-invalid' : '' }}">
                                         <option value="">Select type</option>
                                         <option value="Full-time">Full-time</option>
                                         <option value="Part-time">Part-time</option>
@@ -404,21 +404,21 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Company</label>
-                                    <input type="text" wire:model.lazy="new_company" class="form-control" placeholder="Example: Mozisha International.">
+                                    <input type="text" wire:model.lazy="new_company" class="form-control {{$errors->has('new_company')? 'is-invalid' : '' }}" placeholder="Example: Mozisha International.">
                                     @error('new_company') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Location</label>
-                                    <input type="text" wire:model="new_location" class="form-control" placeholder="Example: Lagos, Nigeria.">
+                                    <input type="text" wire:model="new_location" class="form-control {{$errors->has('new_location')? 'is-invalid' : '' }}" placeholder="Example: Lagos, Nigeria.">
                                     @error('new_location') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Role description</label>
-                                    <textarea class="form-control" wire:model.lazy="new_description" placeholder="Say something about your at this role."></textarea>
+                                    <textarea class="form-control {{$errors->has('new_description')? 'is-invalid' : '' }}" wire:model.lazy="new_description" placeholder="Say something about your at this role."></textarea>
                                     @error('new_description') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -434,7 +434,7 @@
                                 <div class="form-group">
                                     <label>Start month</label>
                                     <small class="form-text text-muted">Share the month you started this role.</small>
-                                    <select class="form-control" wire:model.lazy="new_start_month" name="language">
+                                    <select class="form-control {{$errors->has('new_start_month')? 'is-invalid' : '' }}" wire:model.lazy="new_start_month" name="language">
                                         <option value="">Select month</option>
                                         <option value="January">January</option>
                                         <option value="Febuary">Febuary</option>
@@ -457,7 +457,7 @@
                                 <div class="form-group">
                                     <label>Start year</label>
                                     <small class="form-text text-muted">Share the year you started this role.</small>
-                                    <select class="form-control" wire:model.lazy="new_start_year" name="language">
+                                    <select class="form-control {{$errors->has('new_start_year')? 'is-invalid' : '' }}" wire:model.lazy="new_start_year" name="language">
                                         <option value="">Select year</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -566,7 +566,7 @@
                                 <div class="form-group">
                                     <label>End month</label>
                                     <small class="form-text text-muted">Share the month you ended this role.</small>
-                                    <select class="form-control" wire:model.lazy="new_end_month">
+                                    <select class="form-control {{$errors->has('new_end_month')? 'is-invalid' : '' }}" wire:model.lazy="new_end_month">
                                         <option value="">Select month</option>
                                         <option value="January">January</option>
                                         <option value="Febuary">Febuary</option>
@@ -589,7 +589,7 @@
                                 <div class="form-group">
                                     <label>End year</label>
                                     <small class="form-text text-muted">Share the year you ended this role.</small>
-                                    <select class="form-control" wire:model.lazy="new_end_year" name="language">
+                                    <select class="form-control {{$errors->has('new_end_year')? 'is-invalid' : '' }}" wire:model.lazy="new_end_year" name="language">
                                         <option value="">Select year</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -683,7 +683,7 @@
                                         <option value="1931">1931</option>
                                         <option value="1930">1930</option>
                                     </select>
-                                    @error('new_start_month') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('new_end_year') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">

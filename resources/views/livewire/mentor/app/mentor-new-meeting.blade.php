@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <label>Platform</label>
                                 <small class="form-text text-muted">Preferred Meeting platform.</small>
-                                <select class="form-control" wire:model.lazy="platform">
+                                <select class="form-control {{$errors->has('platform')? 'is-invalid' : '' }}" wire:model.lazy="platform">
                                     <option value="">Select Platform</option>
                                     <option value="Google_Meet">Google Meet</option>
                                     <option value="Zoom">Zoom</option>
@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label>Date</label>
                                 <small class="form-text text-muted">Scheduled Date.</small>
-                                <input type="date" wire:model.lazy="date" class="form-control" placeholder="Date of the meeting.">
+                                <input type="date" wire:model.lazy="date" class="form-control {{$errors->has('date')? 'is-invalid' : '' }}" placeholder="Date of the meeting.">
                                 @error('date') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <label>Topic</label>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" wire:model.lazy="topic"
+                                    <input type="text" class="form-control {{$errors->has('topic')? 'is-invalid' : '' }}" wire:model.lazy="topic"
                                            placeholder="Topic the  of meeting">
                                     @error('topic') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <label>Description</label>
                                 <div class="form-group">
-                                    <textarea class="form-control" wire:model.lazy="details"
+                                    <textarea class="form-control {{$errors->has('details')? 'is-invalid' : '' }}" wire:model.lazy="details"
                                               placeholder="Details of the meeting.."></textarea>
                                     @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
@@ -62,7 +62,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <small class="form-text text-muted">Hour(24hrs format).</small>
-                                <select class="form-control" wire:model.lazy="hour" name="language">
+                                <select class="form-control {{$errors->has('hour')? 'is-invalid' : '' }}" wire:model.lazy="hour" name="language">
                                     <option value="">Select hour</option>
                                     <option value="00">00</option>
                                     <option value="1">01</option>
@@ -96,7 +96,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <small class="form-text text-muted">Minute.</small>
-                                <select class="form-control" wire:model.lazy="minute" name="language">
+                                <select class="form-control {{$errors->has('minute')? 'is-invalid' : '' }}" wire:model.lazy="minute" name="language">
                                     <option value="">Select Minute</option>
                                     <option value="00">00</option>
                                     <option value="01">01</option>
@@ -166,7 +166,7 @@
                             <div class="form-group">
                                 <label>Meeting link</label>
                                 <small class="form-text text-muted">Meeting link.</small>
-                                <input type="text" class="form-control" wire:model.lazy="link">
+                                <input type="text" class="form-control {{$errors->has('link')? 'is-invalid' : '' }}" wire:model.lazy="link">
                                 @error('link') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label>Meeting id</label>
-                                <input type="text" class="form-control" wire:model.lazy="meeting_id">
+                                <input type="text" class="form-control {{$errors->has('meeting_id')? 'is-invalid' : '' }}" wire:model.lazy="meeting_id">
                                 @error('meeting_id') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
 
                             </div>
@@ -182,7 +182,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label>Meeting passcode</label>
-                                <input type="text" class="form-control" wire:model.lazy="passcode">
+                                <input type="text" class="form-control {{$errors->has('passcode')? 'is-invalid' : '' }}" wire:model.lazy="passcode">
                                 @error('passcode') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>

@@ -38,7 +38,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Biography (Max: 1000 chars)</label>
-                                    <textarea  wire:model.lazy="biography" class="form-control" placeholder="Write a short bio..."></textarea>
+                                    <textarea  wire:model.lazy="biography" class="form-control {{$errors->has('biography')? 'is-invalid' : '' }}" placeholder="Write a short bio..."></textarea>
                                     @error('biography') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label>Looking for apprentiship in</label><br>
                                     <small>What will your apprentice learn and work on?</small>
-                                    <input type="text"  class="form-control" wire:model.lazy="apprenticeship"  placeholder="Tell your apprentice what they'll learn...">
+                                    <input type="text"  class="form-control {{$errors->has('apprenticeship')? 'is-invalid' : '' }}" wire:model.lazy="apprenticeship"  placeholder="Tell your apprentice what they'll learn...">
                                     @error('apprenticeship') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                     <label>Interested Field</label><br>
                                     <small>Looking for help with?</small>
-                                    <select class="form-control" wire:model.lazy="help" name="language">
+                                    <select class="form-control {{$errors->has('help')? 'is-invalid' : '' }}" wire:model.lazy="help" name="language">
                                         <option value="">Select Industry</option>
                                         <option value="Technology">Technology</option>
                                         <option value="Fashion">Fashion</option>

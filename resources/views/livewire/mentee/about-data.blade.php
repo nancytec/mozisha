@@ -38,7 +38,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Biography (Max: 1000 chars)</label>
-                                    <textarea  wire:model.lazy="biography" class="form-control" placeholder="Write a short bio"></textarea>
+                                    <textarea  wire:model.lazy="biography" class="form-control {{$errors->has('biography')? 'is-invalid' : '' }}" placeholder="Write a short bio"></textarea>
                                     @error('biography') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label>Personal interests</label>
                                     <small class="form-text text-muted">Personal interests help mentors learn a bit more about you.</small>
-                                    <select class="form-control" wire:model.lazy="interest" name="language">
+                                    <select class="form-control {{$errors->has('interest')? 'is-invalid' : '' }}" wire:model.lazy="interest" name="language">
                                         <option value="Null">Select Interest</option>
                                         <option value="Football">Football</option>
                                         <option value="Music">Music</option>

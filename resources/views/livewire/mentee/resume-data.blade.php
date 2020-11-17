@@ -61,7 +61,7 @@
 
                                                 <div class="change-photo-btn" style="background-color: #420175;">
                                                     <span><i class="fa fa-upload"></i> Resume</span>
-                                                    <input type="file" wire:model="resume" class="upload">
+                                                    <input type="file" wire:model="resume" class="upload {{$errors->has('resume')? 'is-invalid' : '' }}">
                                                 </div>
                                                 @if($old_resume)
                                                     <div class="profile-img">
@@ -84,7 +84,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Current Location</label>
-                                    <input type="text" class="form-control" wire:model.lazy="location">
+                                    <input type="text" class="form-control {{$errors->has('location')? 'is-invalid' : '' }}" wire:model.lazy="location">
                                     @error('location') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                     @else
                                     <label>Tell your mentors about language you can speak.</label>
                                     @endif
-                                    <select class="form-control" wire:model.lazy="languages" name="language">
+                                    <select class="form-control {{$errors->has('languages')? 'is-invalid' : '' }}" wire:model.lazy="languages" name="language">
                                         <option value="English">Select Language</option>
                                         <option value="English">English</option>
                                         <option value="Pidging">Pidgin</option>
@@ -140,7 +140,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Add other languages you can speak. <li wire:click="hideLanguageForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                    <select class="form-control" wire:model.lazy="other_language" name="language[]">
+                                    <select class="form-control {{$errors->has('other_language')? 'is-invalid' : '' }}" wire:model.lazy="other_language" name="language[]">
                                         <option value="English">Select Language</option>
                                         <option value="English">English</option>
                                         <option value="Pidging">Pidgin</option>

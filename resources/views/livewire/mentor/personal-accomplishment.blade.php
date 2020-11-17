@@ -46,7 +46,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Professional accomplishment</label>
-                                    <input type="text" class="form-control" wire:model.lazy="accomplish">
+                                    <input type="text" class="form-control {{$errors->has('accomplish')? 'is-invalid' : '' }}" wire:model.lazy="accomplish">
                                     @error('accomplish') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                         <label>Personal Interest.</label>
-                                    <select class="form-control" wire:model.lazy="interest" name="interest">
+                                    <select class="form-control {{$errors->has('interest')? 'is-invalid' : '' }}" wire:model.lazy="interest" name="interest">
                                         <option value="Null">Select Interest</option>
                                         <option value="Technology">Technology</option>
                                         <option value="Fashion">Fashion</option>
@@ -118,7 +118,7 @@
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label>Add other interest. <li wire:click="hideInterestForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                        <select class="form-control" wire:model.lazy="other_interest" name="interest">
+                                        <select class="form-control {{$errors->has('other_interest')? 'is-invalid' : '' }}" wire:model.lazy="other_interest" name="interest">
                                             <option value="Null">Select Interest</option>
                                             <option value="Technology">Technology</option>
                                             <option value="Fashion">Fashion</option>
@@ -140,7 +140,7 @@
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label>Add other Accomplishment. <li wire:click="hideAccomplishForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                        <input type="text" class="form-control" wire:model.lazy="other_accomplish">
+                                        <input type="text" class="form-control {{$errors->has('other_accomplish')? 'is-invalid' : '' }}" wire:model.lazy="other_accomplish">
                                         @error('other_accomplish') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                     </div>
                                 </div>

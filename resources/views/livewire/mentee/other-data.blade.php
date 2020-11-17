@@ -37,21 +37,21 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label>School</label>
-                            <input type="text" wire:model.lazy="school" class="form-control" placeholder="Example: University of Ibadan.">
+                            <input type="text" wire:model.lazy="school" class="form-control {{$errors->has('school')? 'is-invalid' : '' }}" placeholder="Example: University of Ibadan.">
                             @error('school') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Degree</label>
-                            <input type="text" wire:model.lazy="degree" class="form-control" placeholder="Example: UBachelor's.">
+                            <input type="text" wire:model.lazy="degree" class="form-control {{$errors->has('degree')? 'is-invalid' : '' }}" placeholder="Example: UBachelor's.">
                             @error('degree') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Course of study</label>
-                            <input type="text" wire:model.lazy="course" class="form-control" placeholder="Example: Computer science.">
+                            <input type="text" wire:model.lazy="course" class="form-control {{$errors->has('course')? 'is-invalid' : '' }}" placeholder="Example: Computer science.">
                             @error('course') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label>Start year</label>
                             <small class="form-text text-muted">Share when you started this study.</small>
-                            <select wire:model.lazy="start_year" class="form-control" name="language">
+                            <select wire:model.lazy="start_year" class="form-control {{$errors->has('start_year')? 'is-invalid' : '' }}" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -162,7 +162,7 @@
                         <div class="form-group">
                             <label>End year</label>
                             <small class="form-text text-muted">Share when you complete this study.</small>
-                            <select wire:model.lazy="end_year" class="form-control" name="language">
+                            <select wire:model.lazy="end_year" class="form-control {{$errors->has('end_year')? 'is-invalid' : '' }}" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -285,21 +285,21 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>School</label>
-                                    <input type="text" wire:model="new_school" class="form-control" placeholder="Example: University of Ibadan.">
+                                    <input type="text" wire:model="new_school" class="form-control {{$errors->has('new_school')? 'is-invalid' : '' }}" placeholder="Example: University of Ibadan.">
                                     @error('new_school') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Degree</label>
-                                    <input type="text" wire:model="new_degree" class="form-control" placeholder="Example: UBachelor's.">
+                                    <input type="text" wire:model="new_degree" class="form-control {{$errors->has('new_degree')? 'is-invalid' : '' }}" placeholder="Example: UBachelor's.">
                                     @error('new_degree') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Course of study</label>
-                                    <input type="text" wire:model="new_course" class="form-control" placeholder="Example: Computer science.">
+                                    <input type="text" wire:model="new_course" class="form-control {{$errors->has('new_course')? 'is-invalid' : '' }}" placeholder="Example: Computer science.">
                                     @error('new_course') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -308,7 +308,7 @@
                                 <div class="form-group">
                                     <label>Start year</label>
                                     <small class="form-text text-muted">Share when you started this study.</small>
-                                    <select wire:model="new_start_year" class="form-control" name="language">
+                                    <select wire:model="new_start_year" class="form-control {{$errors->has('new_start_year')? 'is-invalid' : '' }}" name="language">
                                         <option value="">Select year</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -410,7 +410,7 @@
                                 <div class="form-group">
                                     <label>End year</label>
                                     <small class="form-text text-muted">Share when you complete this study.</small>
-                                    <select wire:model="new_end_year" class="form-control" name="language">
+                                    <select wire:model="new_end_year" class="form-control {{$errors->has('new_end_year')? 'is-invalid' : '' }}" name="language">
                                         <option value="">Select year</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -504,7 +504,7 @@
                                         <option value="1931">1931</option>
                                         <option value="1930">1930</option>
                                     </select>
-                                    @error('end_year') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('new_end_year') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                         </div>
