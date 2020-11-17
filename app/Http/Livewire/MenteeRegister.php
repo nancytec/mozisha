@@ -22,7 +22,6 @@ class MenteeRegister extends Component
         $this->validateOnly($field, [
             'first_name'            => 'required|max:255',
             'last_name'             => 'required|max:255',
-            'terms'                 => 'required',
             'email'                 => 'required|email|max:255|unique:users,email',
             'password'              => 'required|min:6',
             'password_confirmation' => 'min:6|required_with:password|same:password',
@@ -40,13 +39,10 @@ class MenteeRegister extends Component
         $this->validate([
             'first_name'            => 'required|max:255',
             'last_name'             => 'required|max:255',
-            'terms'                 => 'required',
             'email'                 => 'required|email|max:255|unique:users,email',
             'password'              => 'required|min:6',
             'password_confirmation' => 'min:6|required_with:password|same:password',
         ]);
-
-
 
         $user = User::create([
             'name'     => $this->last_name . ' ' . $this->first_name,
@@ -60,14 +56,14 @@ class MenteeRegister extends Component
             'user_id'       => $newAccount->id,
             'firstname'     => $this->first_name,
             'lastname'      => $this->last_name,
-            'date_of_birth' => 'Yet to be supplied',
-            'phone'         => 'Yet to be supplied',
-            'address'       => 'Yet to be supplied',
-            'city'          => 'Yet to be supplied',
-            'state'         => 'Yet to be supplied',
-            'zipcode'       => 'Yet to be supplied',
-            'country'       => 'Yet to be supplied',
-            'about'         => 'Yet to be supplied',
+            'age'           => '',
+            'phone'         => '',
+            'address'       => '',
+            'city'          => '',
+            'state'         => '',
+            'zipcode'       => '',
+            'country'       => '',
+            'about'         => '',
         ]);
         //Sets the user role
         $newAccount->attachRole('mentee');

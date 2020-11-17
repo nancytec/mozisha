@@ -16,19 +16,18 @@ class UserDetails extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('firstname');
-            $table->string('lastname');
-//            $table->string('email'); An initial stupid idea
-            $table->string('phone');
-            $table->string('date_of_birth');
-            $table->string('address');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('age')->nullable();
+            $table->string('address')->nullable();
             $table->string('address_2')->nullable()->default('Not Available');
-            $table->string('city');
-            $table->string('state');
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
             $table->string('zipcode')->nullable();
-            $table->string('country');
+            $table->string('country')->nullable();
             $table->string('gender')->nullable();
-            $table->text('about');
+            $table->text('about')->nullable();
             $table->timestamps();
         });
     }

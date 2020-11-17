@@ -57,6 +57,19 @@
                         <div class="row form-row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
+                                    <label>Note:</label><br>
+                                    <hr>
+                                    <small>Not all fields are required; "address_2, zipcode and profile photo" are not required for the this form
+                                    to be processed, but all supplied data will validated before processing in order for us to provide
+                                        the best experience for you on this platform.</small>
+                                </div>
+                                <hr>
+                            </div>
+
+
+
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
                                     <div class="change-avatar">
                                         @if($image)
                                             <div class="profile-img">
@@ -95,10 +108,10 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Date of Birth</label>
-                                    <div class="cal-icon">
-                                        <input type="text" class="form-control datetimepicker {{$errors->has('date_of_birth')? 'is-invalid' : '' }}" wire:model.lazy="date_of_birth" placeholder="Date of birth">
-                                        @error('date_of_birth') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    <label>Age</label>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control {{$errors->has('age')? 'is-invalid' : '' }}" wire:model.lazy="age" placeholder="Your age">
+                                        @error('age') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                             </div>

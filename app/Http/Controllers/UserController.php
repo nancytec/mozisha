@@ -38,9 +38,10 @@ class UserController extends Controller
 
             $googleUser = User::where('google_id', $user->id)->first(); //Check for google users
 
-            if ($googleUser) {
+            if ($googleUser)
+            {
                     Auth::login($googleUser);
-//                   $this->authenticated($googleUser); //Redirects to the appropriate routes
+
                     if(Auth::user()->hasRole('mentor')){
                         return redirect()->route('mentor.dashboard');
                     }
@@ -60,18 +61,23 @@ class UserController extends Controller
                     if(Auth::user()->hasRole('developer')){
                         return redirect()->route('admin.home');
                     }
+
             } else {
 
                 //check if the user is registered without google, the create google_id
                 $localUserCount = User::where('email', $user->email)->count();
-               // $localUser = User::where('email', $user->email)->first(); //Check for google users
-                if($localUserCount > 0){
-                    $newUser = User::where('email', $user->email)->update([
+
+                if($localUserCount > 0)
+                {
+                    //Updates the user's google_id
+                    User::where('email', $user->email)->update([
                         'google_id' => $user->id,
-                 ]);
-                  $googleUser = User::where('google_id', $user->id)->first(); //Check for google users
+                    ]);
+
+                  //Fetch the user with the updated google_id
+                  $googleUser = User::where('google_id', $user->id)->first();
+
                   Auth::login($googleUser);
-//                  $this->authenticated($googleUser); //Redirects to the appropriate routes
                     if(Auth::user()->hasRole('mentor')){
                         return redirect()->route('mentor.dashboard');
                     }
@@ -92,54 +98,61 @@ class UserController extends Controller
 
 
                 }else{
-                    //Checks if there is role session set
-                    if (Session::has('role')){
-                        //If not found the register
-                        $newUser = User::create([
-                            'name'      => $user->name,
-                            'email'     => $user->email,
-                            'google_id' => $user->id,
-                            'password'  => bcrypt('12345dummy')
-                        ]);
 
-                        //Updating user details
-                        $newAccount =  User::where('google_id', $user->id)->first();
-                        UserDetail::create([
-                            'user_id' => $newAccount->id,
-                            'firstname'     => 'Yet to be supplied',
-                            'lastname'      => 'Yet to be supplied',
-                            'date_of_birth' => 'Yet to be supplied',
-                            'phone'         => 'Yet to be supplied',
-                            'address'       => 'Yet to be supplied',
-                            'city'          => 'Yet to be supplied',
-                            'state'         => 'Yet to be supplied',
-                            'zipcode'       => 'Yet to be supplied',
-                            'country'       => 'Yet to be supplied',
-                            'about'         => 'Yet to be supplied',
-                        ]);
-
-                        return redirect('/auth/google/user/'.$user->id.'/password');//redirect to change password page
+                    /* If the user does not exist in the database
+                     | We try to check if he's actually trying
+                     | to register by checking the role session coming from
+                     | from the google sign up page
+                    */
 
 
-                    }else{
-                        //If session is not set
-                        session()->flash('message', 'Account not found, Please create an Account!.');
+                     //Checks if there is role session set
+                    if (Session::has('role')){return $this->newAccount($user);}
+
+                        //If session is not set i.e if not trying to register
+                        session()->flash('error', 'Account not found, Please create an Account!.');
                         return redirect()->route('user.account');
-                    }
+
+
 
                 }
 
 
             }
         } catch (Exception $e) {
-            dd($e->getMessage());
+//            dd($e->getMessage());
         }
     }
 
 
+    public function newAccount($user)
+    {
+        //If not found the register
+        $newUser = User::create([
+            'name'      => $user->name,
+            'email'     => $user->email,
+            'google_id' => $user->id,
+            'password'  => bcrypt('12345dummy')
+        ]);
 
+        //Updating user details
+        $newAccount =  User::where('google_id', $user->id)->first();
+        UserDetail::create([
+            'user_id' => $newAccount->id,
+            'firstname'     => '',
+            'lastname'      => '',
+            'age'           => '',
+            'phone'         => '',
+            'address'       => '',
+            'city'          => '',
+            'state'         => '',
+            'zipcode'       => '',
+            'country'       => '',
+            'about'         => '',
+        ]);
 
-
+        return redirect('/auth/google/user/'.$user->id.'/password');//redirect to change password page
+    }
 
 
     public function redirectMenteeToGoogle(){

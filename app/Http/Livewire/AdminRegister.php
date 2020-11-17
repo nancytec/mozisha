@@ -48,14 +48,14 @@ class AdminRegister extends Component
             'user_id'       => $newAccount->id,
             'firstname'     => $this->first_name,
             'lastname'      => $this->last_name,
-            'date_of_birth' => 'Yet to be supplied',
-            'phone'         => 'Yet to be supplied',
-            'address'       => 'Yet to be supplied',
-            'city'          => 'Yet to be supplied',
-            'state'         => 'Yet to be supplied',
-            'zipcode'       => 'Yet to be supplied',
-            'country'       => 'Yet to be supplied',
-            'about'         => 'Yet to be supplied',
+            'age'           => '',
+            'phone'         => '',
+            'address'       => '',
+            'city'          => '',
+            'state'         => '',
+            'zipcode'       => '',
+            'country'       => '',
+            'about'         => '',
         ]);
         //Sets the user role
         $user->attachRole($this->role);

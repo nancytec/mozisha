@@ -17,7 +17,7 @@ class PrimaryData extends Component
     use WithFileUploads;
     public $firstname;
     public $lastname;
-    public $date_of_birth;
+    public $age;
     public $phone;
     public $address;
     public $address_2;
@@ -33,7 +33,7 @@ class PrimaryData extends Component
         $this->validateOnly($field, [
             'firstname'         => 'required|max:255',
             'lastname'          => 'required|max:255',
-            'date_of_birth'     => 'required|max:255',
+            'age'               => 'required|numeric|min:1|max:255',
             'phone'             => 'required|max:255',
             'address'           => 'required|max:255',
             'address_2'         => 'nullable|max:255',
@@ -49,7 +49,7 @@ class PrimaryData extends Component
         $this->validate([
             'firstname'         => 'required|max:255',
             'lastname'          => 'required|max:255',
-            'date_of_birth'     => 'required|max:255',
+            'age'               => 'required|numeric|min:1|max:255',
             'phone'             => 'required|max:255',
             'address'           => 'required|max:255',
             'address_2'         => 'nullable|max:255',
@@ -85,7 +85,7 @@ class PrimaryData extends Component
         UserDetail::where('user_id', Auth::user()->id)->update([
             'firstname'     => $this->firstname,
             'lastname'      => $this->lastname,
-            'date_of_birth' => $this->date_of_birth,
+            'age'           => $this->age,
             'phone'         => $this->phone,
             'address'       => $this->address,
             'address_2'     => $this->address_2,
@@ -139,7 +139,7 @@ class PrimaryData extends Component
             $user = UserDetail::where('user_id', Auth::user()->id)->first();
             $this->firstname    = $user->firstname;
             $this->lastname     = $user->lastname;
-            $this->date_of_birth= $user->date_of_birth;
+            $this->age          = $user->age;
             $this->gender       = $user->gender;
             $this->phone        = $user->phone;
             $this->address      = $user->address;

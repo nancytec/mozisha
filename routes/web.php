@@ -17,22 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-Route::get('/test', function () {
-    return view('test');
-});
-
 
 Route::get('/',               [UserPageController::class, 'home'])->name('homepage');
 
 Route::get('/login',          [LoginController::class, 'login'])->name('user.login');
 
 Route::get('/reset',          [LoginController::class, 'reset'])->name('password.reset');
-
-Route::get('/token',          [LoginController::class, 'token'])->name('password.token');
 
 Route::get('/about',          [UserPageController::class, 'about'])->name('about');
 
@@ -55,8 +45,6 @@ Route::get('/app/more',       [UserPageController::class, 'appMore'])->name('app
 Route::get('/col/more',       [UserPageController::class, 'colMore'])->name('col.more');
 
 Route::get('/free/more',       [UserPageController::class, 'freeMore'])->name('free.more');
-
-
 
 
 

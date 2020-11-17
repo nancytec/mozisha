@@ -23,18 +23,18 @@ class UserGoogleSelectPassword extends Component
 
     }
 
-    public function updated($field){
+    public function updated($field)
+    {
         $this->validateOnly($field, [
-//            'role'                  => 'required',
             'password'              => 'required|min:6',
             'password_confirmation' => 'min:6|required_with:password|same:password',
         ]);
     }
 
 
-    public function updatePassword(){
+    public function updatePassword()
+    {
         $this->validate([
-//            'role'                  => 'required',
             'password'              => 'required|min:6',
             'password_confirmation' => 'min:6|required_with:password|same:password',
         ]);
@@ -42,12 +42,14 @@ class UserGoogleSelectPassword extends Component
         $user = User::where('google_id', $this->google_id)->update([
             'password' => Hash::make($this->password),
         ]);
+
         $newAccount =  User::where('google_id', $this->google_id)->first();
 
         $newAccount->attachRole(Session::get('role'));
 
         try {
             if(Session::get('role') == 'mentor'){
+
                 //Mails user concerning the registration
                 $data = [
                     'email' => $newAccount->email,
@@ -69,13 +71,12 @@ class UserGoogleSelectPassword extends Component
             }
 
 
+        //Unset role session
+        Session::forget('role');
 
-        Session::forget('role'); //Unset role session
-
+        //Inform user of the update and redirect to login
         session()->flash('message', 'Registration completed.');
-//        $this->emit('alert', ['type' => 'success', 'message' => 'Registration successful, you can now login']);
         redirect()->route('user.login');
-        //$this->discard();
     }
 
     public function discard(){

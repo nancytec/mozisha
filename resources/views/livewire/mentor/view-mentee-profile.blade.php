@@ -122,8 +122,8 @@
                                 <li>
                                     <div class="experience-content">
                                         <div class="timeline-content">
-                                            <span>Date of Birth</span>
-                                            <div class="row-result">{{$detail->date_of_birth}}</div>
+                                            <span>Age</span>
+                                            <div class="row-result">{{$detail->age}}</div>
                                         </div>
                                     </div>
                                 </li>

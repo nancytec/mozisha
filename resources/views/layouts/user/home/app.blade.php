@@ -297,7 +297,6 @@
             </div>
         </div>
 
-
         <!-- mobile menu area-->
         <div class="mobile-menu-area d-lg-none" >
             <div class="m-menu-header" >

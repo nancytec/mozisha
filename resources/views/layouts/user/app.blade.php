@@ -40,7 +40,24 @@
     <!--Laravel livewire styles  -->
     <livewire:styles />
 </head>
-<style></style>
+<style>
+    .btn-primary{
+        background-color: #9A4EAE;
+    }
+    @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .account-box{
+            max-width: 70% !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .account-box{
+            max-width: 100% !important;
+        }
+    }
+</style>
 <!-- Loader -->
 <body style="">
 <!-- /Loader  -->
@@ -59,13 +76,13 @@
                 @if(Auth::user()->hasRole('mentor'))
                     <a href="{{route('mentor.dashboard')}}" class="navbar-brand logo">
 
-                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" style="width: 90%;" alt="Logo">
+                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" alt="Logo">
                     </a>
                 @endif
                 @if(Auth::user()->hasRole('mentee'))
                     <a href="{{route('mentee.dashboard')}}" class="navbar-brand logo">
 
-                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" style="width: 90%;" alt="Logo">
+                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" alt="Logo">
                     </a>
                 @endif
 
@@ -73,7 +90,7 @@
             <div class="main-menu-wrapper">
                 <div class="menu-header">
                     <a href="{{route('homepage')}}" class="menu-logo">
-                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" style="width: 90%;" alt="Logo">
+                        <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive"  alt="Logo">
                         <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
                     </a>
                     <a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -181,6 +198,7 @@
 
 
             </div>
+
             <ul class="nav header-navbar-rht">
                 @if(Auth::check())
                     <li class="nav-item dropdown has-arrow logged-item">
@@ -258,11 +276,7 @@
         </nav>
     </div>
 </header>
-<style>
-    .btn-primary{
-        background-color: #9A4EAE;
-    }
-</style>
+
 <div class="main-wrapper">
 
     <!-- Home Banner -->
@@ -286,7 +300,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <div class="copyright-text">
-                            <p class="mb-0">&copy; 2020 Mentoring. All rights reserved.</p>
+                            <p class="mb-0">&copy; 2020 Mozisha. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
