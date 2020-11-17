@@ -38,14 +38,14 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Biography (Max: 1000 chars)</label>
-                                    <textarea  wire:model="biography" class="form-control" placeholder="Write a short bio"></textarea>
+                                    <textarea  wire:model.lazy="biography" class="form-control" placeholder="Write a short bio"></textarea>
                                     @error('biography') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Looking for experience in</label>
-                                    <select class="form-control" wire:model="experience" name="language">
+                                    <select class="form-control" wire:model.lazy="experience" name="language">
                                         <option value="Null">Select Skill</option>
                                         <option value="Fishery">Fishery</option>
                                         <option value="Poultry">Poultry</option>
@@ -59,7 +59,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Industries I'm interested in</label>
-                                    <select class="form-control" wire:model="industry" name="language">
+                                    <select class="form-control" wire:model.lazy="industry" name="language">
                                         <option value="Null">Select Industry</option>
                                         <option value="Technology">Technology</option>
                                         <option value="Fashion">Fashion</option>
@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label>Personal interests</label>
                                     <small class="form-text text-muted">Personal interests help mentors learn a bit more about you.</small>
-                                    <select class="form-control" wire:model="interest" name="language">
+                                    <select class="form-control" wire:model.lazy="interest" name="language">
                                         <option value="Null">Select Interest</option>
                                         <option value="Football">Football</option>
                                         <option value="Music">Music</option>
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <label>Familiar tools</label>
                                     <small class="form-text text-muted">Share what tools you're familiar with.</small>
-                                    <select class="form-control" wire:model="tool" name="language">
+                                    <select class="form-control" wire:model.lazy="tool" name="language">
                                         <option value="Null">Select Tool</option>
                                         <option value="Adobe photosho">Adobe photoshop</option>
                                         <option value="Washing mashing">Washing mashing</option>

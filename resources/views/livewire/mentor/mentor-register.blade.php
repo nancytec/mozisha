@@ -33,35 +33,35 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label class="form-control-label">First Name</label>
-                                                        <input id="first-name" type="text" class="form-control" wire:model="first_name" name="name" autofocus="">
+                                                        <input id="first-name" type="text" class="form-control" wire:model.lazy="first_name" name="name" autofocus="">
                                                         @error('first_name') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Last Name</label>
-                                                        <input id="last-name" type="text" class="form-control" wire:model="last_name" name="last_name">
+                                                        <input id="last-name" type="text" class="form-control" wire:model.lazy="last_name" name="last_name">
                                                         @error('last_name') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-control-label">Email Address</label>
-                                                <input id="email" type="email"  wire:model="email" class="form-control">
+                                                <input id="email" type="email"  wire:model.lazy="email" class="form-control">
                                                 @error('email') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Password</label>
-                                                        <input id="password" type="password" class="form-control" wire:model="password" name="password">
+                                                        <input id="password" type="password" class="form-control" wire:model.lazy="password" name="password">
                                                         @error('password') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Confirm Password</label>
-                                                        <input id="password-confirm" type="password" class="form-control" wire:model="password_confirmation" name="password_confirmation">
+                                                        <input id="password-confirm" type="password" class="form-control" wire:model.lazy="password_confirmation" name="password_confirmation">
                                                         @error('password_confirmation') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                                     </div>
                                                 </div>

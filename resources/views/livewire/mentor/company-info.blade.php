@@ -37,7 +37,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Company Name</label>
-                                <input type="text" wire:model="name" class="form-control" placeholder="Example: Mozisha International.">
+                                <input type="text" wire:model.lazy="name" class="form-control" placeholder="Example: Mozisha International.">
                                 @error('name') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <label>Website</label>
                                 <small class="form-text text-muted">(Any social media profile will also do).</small>
-                                <input type="text" wire:model="website" class="form-control" placeholder="Example: www.mozisha.com">
+                                <input type="text" wire:model.lazy="website" class="form-control" placeholder="Example: www.mozisha.com">
                                 @error('website') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                             <div class="form-group">
                                 <label>Industry</label>
                                 <small class="form-text text-muted">Every company belongs to an industry.</small>
-                                <select wire:model="industry" class="form-control" name="language">
+                                <select wire:model.lazy="industry" class="form-control" name="language">
                                     <option value="">Select Industry</option>
                                     <option value="Accounting">Accounting</option>
                                     <option value="Airlines/Aviation">Airlines/Aviation</option>
@@ -211,7 +211,7 @@
                             <div class="form-group">
                                 <label>Your position</label>
                                 <small class="form-text text-muted">The position you hold with the company.</small>
-                                <select wire:model="position" class="form-control" name="language">
+                                <select wire:model.lazy="position" class="form-control" name="language">
                                     <option value="">Select role</option>
                                     <option value="CEO">CEO</option>
                                     <option value="Marketer">Martketer</option>
@@ -229,7 +229,7 @@
                             <div class="form-group">
                                 <label>Description</label>
                                 <small class="form-text text-muted">Tell your apprentice about your company.</small>
-                                <textarea class="form-control" wire:model="description" placeholder="Share some information about your comany(Max:2000 chars)"></textarea>
+                                <textarea class="form-control" wire:model.lazy="description" placeholder="Share some information about your comany(Max:2000 chars)"></textarea>
                                 @error('description') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>

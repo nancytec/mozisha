@@ -15,7 +15,7 @@
                     <form action="" wire:submit.prevent="getCode">
                         <div class="form-group">
                             <label class="form-control-label">Reset token</label>
-                            <input type="text" wire:model="email" class="form-control">
+                            <input type="text" wire:model.lazy="email" class="form-control">
                             @error('email') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                         </div>
 

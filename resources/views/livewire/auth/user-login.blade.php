@@ -27,13 +27,13 @@
                     <form action="" wire:submit.prevent="login">
                         <div class="form-group">
                             <label class="form-control-label">Email Address</label>
-                            <input type="email" wire:model="email" class="form-control">
+                            <input type="email" wire:model.lazy="email" class="form-control {{$errors->has('email')? 'is-invalid' : '' }}">
                             @error('email') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Password</label>
                             <div class="pass-group">
-                                <input type="password" wire:model="password" class="form-control pass-input">
+                                <input type="password" wire:model.lazy="password" class="form-control pass-input {{$errors->has('password')? 'is-invalid' : '' }}">
                                 <span class="fas fa-eye toggle-password"></span>
                                 @error('password') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                             </div>

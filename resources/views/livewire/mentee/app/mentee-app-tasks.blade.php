@@ -109,7 +109,7 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Schedule</label>
-                                                    <select class="form-control" wire:model="type">
+                                                    <select class="form-control" wire:model.lazy="type">
                                                         <option value="">Select schedule</option>
                                                         <option value="Daily">Daily</option>
                                                         <option value="Weekly">Weekly</option>
@@ -121,7 +121,7 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Task Title</label>
-                                                    <input type="text" wire:model="title" class="form-control" placeholder="Example: To do this and that...">
+                                                    <input type="text" wire:model.lazy="title" class="form-control" placeholder="Example: To do this and that...">
                                                     @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
@@ -129,28 +129,28 @@
                                                 <div class="form-group">
                                                     <label>Details of this task</label>
                                                     <small class="form-text text-muted">A detailed explaination of this task.</small>
-                                                    <textarea rows="5" class="form-control" wire:model="details" placeholder="Share some information about this task."></textarea>
+                                                    <textarea rows="5" class="form-control" wire:model.lazy="details" placeholder="Share some information about this task."></textarea>
                                                     @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Resource link 1(Optional)</label>
-                                                    <input type="text" wire:model="link_1" class="form-control" placeholder="Add link to a useful resource...">
+                                                    <input type="text" wire:model.lazy="link_1" class="form-control" placeholder="Add link to a useful resource...">
                                                     @error('link_1') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Resource link 2(Optional)</label>
-                                                    <input type="text" wire:model="link_2" class="form-control" placeholder="Add link to a useful resource...">
+                                                    <input type="text" wire:model.lazy="link_2" class="form-control" placeholder="Add link to a useful resource...">
                                                     @error('link_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Attachment(Optional)</label>
-                                                    <input type="file"  wire:model="attach" class="form-control">
+                                                    <input type="file"  wire:model.lazy="attach" class="form-control">
                                                     @error('attach') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
@@ -315,7 +315,7 @@
                                                             {{--                                                        </div>--}}
                                                         </div>
 
-                                                        <input type="text" wire:model="reply" class="input-msg-send form-control" placeholder="Type something">
+                                                        <input type="text" wire:model.lazy="reply" class="input-msg-send form-control" placeholder="Type something">
                                                         <div class="input-group-append">
                                                             <button   style="border-color: #420175; background-color: #420175;" type="submit" class="btn msg-send-btn"> <i wire:loading wire:target="sendReply"  class="fa fa-spinner fa-spin"></i> Send</button>
                                                         </div>
@@ -361,7 +361,7 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Title</label>
-                                                    <input type="text" wire:model="title" class="form-control" placeholder="Example: To do this and that...">
+                                                    <input type="text" wire:model.lazy="title" class="form-control" placeholder="Example: To do this and that...">
                                                     @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
@@ -369,28 +369,28 @@
                                                 <div class="form-group">
                                                     <label>Details of this solution</label>
                                                     <small class="form-text text-muted">A detailed explaination of the solution.</small>
-                                                    <textarea rows="5" class="form-control" wire:model="details" placeholder="Share some information about this solution."></textarea>
+                                                    <textarea rows="5" class="form-control" wire:model.lazy="details" placeholder="Share some information about this solution."></textarea>
                                                     @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Resource link 1(Optional)</label>
-                                                    <input type="text" wire:model="link_1" class="form-control" placeholder="Add link to a useful resource...">
+                                                    <input type="text" wire:model.lazy="link_1" class="form-control" placeholder="Add link to a useful resource...">
                                                     @error('link_1') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Resource link 2(Optional)</label>
-                                                    <input type="text" wire:model="link_2" class="form-control" placeholder="Add link to a useful resource...">
+                                                    <input type="text" wire:model.lazy="link_2" class="form-control" placeholder="Add link to a useful resource...">
                                                     @error('link_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Attachment(Optional)</label>
-                                                    <input type="file"  wire:model="attach" class="form-control">
+                                                    <input type="file"  wire:model.lazy="attach" class="form-control">
                                                     @error('attach') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                             </div>

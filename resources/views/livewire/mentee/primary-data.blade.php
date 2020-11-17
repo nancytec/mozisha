@@ -82,14 +82,14 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" wire:model = "firstname" class="form-control" placeholder="First Name">
+                                    <input type="text" wire:model.lazy = "firstname" class="form-control" placeholder="First Name">
                                     @error('firstname') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" wire:model = "lastname" class="form-control" PLACEHOLDER="Last Name">
+                                    <input type="text" wire:model.lazy = "lastname" class="form-control" PLACEHOLDER="Last Name">
                                     @error('lastname') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="form-group">
                                     <label>Date of Birth</label>
                                     <div class="cal-icon">
-                                        <input type="text" class="form-control datetimepicker" wire:model="date_of_birth" placeholder="Date of birth">
+                                        <input type="text" class="form-control datetimepicker" wire:model.lazy="date_of_birth" placeholder="Date of birth">
                                         @error('date_of_birth') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Mobile</label>
-                                    <input type="text" wire:model="phone" placeholder="Phone Number" class="form-control">
+                                    <input type="text" wire:model.lazy="phone" placeholder="Phone Number" class="form-control">
                                     @error('phone') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Gender</label>
-                                    <select class="form-control" wire:model="gender" name="language">
+                                    <select class="form-control" wire:model.lazy="gender" name="language">
                                         <option value="">Select gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -125,42 +125,42 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" wire:model="address" placeholder="Your Address" class="form-control">
+                                    <input type="text" wire:model.lazy="address" placeholder="Your Address" class="form-control">
                                     @error('address') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Address 2</label>
-                                    <input type="text" wire:model="address_2" placeholder="Your second Address" class="form-control">
+                                    <input type="text" wire:model.lazy="address_2" placeholder="Your second Address" class="form-control">
                                     @error('address_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>City</label>
-                                    <input type="text" wire:model="city" placeholder="City" class="form-control">
+                                    <input type="text" wire:model.lazy="city" placeholder="City" class="form-control">
                                     @error('city') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>State</label>
-                                    <input type="text" wire:model="state" placeholder="State" class="form-control">
+                                    <input type="text" wire:model.lazy="state" placeholder="State" class="form-control">
                                     @error('state') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Zip Code</label>
-                                    <input type="text" wire:model="zipcode" placeholder="Zip Code" class="form-control">
+                                    <input type="text" wire:model.lazy="zipcode" placeholder="Zip Code" class="form-control">
                                     @error('zipcode') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Country</label>
-                                    <input type="text" wire:model="country" placeholder="Nationality" class="form-control" >
+                                    <input type="text" wire:model.lazy="country" placeholder="Nationality" class="form-control" >
                                     @error('country') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>

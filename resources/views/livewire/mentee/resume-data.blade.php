@@ -84,7 +84,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Current Location</label>
-                                    <input type="text" class="form-control" wire:model="location">
+                                    <input type="text" class="form-control" wire:model.lazy="location">
                                     @error('location') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                     @else
                                     <label>Tell your mentors about language you can speak.</label>
                                     @endif
-                                    <select class="form-control" wire:model="languages" name="language">
+                                    <select class="form-control" wire:model.lazy="languages" name="language">
                                         <option value="English">Select Language</option>
                                         <option value="English">English</option>
                                         <option value="Pidging">Pidgin</option>
@@ -140,7 +140,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Add other languages you can speak. <li wire:click="hideLanguageForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                    <select class="form-control" wire:model="other_language" name="language[]">
+                                    <select class="form-control" wire:model.lazy="other_language" name="language[]">
                                         <option value="English">Select Language</option>
                                         <option value="English">English</option>
                                         <option value="Pidging">Pidgin</option>
@@ -164,7 +164,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>If you're a military veteran, you can display it on your profile.</label><br>
-                                    <input wire:model="military"  type="checkbox" value="Yes" >
+                                    <input wire:model.lazy="military"  type="checkbox" value="Yes" >
                                     <label>I'm a military veteran</label>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@
                     <form action="" wire:submit.prevent="getCode">
                         <div class="form-group">
                             <label class="form-control-label">Email Address</label>
-                            <input type="email" wire:model="email" class="form-control" placeholder="Your email address.">
+                            <input type="email" wire:model.lazy="email" class="form-control {{$errors->has('email')? 'is-invalid' : '' }}" placeholder="Your email address.">
                             @error('email') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                         </div>
 
@@ -47,7 +47,7 @@
                             <form action="" wire:submit.prevent="verifyToken">
                                 <div class="form-group">
                                     <label class="form-control-label">Reset token</label>
-                                    <input type="text" wire:model="token" class="form-control" placeholder="Enter your reset token.">
+                                    <input type="text" wire:model.lazy="token" class="form-control {{$errors->has('token')? 'is-invalid' : '' }}" placeholder="Enter your reset token.">
                                     @error('token') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                 </div>
 
@@ -79,13 +79,13 @@
 
                                     <div class="form-group">
                                         <label class="form-control-label">Password</label>
-                                        <input id="password" type="password" class="form-control" wire:model="password" placeholder="Enter new password" name="password">
+                                        <input id="password" type="password" class="form-control {{$errors->has('password')? 'is-invalid' : '' }}" wire:model.lazy="password" placeholder="Enter new password" name="password">
                                         @error('password') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-control-label">Confirm Password</label>
-                                        <input id="password_confirmation" type="password" class="form-control" wire:model="password_confirmation" placeholder="Verify password"  name="password_confirmation">
+                                        <input id="password_confirmation" type="password" class="form-control {{$errors->has('password_confirmation')? 'is-invalid' : '' }}" wire:model="password_confirmation" placeholder="Verify password"  name="password_confirmation">
                                         @error('password_confirmation') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                                     </div>
 

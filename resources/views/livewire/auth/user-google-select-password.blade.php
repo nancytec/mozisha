@@ -35,11 +35,11 @@
 {{--                            @error('role') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror--}}
 {{--                        </div>--}}
                         <div class="form-group">
-                            <input class="form-control" wire:model="password" type="password" placeholder="Password">
+                            <input class="form-control" wire:model.lazy="password" type="password" placeholder="Password">
                             @error('password') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group">
-                            <input class="form-control" wire:model="password_confirmation" type="password" placeholder="Confirm Password">
+                            <input class="form-control" wire:model.lazy="password_confirmation" type="password" placeholder="Confirm Password">
                             @error('password_confirmation') <span style="color: crimson; font-size: 10px;">{{ $message }}</span> @enderror
                         </div>
                         <div class="row">

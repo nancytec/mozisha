@@ -37,21 +37,21 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label>School</label>
-                            <input type="text" wire:model="school" class="form-control" placeholder="Example: University of Ibadan.">
+                            <input type="text" wire:model.lazy="school" class="form-control" placeholder="Example: University of Ibadan.">
                             @error('school') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Degree</label>
-                            <input type="text" wire:model="degree" class="form-control" placeholder="Example: UBachelor's.">
+                            <input type="text" wire:model.lazy="degree" class="form-control" placeholder="Example: UBachelor's.">
                             @error('degree') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label>Course of study</label>
-                            <input type="text" wire:model="course" class="form-control" placeholder="Example: Computer science.">
+                            <input type="text" wire:model.lazy="course" class="form-control" placeholder="Example: Computer science.">
                             @error('course') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label>Start year</label>
                             <small class="form-text text-muted">Share when you started this study.</small>
-                            <select wire:model="start_year" class="form-control" name="language">
+                            <select wire:model.lazy="start_year" class="form-control" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -162,7 +162,7 @@
                         <div class="form-group">
                             <label>End year</label>
                             <small class="form-text text-muted">Share when you complete this study.</small>
-                            <select wire:model="end_year" class="form-control" name="language">
+                            <select wire:model.lazy="end_year" class="form-control" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>

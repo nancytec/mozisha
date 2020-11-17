@@ -37,7 +37,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Goal Title</label>
-                                <input type="text" wire:model="title" class="form-control" placeholder="Example: To do this and that...">
+                                <input type="text" wire:model.lazy="title" class="form-control" placeholder="Example: To do this and that...">
                                 @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <label>Details of the Goal</label>
                                 <small class="form-text text-muted">A detailed explaination of the goal of this apprenticeship.</small>
-                                <textarea rows="10" class="form-control" wire:model="details" placeholder="Share some information about you goal."></textarea>
+                                <textarea rows="10" class="form-control" wire:model.lazy="details" placeholder="Share some information about you goal."></textarea>
                                 @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>

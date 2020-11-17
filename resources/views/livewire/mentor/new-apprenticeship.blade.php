@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label>Available Apprenticeships</label>
                             <small class="form-text text-muted">Preferred apprenticeship.</small>
-                            <select class="form-control" wire:model="title" name="language">
+                            <select class="form-control" wire:model.lazy="title" name="language">
                                 <option value="">Select Apprenticeship</option>
                                 @foreach($apprenticeships as $apr)
                                 <option value="{{$apr->duty}}">{{$apr->duty}}</option>
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <label>Start Month</label>
                             <small class="form-text text-muted">Preferred start Month.</small>
-                            <select class="form-control" wire:model="start_month" name="language">
+                            <select class="form-control" wire:model.lazy="start_month" name="language">
                                 <option value="">Select month</option>
                                 <option value="January">January</option>
                                 <option value="Febuary">Febuary</option>
@@ -53,8 +53,8 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Start Year</label>
-                            <small class="form-text text-muted">Preferred start Month.</small>
-                            <select class="form-control" wire:model="start_year" name="language">
+                            <small class="form-text text-muted">Preferred start year.</small>
+                            <select class="form-control" wire:model.lazy="start_year" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -156,7 +156,7 @@
                         <div class="form-group">
                             <label>End Month</label>
                             <small class="form-text text-muted">Preferred end Month.</small>
-                            <select class="form-control" wire:model="end_month" name="language">
+                            <select class="form-control" wire:model.lazy="end_month" name="language">
                                 <option value="">Select month</option>
                                 <option value="January">January</option>
                                 <option value="Febuary">Febuary</option>
@@ -178,7 +178,7 @@
                         <div class="form-group">
                             <label>End Year</label>
                             <small class="form-text text-muted">Preferred end year.</small>
-                            <select class="form-control" wire:model="end_year" name="language">
+                            <select class="form-control" wire:model.lazy="end_year" name="language">
                                 <option value="">Select year</option>
                                 <option value="2020">2020</option>
                                 <option value="2021">2021</option>
@@ -195,7 +195,7 @@
                         <div class="form-group">
                             <label>Description</label>
                             <div class="form-group">
-                                <textarea class="form-control" wire:model="details" placeholder="Describe what the apprenticeship program is all about.."></textarea>
+                                <textarea class="form-control" wire:model.lazy="details" placeholder="Describe what the apprenticeship program is all about.."></textarea>
                                 @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mentorship period(hrs/week)</label>
-                            <select class="form-control" wire:model="mentorship_period" name="language">
+                            <select class="form-control" wire:model.lazy="mentorship_period" name="language">
                                 <option value="">Select Period</option>
                                 <option value="5">10</option>
                                 <option value="10">10</option>
@@ -226,7 +226,7 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Apprentice period(hrs/week)</label>
-                            <select class="form-control" wire:model="apprentice_period" name="language">
+                            <select class="form-control" wire:model.lazy="apprentice_period" name="language">
                                 <option value="">Select Period</option>
                                 <option value="5">10</option>
                                 <option value="10">10</option>
