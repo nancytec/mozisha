@@ -167,7 +167,7 @@
 
 
                         <li class="nav-item mega-menu"><a href="#">Apprenticeship<i class="fa fa-angle-down"></i></a>
-                            <div class="mega-menu-fullwidth dark">
+                            <div class="mega-menu-fullwidth dark" style="background-color: #420175 !important;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-3">
@@ -204,7 +204,7 @@
                         </li>
 
                         <li class="nav-item mega-menu"><a href="#">Mozilearn<i class="fa fa-angle-down"></i></a>
-                            <div class="mega-menu-fullwidth dark">
+                            <div class="mega-menu-fullwidth dark" style="background-color: #420175 !important;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-3">
@@ -244,7 +244,7 @@
                         </li>
 
                         <li class="nav-item mega-menu"><a href="#">Mozilance<i class="fa fa-angle-down"></i></a>
-                            <div class="mega-menu-fullwidth dark">
+                            <div class="mega-menu-fullwidth dark" style="background-color: #420175 !important;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-3">
