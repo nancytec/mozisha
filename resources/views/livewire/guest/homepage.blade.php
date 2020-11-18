@@ -196,25 +196,25 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="about-image">
-                                        <img class="lazy" src="{{asset('user/home/assets/images/post/03.jpg')}}" alt="images">
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="about-image">
                                         <img class="lazy" src="{{asset('user/home/assets/images/post/11.jpg')}}" alt="images">
                                     </div>
                                 </div>
 
                                 <div class="swiper-slide">
                                     <div class="about-image">
-                                        <img class="lazy" src="{{asset('user/home/assets/images/post/02.jpg')}}" alt="images">
+                                        <img class="lazy" src="{{asset('user/home/assets/images/post/13.jpg')}}" alt="images">
                                     </div>
                                 </div>
 
                                 <div class="swiper-slide">
                                     <div class="about-image">
-                                        <img class="lazy" src="{{asset('user/home/assets/images/post/13.jpg')}}" alt="images">
+                                        <img class="lazy" src="{{asset('user/home/assets/images/post/03.jpg')}}" alt="images">
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="about-image">
+                                        <img class="lazy" src="{{asset('user/home/assets/images/post/02.jpg')}}" alt="images">
                                     </div>
                                 </div>
 

@@ -136,10 +136,10 @@
 
             <!-- social-media -->
             <ul class="social-media-list d-flex m-0 p-0 list-unstyled">
-                <li><a href="https://www.facebook.com/fluxthemeOfficial/"><i class="fa fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/fluxtheme"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/flux-theme/"><i class="fa fa-linkedin-in"></i></a></li>
-                <li><a href="https://www.instagram.com/FluxThemeOfficial/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fa fa-vimeo-v"></i></a></li>
             </ul>
         </div>
@@ -425,10 +425,10 @@
 
                 <!-- social-media -->
                 <ul class="social-media-list d-flex flex-wrap m-0 p-0 list-unstyled">
-                    <li><a href="https://www.facebook.com/fluxthemeOfficial/"><i class="fa fa-facebook-f"></i></a></li>
-                    <li><a href="https://twitter.com/fluxtheme"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.linkedin.com/company/flux-theme/"><i class="fa fa-linkedin-in"></i></a></li>
-                    <li><a href="https://www.instagram.com/FluxThemeOfficial/"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fa fa-vimeo-v"></i></a></li>
                 </ul>
             </div>

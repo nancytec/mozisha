@@ -30,6 +30,10 @@ class MentorAboutData extends Component
     public function refresh(){
         $this->c_helps               = ApprenticeHelp::where('user_id',   $this->user->id)->get();
         $this->c_apprenticeships     = ApprenticeDuty::where('user_id',       $this->user->id)->get();
+        $about                       = About::where('user_id',       $this->user->id)->first();
+
+        //Fetch the biography data from the About model
+        if($about) {$this->biography = $about->biography;}
     }
 
     public function updateAbout(){

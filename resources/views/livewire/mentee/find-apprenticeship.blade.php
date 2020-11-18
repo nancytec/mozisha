@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="btn-search">
-                                <button type="button" style="background-color: #9A4EAE; border-color: #9A4EAE;" class="btn btn-block">Search</button>
+                                <button type="button" style="background-color: #420175; border-color: #420175;" class="btn btn-block">Search</button>
                             </div>
                         </div>
                     </div>

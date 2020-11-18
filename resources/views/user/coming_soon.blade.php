@@ -18,14 +18,14 @@
                             <div id="countdown" class="countdown d-flex flex-wrap justify-content-center">
                                 <div class="count-item">
                                     <div class="count-item-inner">
-                                        <div class="count-number days">15</div>
+                                        <div class="count-number days">10</div>
                                         <div class="days_text count-text">Sunday</div>
                                     </div>
                                 </div>
                                 <div class="count-item">
                                     <div class="count-item-inner">
-                                        <div class="count-number hours">11</div>
-                                        <div class="hours_text count-text">November</div>
+                                        <div class="count-number hours">01</div>
+                                        <div class="hours_text count-text">January</div>
                                     </div>
                                 </div>
                                 <div class="count-item">
@@ -36,8 +36,8 @@
                                 </div>
                                 <div class="count-item">
                                     <div class="count-item-inner">
-                                        <div class="count-number seconds">20</div>
-                                        <div class="seconds_text count-text">2020</div>
+                                        <div class="count-number seconds">21</div>
+                                        <div class="seconds_text count-text">2021</div>
                                     </div>
                                 </div>
                             </div>

@@ -43,8 +43,8 @@
                                 <hr>
                             </div>
                             @endif
-                                @if(Auth::user()->hasRole('mentor'))
-                                    <div class="col-12 col-md-12">
+                            @if(Auth::user()->hasRole('mentor'))
+                            <div class="col-12 col-md-12">
                                         <div class="form-group">
                                             <label>Note:</label><br>
                                             <hr>
@@ -53,7 +53,7 @@
                                         </div>
                                         <hr>
                                     </div>
-                                @endif
+                            @endif
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <div class="change-avatar">
@@ -163,7 +163,7 @@
                                 <div class="form-group">
                                     <label>Add other languages you can speak. <li wire:click="hideLanguageForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
                                     <select class="form-control {{$errors->has('other_language')? 'is-invalid' : '' }}" wire:model.lazy="other_language" name="language[]">
-                                        <option value="English">Select Language</option>
+                                        <option value="">Select Language</option>
                                         <option value="English">English</option>
                                         <option value="Pidging">Pidgin</option>
                                         <option value="Yoruba">Yoruba</option>
@@ -174,7 +174,7 @@
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <small style="cursor: pointer;" wire:click="insertOtherLanguage" class="form-text text-muted"><li class="fa fa-check"></li> Update language</small>
+                                    <small style="cursor: pointer;" wire:click="insertOtherLanguage" class="form-text text-muted"><li class="fa fa-check"></li> Save language</small>
                                 </div>
                             </div>
                             @endif

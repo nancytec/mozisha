@@ -120,12 +120,13 @@
                             <a >Explore <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li class=""><a href="{{route('mentor.dashboard')}}">Dashboard</a></li>
-                                <li class=""><a href="{{route('mentor.apprenticeship.new')}}">New Apprenticeship</a></li>
-                                <li class=""><a href="{{route('mentor.profile.update')}}">Update profile</a></li>
+                                <li class=""><a href="{{route('mentor.apprenticeship.new')}}">Post Apprenticeship</a></li>
+                                <li class=""><a target="_blank" href="{{route('chat')}}">Messenger</a></li>
                                 <li class="has-submenu">
                                     <a href="#">Modules</a>
                                     <ul class="submenu">
                                         <li><a href="#">E-learning</a></li>
+                                        <li><a href="#">Forum</a></li>
                                         <li><a href="#">Freelancing</a></li>
                                     </ul>
                                 </li>
@@ -136,12 +137,12 @@
                         <li class="has-submenu ">
                             <a href="#">Profile <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li class=""><a href="{{route('chat')}}">Chat</a></li>
+                                <li class=""><a href="{{route('mentor.profile')}}">Support</a></li>
                                 <li class="has-submenu">
-                                    <a href="#">Career</a>
+                                    <a href="#">Business</a>
                                     <ul class="submenu">
-                                        <li><a href="{{route('mentor.profile')}}">Profile information</a></li>
-                                        <li><a href="{{route('mentor.profile.settings')}}">Profile settings</a></li>
+                                        <li><a href="{{route('mentor.profile')}}">Information</a></li>
+                                        <li><a href="{{route('mentor.profile.settings')}}">Update</a></li>
                                     </ul>
                                 </li>
                                 <li class=""><a href="{{route('logout')}}">Reset Password</a></li>
@@ -158,7 +159,8 @@
                         </li>
 
                     </ul>
-                @else
+                @endif
+                    @if(Auth::user()->hasRole('mentee'))
                     <ul class="main-nav">
                         <!-- <li class="">
                             <a href="index-2.html">Home</a>
@@ -169,11 +171,12 @@
                             <ul class="submenu">
                                 <li class=""><a href="{{route('mentee.dashboard')}}">Dashboard</a></li>
                                 <li class=""><a href="{{route('mentee.apprenticeship.find')}}">Find Apprenticeship</a></li>
-                                <li class=""><a href="{{route('mentee.profile.update')}}">Update profile</a></li>
+                                <li class=""><a target="_blank" href="{{route('chat')}}">Messenger</a></li>
                                 <li class="has-submenu">
                                     <a href="invoices.html">Modules</a>
                                     <ul class="submenu">
                                         <li><a href="#">E-learning</a></li>
+                                        <li><a href="#">Forum</a></li>
                                         <li><a href="#">Freelancing</a></li>
                                     </ul>
                                 </li>
@@ -184,12 +187,12 @@
                         <li class="has-submenu ">
                             <a href="">Profile <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li class=""><a target="_blank" href="{{route('chat')}}">Chat</a></li>
+                                <li class=""><a target="_blank" href="{{route('chat')}}">Support</a></li>
                                 <li class="has-submenu">
-                                    <a href="#">Career</a>
+                                    <a href="#">Profile</a>
                                     <ul class="submenu">
-                                        <li><a href="{{route('mentee.profile')}}">Profile information</a></li>
-                                        <li><a href="{{route('mentee.profile.settings')}}">Profile settings</a></li>
+                                        <li><a href="{{route('mentee.profile')}}">Information</a></li>
+                                        <li><a href="{{route('mentee.profile.settings')}}">Update</a></li>
                                     </ul>
                                 </li>
                                 <li class=""><a href="{{route('logout')}}">Reset Password</a></li>

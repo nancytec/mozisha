@@ -18,6 +18,7 @@ class PersonalAccomplishment extends Component
 
     public $interest;
     public $old_interests;
+
     public $other_interest;
     public $showInterestForm = false;
     public $showAccomplishForm = false;
@@ -41,7 +42,8 @@ class PersonalAccomplishment extends Component
     }
 
 
-    public function updated($field){
+    public function updated($field)
+    {
         $this->validateOnly($field,[
             'accomplish' => 'nullable|max:255',
             'interest'   => 'nullable|max:255'
@@ -49,7 +51,8 @@ class PersonalAccomplishment extends Component
     }
 
     //Update the about table
-    public function updateAccomplish(){
+    public function updateAccomplish()
+    {
         //Check if the user already has a record in the About table
         $userAbout = MyAccomplishment::where(['user_id' => $this->user->id, 'accomplishment' => $this->accomplish])->count();
         if ($userAbout < 1) { //if not exist
@@ -183,31 +186,22 @@ class PersonalAccomplishment extends Component
 
     public function refresh()
     {
-        $user = PersonalInterest::where('user_id', Auth::user()->id)->count();
-        if ($user < 1) {
-            $this->interest = '';
 
-        } else {
-//            $interest = PersonalInterest::where('user_id', Auth::user()->id)->count();
-//            if ($interest > 0) {
-//                $interest = PersonalInterest::where('user_id', Auth::user()->id)->first();
-//                $this->interest = $interest->interest;
-//            }
+          $this->refreshInterest();
+          $this->refreshAccomplish();
 
-            $interests    = PersonalInterest::where('user_id', Auth::user()->id)->count();
-            $accomplishes = MyAccomplishment::where('user_id', Auth::user()->id)->count();
+    }
 
-            if ($interests > 0) {
-                $interests = PersonalInterest::where('user_id', Auth::user()->id)->get();
-                $this->old_interests = $interests;
-            }
+    public function refreshInterest()
+    {
+            $interests = PersonalInterest::where('user_id', Auth::user()->id)->get();
+            $this->old_interests = $interests;
+    }
 
-            if ($accomplishes > 0) {
-                $accomplishes = MyAccomplishment::where('user_id', Auth::user()->id)->get();
-                $this->old_accomplishes = $accomplishes;
-            }
-
-        }
+    public function refreshAccomplish()
+    {
+            $accomplishes = MyAccomplishment::where('user_id', Auth::user()->id)->get();
+            $this->old_accomplishes = $accomplishes;
     }
 
 

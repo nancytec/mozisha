@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                         <label>Personal Interest.</label>
                                     <select class="form-control {{$errors->has('interest')? 'is-invalid' : '' }}" wire:model.lazy="interest" name="interest">
-                                        <option value="Null">Select Interest</option>
+                                        <option value="">Select Interest</option>
                                         <option value="Technology">Technology</option>
                                         <option value="Fashion">Fashion</option>
                                         <option value="Engineering">Engineering</option>
@@ -84,7 +84,6 @@
                                                 <li wire:click="removeInterest({{$interest->id}})" style="cursor: pointer;" > <small>{{$interest->interest}} </small></li>
                                             @endforeach
                                         </ul>
-
                                     @endif
                                 </div>
                             </div>
@@ -122,8 +121,8 @@
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label>Add other interest. <li wire:click="hideInterestForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                        <select class="form-control {{$errors->has('other_interest')? 'is-invalid' : '' }}" wire:model.lazy="other_interest" name="interest">
-                                            <option value="Null">Select Interest</option>
+                                        <select class="form-control {{$errors->has('other_interest')? 'is-invalid' : '' }}" wire:model="other_interest" name="interest">
+                                            <option value="">Select Interest</option>
                                             <option value="Technology">Technology</option>
                                             <option value="Fashion">Fashion</option>
                                             <option value="Engineering">Engineering</option>
@@ -135,7 +134,7 @@
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <small style="cursor: pointer;" wire:click="insertOtherInterest" class="form-text text-muted"><li class="fa fa-check"></li> Add Interest</small>
+                                        <small style="cursor: pointer;" wire:click="insertOtherInterest" class="form-text text-muted"><li class="fa fa-check"></li> Save Interest</small>
                                     </div>
                                 </div>
                             @endif
@@ -144,14 +143,14 @@
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label>Add other Accomplishment. <li wire:click="hideAccomplishForm" style="cursor: pointer;" class="fa fa-minus-circle"></li></label>
-                                        <input type="text" class="form-control {{$errors->has('other_accomplish')? 'is-invalid' : '' }}" wire:model.lazy="other_accomplish">
+                                        <input type="text" class="form-control {{$errors->has('other_accomplish')? 'is-invalid' : '' }}" wire:model="other_accomplish">
                                         @error('other_accomplish') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <small style="cursor: pointer;" wire:click="insertOtherAccomplish" class="form-text text-muted"><li class="fa fa-check"></li> Add Accomplishment</small>
+                                        <small style="cursor: pointer;" wire:click="insertOtherAccomplish" class="form-text text-muted"><li class="fa fa-check"></li> Save Accomplishment</small>
                                     </div>
                                 </div>
                             @endif

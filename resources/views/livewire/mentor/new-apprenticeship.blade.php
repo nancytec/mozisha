@@ -2,13 +2,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document" >
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Apprenticeship Details</h5>
+            <h5 class="modal-title">Post new Apprenticeship</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-header">
-            <p style="text-align: center;"> <small>Note that Apprenticeship programs will be posted based on your company profile information.</small></p>
+            <p style="text-align: center;"> <small>Note: Apprenticeship programs will be posted based on your business profile, Make sure your profile is up to date. Feel free to post apprenticeships as many as possible..
+                GOOD LUCK!</small></p>
         </div>
 
         <div class="modal-body">
@@ -244,8 +245,8 @@
                     </div>
 
                 </div>
-                <button type="submit" wire:loading.remove wire:target="newApprenticeship"  class="btn btn-primary btn-block">Post Apprenticeship</button>
-                <button type="submit" wire:loading wire:target="newApprenticeship"  class="btn btn-primary btn-block"><i class="fa fa-spinner fa-spin"></i>  Processing request...</button>
+                <button type="submit" wire:loading.remove wire:target="newApprenticeship"  class="btn btn-primary btn-block" style="background-color: #420175; border-color: #420175;">Post Apprenticeship</button>
+                <button type="submit" wire:loading wire:target="newApprenticeship"  class="btn btn-primary btn-block" style="background-color: #420175; border-color: #420175;"><i class="fa fa-spinner fa-spin"></i>  Processing request...</button>
             </form>
         </div>
     </div>

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/mentee/register', [MenteeController::class, 'menteeRegister'])->name('mentee.register');
 
 Route::middleware('auth')->group(function (){
-    Route::get('/messenger',  [ChatController::class, 'home'])->name('chat');
+    Route::get('/messenger',  [ChatController::class, 'platform'])->name('chat');
     Route::get('/platform',   [ChatController::class, 'platform'])->name('platform');
 });
 
