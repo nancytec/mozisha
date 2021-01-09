@@ -27,7 +27,7 @@ class MentorNewMeeting extends Component
     public $conn;
 
     public function mount(){
-        $this->conn = Session::get('conn');;
+        $this->conn = Session::get('conn');
     }
     public function updated($field){
         $this->validateOnly($field, [

@@ -29,11 +29,12 @@
     <link rel="stylesheet" href="{{asset('user/home/assets/css/digital-agency.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('user/home/assets/css/custom.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('admin/css/toastr.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('admin/css/toastr.css')}}">
     <!--Laravel livewire styles  -->
     <livewire:styles />
 </head>
 <body id="top-page" class="search color1" style="font-size: 90%">
+@if(Route::currentRouteName() == 'homepage')
 <!-- preloader-->
 <div id="loading">
     <div id="loading-center" style="background-color: #420175;">
@@ -45,6 +46,7 @@
         </div>
     </div>
 </div>
+@endif
 
 <!--search-body-->
 <div class="search-area">
@@ -65,8 +67,8 @@
     <div class="header-top d-none d-lg-flex">
         <div class="headertop-left">
             <ul class="site-info m-0 p-0 list-unstyled">
-                <li><a href="tel:4484 4873 7363"><i class="fa fa-mobile-phone"></i> +234 905 651 6559</a></li>
-                <li><a href="mailto:info@mozisha.com" target="_top"><i class="fa fa-send-o"></i> info@mozisha.com</a></li>
+                <li><a href="tel:{{$setting->phone}}"><i class="fa fa-mobile-phone"></i> {{$setting->phone}}</a></li>
+                <li><a href="mailto:{{$setting->email}}" target="_top"><i class="fa fa-send-o"></i> {{$setting->email}}</a></li>
             </ul>
         </div>
 
@@ -136,11 +138,11 @@
 
             <!-- social-media -->
             <ul class="social-media-list d-flex m-0 p-0 list-unstyled">
-                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-vimeo-v"></i></a></li>
+                <li><a href="https://{{$social->facebook}}"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="https://{{$social->twitter}}"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://{{$social->linkedIn}}"><i class="fa fa-linkedin-in"></i></a></li>
+                <li><a href="https://{{$social->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone={{$social->whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
             </ul>
         </div>
     </div>
@@ -234,8 +236,7 @@
                                         <div class="col-lg-3">
                                             <h3 class="mega-menu-list-title">Get started</h3>
                                             <ul class="mega-menu-list">
-                                                <li><a href="{{route('coming_soon')}}">Login</a></li>
-                                                <li><a href="{{route('coming_soon')}}">Sign up</a></li>
+                                              <li><a href="https://learn.mozisha.com" target="_blank">Explore Now</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -285,7 +286,9 @@
 
 
                         <li class="nav-item @if(Route::currentRouteName() == 'team') active @endif "><a href="{{route('team')}}">Team</a></li>
+                        <li class="nav-item @if(Route::currentRouteName() == 'events') active @endif "><a href="{{route('events')}}">Events</a></li>
                         <li class="nav-item @if(Route::currentRouteName() == 'about') active @endif "><a href="{{route('about')}}">About</a></li>
+
 
                     </ul>
                 </div>
@@ -312,37 +315,38 @@
                     <li><a>Apprenticeship <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="mobile-submenu">
                             <li><a href="{{route('user.login')}}">Login</a></li>
-                            <li><a href="{{route('user.account')}}">Button</a></li>
+                            <li><a href="{{route('user.account')}}">Sign-Up</a></li>
                         </ul>
                     </li>
                     <li><a>Mozilearn <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="mobile-submenu">
                             <li><a href="{{route('coming_soon')}}">Explore</a></li>
                             <li><a href="{{route('coming_soon')}}">Login</a></li>
-                            <li><a href="{{route('coming_soon')}}">Button</a></li>
+                            <li><a href="{{route('coming_soon')}}">Sign-Up</a></li>
                         </ul>
                     </li>
                     <li><a>Mozilance <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="mobile-submenu">
                             <li><a href="{{route('coming_soon')}}">Explore</a></li>
                             <li><a href="{{route('coming_soon')}}">Login</a></li>
-                            <li><a href="{{route('coming_soon')}}">Button</a></li>
+                            <li><a href="{{route('coming_soon')}}">Sign-Up</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item @if(Route::currentRouteName() == 'about') m-active @endif "><a href="{{route('about')}}">About</a></li>
+
                     <li class="nav-item"><a href="{{route('team')}}">Team</a></li>
-                   @if(Auth::user())
+                    <li class="nav-item @if(Route::currentRouteName() == 'events') active @endif "><a href="{{route('events')}}">Events</a></li>
+                    <li class="nav-item @if(Route::currentRouteName() == 'about') m-active @endif "><a href="{{route('about')}}">About</a></li>
+                    @if(Auth::user())
                         @if(Auth::user()->hasRole('mentor'))
                             <li class="nav-item"><a href="{{route('mentor.dashboard')}}">Dashboard</a></li>
                         @endif
                         @if(Auth::user()->hasRole('mentee'))
                             <li class="nav-item"><a href="{{route('mentee.dashboard')}}">Dashboard</a></li>
                         @endif
-                   @else
+                    @else
                         <li class="nav-item"><a href="{{route('user.login')}}">Login</a></li>
-                   @endif
-
+                    @endif
                 </ul>
             </div>
         </div>
@@ -364,13 +368,12 @@
                     <div class="footer-widget">
                         <a href="#" class="footer-logo" style="color: orange;font-weight: bold;"><img class="lazy" style="max-width: 28%;" src="{{asset('user/home/assets/images/logo-black.png')}}" alt="logo" ></a>
                         <p class="address">
-                            Lagos: D2, Road 3B, Diamond Estate, Lagos, Nigeria<br/>
-                            Ondo: 156 Ondo-Ore Road, Beside Adesuper Bakery, Ondo City, Nigeria
+                            {{$setting->address}}
                         </p>
                         <ul class="footer-site-info">
-                            <li><a href="tel:1(800) 32134343">++234 905 651 6559 ,+234 803 442 5355
+                            <li><a href="tel:{{$setting->phone}}">{{$setting->phone}} ,+234 803 442 5355
                                 </a></li>
-                            <li><a href="mailto:info@mozisha.com">info@mozisha.com
+                            <li><a href="mailto:{{$setting->email}}">{{$setting->email}}
                                 </a></li>
                         </ul>
                         <!-- <a href="#" class="googlemap">Google Map</a> -->
@@ -406,11 +409,7 @@
                 </div> -->
                 <div class="col-md-6 col-lg-3 p-0">
                     <div class="footer-widget">
-                        <h4 class="footer-title">Newsletter</h4>
-                        <form action="#">
-                            <input type="text" name="email" placeholder="Enter Your Email">
-                            <button class="submit"><i class="fa- fa-email"></i></button>
-                        </form>
+                       <livewire:home-subscribers-form />
                         <p>Subscribe to our mailing list to receive new updates and special offers and other information</p>
                     </div>
                 </div>
@@ -421,7 +420,7 @@
     <div class="footerbottom">
         <div class="container">
             <div class="row justify-content-center justify-content-md-between align-items-center">
-                <p class="m-0 copy-right">&copy; Copyright 2020 | <a href="index.html">Mozisha</a> Powered by <a href="https://mozisha.com/" target="_blank">Mozisha International</a> | All Rights Reserved</p>
+                <p class="m-0 copy-right">&copy; Copyright 2020 | <a href="index.html">Mozisha</a> Powered by <a href="https://mozisha.com/" target="_blank">{{$setting->company}}</a> | All Rights Reserved</p>
 
                 <!-- social-media -->
                 <ul class="social-media-list d-flex flex-wrap m-0 p-0 list-unstyled">

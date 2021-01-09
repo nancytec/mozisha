@@ -42,6 +42,7 @@ class CompanyInfo extends Component
                 'position'     => $this->position,
                 'description'  => $this->description,
             ]);
+
         }else{
             Details::create([
                 'user_id'      => $this->user->id,
@@ -55,6 +56,7 @@ class CompanyInfo extends Component
         }
 
         $this->refresh();
+        $this->emitTo('mentor-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
     }

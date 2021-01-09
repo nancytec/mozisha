@@ -19,7 +19,7 @@
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
     <!--<![endif]-->
-    <title>Email template</title>
+    <title>New {{$mail_data['type']}} Task</title>
     <!--[if gte mso 9]>
     <style type="text/css" media="all">
         sup { font-size: 100% !important; }
@@ -102,9 +102,7 @@
                                             <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                    <tr>
-                                                        <td class="text-header" style="color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:16px; text-align:right;"><div mc:edit="text_1"><a class="link2" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:none;">Expanding capabilities</a></div></td>
-                                                    </tr>
+
                                                 </table>
                                             </th>
                                         </tr>
@@ -129,13 +127,13 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:30px; text-align:left; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
-                                                                    This is to notify that  {{$mail_data['mentor_name']}} uploaded a new {{$mail_data['task_type']}} task for you, you can login to your
+                                                                    This is to notify you that  {{$mail_data['mentor_name']}} uploaded a new {{$mail_data['task_type']}} task for you, you can login to your
                                                                     apprenticeship dashboard to view the task and respond to it as soon as possible.<br/>
 
                                                                     <small>Title:   {{$mail_data['task_title']}}</small><br>
                                                                     <small>Details: {{$mail_data['task_details']}}</small><br>
                                                                     <br>
-                                                                    We advice you to also be on the look out for other great apprenticeship
+                                                                    We advice you to be on the look out for other great apprenticeship
                                                                     opportunities on Mozisha.<br>
                                                                     <small style="font-size: 10px;">{{$mail_data['date_and_time']}}</small>
                                                                 </div>
@@ -186,7 +184,7 @@
                                                 <th class="column-top" width="280" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="images/image4.jpg" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
+                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="{{asset('user/img/moz.jpg')}}" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
                                                         </tr>
                                                     </table>
                                                 </th>

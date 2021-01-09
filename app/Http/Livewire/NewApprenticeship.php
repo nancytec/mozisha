@@ -39,6 +39,12 @@ class NewApprenticeship extends Component
 
     public function mount($user){
         $this->user = $user;
+        $this->refresh();
+    }
+
+    protected $listeners = ['refresh' => 'refresh'];
+
+    public function refresh(){
         $this->fetchApprenticeships();
         $this->fetchCompany();
         $this->fetchApprenticeHelp();
@@ -50,8 +56,6 @@ class NewApprenticeship extends Component
         $this->interest_c   = $this->interest();
         $this->about_c      = $this->about();
     }
-
-
 
     public function fetchCompany(){
         $this->company = CompanyInfo::where('user_id', $this->user->id)->first();

@@ -62,6 +62,7 @@ class OtherData extends Component
         ]);
         $this->refresh();
         $this->newData();
+        $this->emitTo('mentee-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
     }
 
@@ -93,6 +94,7 @@ class OtherData extends Component
         ]);
         $this->discard();
         $this->refresh();
+        $this->emitTo('mentee-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
     }

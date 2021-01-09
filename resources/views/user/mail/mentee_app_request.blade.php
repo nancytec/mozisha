@@ -19,7 +19,7 @@
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
     <!--<![endif]-->
-    <title>Email template</title>
+    <title>Apprenticeship Request</title>
     <!--[if gte mso 9]>
     <style type="text/css" media="all">
         sup { font-size: 100% !important; }
@@ -102,9 +102,7 @@
                                             <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                    <tr>
-                                                        <td class="text-header" style="color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:16px; text-align:right;"><div mc:edit="text_1"><a class="link2" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:none;">Expanding capabilities</a></div></td>
-                                                    </tr>
+
                                                 </table>
                                             </th>
                                         </tr>
@@ -129,7 +127,7 @@
                                                         <tr>
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:30px; text-align:left; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
                                                                     Your application to {{$mail_data['app_name']}} apprenticeship program has been submitted to the mentor for consideration, Also your
-                                                                    profile details has been sent along with the application. We advice you to wait a bit while the mentor considers you for the
+                                                                    profile details has been sent along with the application. We advice you to wait a bit while the mentor reviews your application before considering you for the
                                                                     opportunity.
                                                                     <br/>
                                                                     <br/>
@@ -181,7 +179,7 @@
                                                 <th class="column-top" width="280" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="images/image4.jpg" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
+                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="{{asset('user/img/moz.jpg')}}" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
                                                         </tr>
                                                     </table>
                                                 </th>

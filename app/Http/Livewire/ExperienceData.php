@@ -57,6 +57,7 @@ class ExperienceData extends Component
         $this->new_end_month     = $experience->end_month;
         $this->new_end_year      = $experience->end_year;
         $this->experience_id     = $experience->id;
+        $this->status            = $experience->status;
 
 
         $this->emit('alert', ['type' => 'info', 'message' => 'Edit form now available.']);
@@ -76,6 +77,8 @@ class ExperienceData extends Component
             'new_end_year'     => 'required|max:255',
         ]);
 
+
+
         UserWorkExperience::where('id', $id)->update([
             'user_id'     => $this->user->id,
             'title'       => $this->new_title,
@@ -92,6 +95,7 @@ class ExperienceData extends Component
 
         $this->refresh();
         $this->newData();
+        $this->emitTo('mentee-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
 
@@ -145,6 +149,7 @@ class ExperienceData extends Component
             'status'      => $this->status,
         ]);
 
+        $this->emitTo('mentee-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
     }
 

@@ -26,6 +26,8 @@ Route::get('/reset',          [LoginController::class, 'reset'])->name('password
 
 Route::get('/about',          [UserPageController::class, 'about'])->name('about');
 
+Route::post('/getUser',          [UserController::class, 'validateUser']); //User validation API
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +63,7 @@ Route::get('/checkuser',      [UserController::class, 'checkUser'])->name('user.
 
 Route::get('/logout',         [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/blog/{id}/view', [BlogController::class, 'userView'])->name('blog.view');
+Route::get('/blog/{slug}', [BlogController::class, 'userView'])->name('blog.view');
 
 /*
 |--------------------------------------------------------------------------

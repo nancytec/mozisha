@@ -6,8 +6,8 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </nav>
 
@@ -17,10 +17,10 @@
                 <div class="col-md-4 col-12 d-md-block d-none">
                     <div class="sort-by">
 
-                        <i  wire:loading wire:target="status" class="fa fa-spinner fa-spin" style="font-size: 130%;"></i>
+                        <i wire:loading wire:target="status" class="fa fa-spinner fa-spin" style="font-size: 130%;"></i>
                         <span wire:loading.remove wire:target="status" class="sort-title">Sort by</span>
-                        <span class="sortby-fliter">
-									<select wire:model="status" class="select form-control">
+                        <span wire:ignore class="sortby-fliter">
+									<select wire:ignore wire:model="status" class="select form-control">
 										<option class="sorting">Select</option>
 										<option class="sorting" value="Active">Active</option>
 										<option class="sorting" value="Suspended">Suspended</option>
@@ -50,9 +50,9 @@
                                 <div class="form-group">
                                     <div class="change-avatar" style=" width: 40%; margin: auto;  text-align: center;">
 
-                                            <div class="profile-img">
-                                                <img src="{{$user->ImagePath}}" style="border-radius: 50px;" alt="User Image">
-                                            </div>
+                                        <div class="profile-img" style=" margin: auto;">
+                                            <img src="{{$user->ImagePath}}" style="border-radius: 50px;" alt="User Image">
+                                        </div>
 
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="dash-widget-info"  wire:click="showApps" style="cursor:pointer;" >
                                     <h3>{{$menteeNo}}</h3>
-                                    <h6>My Apprentices</h6>
+                                    <h6>Active Apprentices</h6>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                         <div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="mb-4">Apprentices List</h4>
+                                    <h4 class="mb-4">My Apprentices</h4>
 
                                     <div class="card card-table">
                                         <div class="card-body">
@@ -169,7 +169,7 @@
                                                                     <td class="text-center"><span class="reject">TERMINATED</span></td>
                                                                 @endif
 
-                                                                <td class="text-center"><a href="{{'/mentor/'.$connect->id.'/app'}}" class="btn btn-sm bg-info-light"><i class="far fa-eye"></i> Platform</a></td>
+                                                                <td class="text-center"><a href="{{'/mentor/'.$connect->id.'/app'}}" class="btn btn-sm bg-info-light"><i class="far fa-eye"></i> Dashboard</a></td>
                                                             </tr>
                                                         @endforeach
 

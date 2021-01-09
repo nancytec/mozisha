@@ -19,7 +19,7 @@
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
     <!--<![endif]-->
-    <title>Email template</title>
+    <title>Apprenticeship Goal</title>
     <!--[if gte mso 9]>
     <style type="text/css" media="all">
         sup { font-size: 100% !important; }
@@ -102,9 +102,7 @@
                                             <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                    <tr>
-                                                        <td class="text-header" style="color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:16px; text-align:right;"><div mc:edit="text_1"><a class="link2" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:none;">Expanding capabilities</a></div></td>
-                                                    </tr>
+
                                                 </table>
                                             </th>
                                         </tr>
@@ -129,10 +127,10 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:30px; text-align:left; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
-                                                                    This is to notify that the goal of your apprenticeship with {{$mail_data['mentor_name']}} has been set, you can now login to your
-                                                                    apprenticeship dashboard to view the goal of your apprenticeship.<br/>
-                                                                    We advice you also to be on the look out for other great apprenticeship
-                                                                    opportunities on Mozisha.
+                                                                    This is to notify you that the goal of your apprenticeship with {{$mail_data['mentor_name']}} has been set, you can now login to your
+                                                                    apprenticeship dashboard for more details on this.<br/>
+                                                                    We advice you to be on the look out for other great apprenticeship
+                                                                    opportunities on Mozisha. Thanks
                                                                     <br/>
                                                                     <br/>
                                                                     <small style="font-size: 10px;">{{$mail_data['date_and_time']}}</small>
@@ -158,7 +156,7 @@
                                                         <tr>
 
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:10px; line-height:30px; text-align:center; padding-bottom:25px;"><small>
-                                                                    Building business and apprenticies capabilities.
+                                                                    Building business and entrepreneural capabilities.
                                                                 </small>
                                                             </td>
                                                         </tr>
@@ -184,7 +182,7 @@
                                                 <th class="column-top" width="280" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="images/image4.jpg" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
+                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="{{asset('user/img/moz.jpg')}}" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
                                                         </tr>
                                                     </table>
                                                 </th>
@@ -192,7 +190,7 @@
                                                 <th class="column-top" width="280" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="h4 pb20" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:20px; line-height:28px; text-align:left; padding-bottom:20px;"><div mc:edit="text_14">Tips about Mozisha international:</div></td>
+                                                            <td class="h4 pb20" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:20px; line-height:28px; text-align:left; padding-bottom:20px;"><div mc:edit="text_14">Tip about Mozisha international:</div></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="text pb20" style="color:#ffffff; font-family:Arial,sans-serif; font-size:14px; line-height:26px; text-align:left; padding-bottom:20px;"><div mc:edit="text_15">We believe that expanding youth education and entrepreneurial capabilities is the most effective
@@ -239,10 +237,10 @@
                                                                 <td class="p30-15" style="padding: 50px 30px;">
                                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                                         <tr>
-                                                                            <td class="h2 pb15" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:30px; line-height:36px; text-align:center; padding-bottom:15px;"><div mc:edit="text_17">Acreditation</div></td>
+                                                                            <td class="h2 pb15" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:30px; line-height:36px; text-align:center; padding-bottom:15px;"><div mc:edit="text_17">Disclaimer</div></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td class="text-center white pb20" style="font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; color:#ffffff; padding-bottom:20px;"><div mc:edit="text_18">This email was sent with regards to {{$mail_data['email']}}.
+                                                                            <td class="text-center white pb20" style="font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; color:#ffffff; padding-bottom:20px;"><div mc:edit="text_18">This email was intentionally sent with regards to {{$mail_data['email']}}.
 
                                                                                     Reach out to us directly at info@mozisha.com.</div></td>
                                                                         </tr>

@@ -101,7 +101,7 @@
                                     <div class="slider-content text-center">
                                         <div class="large-text" style="font-size: 250%;">A one-spot platform for personal, <br>career and business development.</div>
                                         <p class="small-text">Acquire the knowledge, skills and networks you need in order <br>
-                                            to discorver, develop and maximise your potential.</p>
+                                            to discover, develop and maximise your potential.</p>
                                         <div class="button-area text-center" >
                                             <a href="{{route('app.more')}}" class="custom-btn button-effect1" style="background-color: #420175 !important;">View More</a>
                                         </div>
@@ -513,7 +513,7 @@
                 </div>
             </div>
             <div style="text-align: center;" data-wow-duration="1s" data-wow-delay="0s">
-                <a href="#" class="da-custom-btn btn-border-radius40" style="background-color: #420175 !important; color: white; border-color: #420175 !important;" ><span >View More</span></a>
+                <a href="https://learn.mozisha.com" target="_blank" class="da-custom-btn btn-border-radius40" style="background-color: #420175 !important; color: white; border-color: #420175 !important;" ><span >Explore platform</span></a>
             </div>
         </div>
     </section>
@@ -604,143 +604,57 @@
 
 
 
-    <!--  customer satisfection section start-->
-    <section class="bz-customer-satisfection-section borderbottom pt--60 pb--60 pt_lg--100 pb_lg--5">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-11 col-lg-5 p-0 mt-lg-5 order-lg-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="bz-section-header pl_lg--60">
-                        <h6 class="subtitle" style="color: #420175 !important;">Some important facts</h6>
-                        <h2 class="title">Dedicated human support <br>every step of the way</h2>
-                        <p class="desc">
-                            We ensure that you get the most from our services by assigning to you a dedicated member of our team.
-                        </p>
 
-                    </div>
-                </div>
-                <div class="col-lg-7 p-0 order-lg-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="image">
-                        <img class="thumbnail" src="{{asset('user/home/assets/images/customer-satisfection/img1.jpg')}}" alt="image">
-                    </div>
+
+    <!--  Evemnt section start  -->
+    <section class="blog-section  pt--60 pb--60 pt_lg--100 pb_lg--100">
+        <div class="container p-0">
+            <div class="col-11 col-lg-5 m-auto ml-lg-0">
+                <div class="bz-section-header pb--30 pb_lg--60">
+                    <h6 class="subtitle  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="color: #420175;">Event updates</h6>
+                    <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Upcoming Events</h2>
+                    <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                        We frequently host impactful events on mozisha which you can be a part of. To get up to date about our events on mozisha subscribe to our newsletter.</p>
                 </div>
             </div>
-
         </div>
 
-        <!--testimonial-->
         <div class="container">
-            <div class="bz-testimonial-container row">
-                <div class="col-lg-8 order-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="swiper-container testimonial-massage">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>
-                                        the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesetting,
+            <div class="row">
 
-
-
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesetting,.</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesetting,</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesetting.</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesetting.</p>
+                @if($events)
+                    @foreach($events as $event)
+                        <div class="col-lg-4  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
+                            <div class="post-item flip-style">
+                                <div class="post-thumb">
+                                    <a href="/event/{{$event->slug}}"><img class="lazy" src="{{$event->ImagePath}}" alt="thumb"></a>
+                                    <div class="post-content">
+                                        <div class="flip-card post-content-inner">
+                                            <div class="front">
+                                                <ul class="meta-post line-style">
+                                                    <li>{{strftime("%b", $event->start_time_stamp)}} {{strftime("%d", $event->start_time_stamp)}}, {{strftime("%Y", $event->start_time_stamp)}}</li>
+                                                </ul>
+                                                <h6 class="title"><a href="/event/{{$event->slug}}">{{Str::limit($event->theme, 54, $end='...') }}</a></h6>
+                                            </div>
+                                            <div class="back" style="background-color: #420175 !important;">
+                                                <a href="/event/{{$event->slug}}" class="read-more">Explore Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Add Arrows -->
-                        <div class="testimonial-control-btn-group">
-                            <div class="swiper-button-next testimonial-swiper-button-next swiper-button-white"><i class="fa fa-angle-right"></i></div>
-                            <div class="swiper-button-prev testimonial-swiper-button-prev swiper-button-white"><i class="fa fa-angle-left"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 order-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="swiper-container testimonial-thumbs">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/11.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">John Doe</h6>
-                                    <p class="m-0 designation">VP, ramie agro company</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/11.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">Cysthia Rex</h6>
-                                    <p class="m-0 designation">Strategist, stiven it Ltd</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/11.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">White Fang</h6>
-                                    <p class="m-0 designation">MD, Fang industries Ltd</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/11.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">Billie Ray</h6>
-                                    <p class="m-0 designation">CTO, Buno construction firm</p>
-                                </div>
-                            </div>
+                    @endforeach
+                @endif
 
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/11.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">Marry Moore</h6>
-                                    <p class="m-0 designation">CEO, Dyte group of industries</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="col-12 pt-5 text-center  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <a href="{{route('events')}}" class="da-custom-btn btn-border-radius40"><span>Explore Events</span></a>
             </div>
         </div>
     </section>
-    <!--  customer satisfection section end-->
+    <!--  Event section end  -->
+
 
     <!--  blog section start  -->
     <section class="blog-section  pt--60 pb--60 pt_lg--100 pb_lg--100">
@@ -764,17 +678,17 @@
                         <div class="col-lg-4  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
                             <div class="post-item flip-style">
                                 <div class="post-thumb">
-                                    <a href="/blog/{{$blog->id}}/view"><img class="lazy" src="{{$blog->ImagePath}}" alt="thumb"></a>
+                                    <a href="/blog/{{$blog->slug}}"><img class="lazy" src="{{$blog->ImagePath}}" alt="thumb"></a>
                                     <div class="post-content">
                                         <div class="flip-card post-content-inner">
                                             <div class="front">
                                                 <ul class="meta-post line-style">
                                                     <li>{{$blog->created_at->format('M d, Y')}}</li>
                                                 </ul>
-                                                <h6 class="title"><a href="/blog/{{$blog->id}}/view">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
+                                                <h6 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
                                             </div>
                                             <div class="back" style="background-color: #420175 !important;">
-                                                <a href="/blog/{{$blog->id}}/view" class="read-more">Read More</a>
+                                                <a href="/blog/{{$blog->slug}}" class="read-more">Read More</a>
                                             </div>
                                         </div>
                                     </div>

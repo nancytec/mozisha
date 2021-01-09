@@ -85,7 +85,7 @@ class NewTeamMember extends Component
         ]);
 
         $this->discard(); // Clearing user inputs area
-        session()->flash('message', 'Post uploaded successfully!.'); //displays a flash message
+        session()->flash('message', 'Member added successfully!.'); //displays a flash message
 
     }
 

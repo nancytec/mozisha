@@ -19,7 +19,7 @@
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
     <!--<![endif]-->
-    <title>Email template</title>
+    <title>Apprenticeship Goal Updated</title>
     <!--[if gte mso 9]>
     <style type="text/css" media="all">
         sup { font-size: 100% !important; }
@@ -102,9 +102,7 @@
                                             <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                    <tr>
-                                                        <td class="text-header" style="color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:16px; text-align:right;"><div mc:edit="text_1"><a class="link2" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:none;">Expanding capabilities</a></div></td>
-                                                    </tr>
+
                                                 </table>
                                             </th>
                                         </tr>
@@ -113,6 +111,7 @@
                             </tr>
                         </table>
                         <!-- END Header -->
+
 
 
                         <!-- Intro -->
@@ -125,17 +124,16 @@
                                                 <td class="tbrr p30-15" style="padding: 60px 30px; border-radius:26px 26px 0px 0px;" bgcolor="#12325c">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="h1 pb25" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:25px; line-height:46px; text-align:center; padding-bottom:25px;"><div mc:edit="text_2">Task Update!</div></td>
+                                                            <td class="h1 pb25" style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:25px; line-height:46px; text-align:center; padding-bottom:25px;"><div mc:edit="text_2">Apprenticeship Goal Updated!</div></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:30px; text-align:left; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
-                                                                    This is to notify that  {{$mail_data['mentor_name']}} updated the  {{$mail_data['type']}} task that was previously uploaded, you can login to your
-                                                                    apprenticeship dashboard to view the update and respond to it as soon as possible.<br/>
-
-                                                                    <small>Title:   {{$mail_data['task_title']}}</small><br>
-                                                                    <small>Details: {{$mail_data['task_details']}}</small><br>
-                                                                    <br>
-                                                                    We advice you to also be on the look out for other great updates on Mozisha.<br>
+                                                                    This is to notify that the goal of your apprenticeship with {{$mail_data['mentor_name']}} has been updated, you can now login to your
+                                                                    apprenticeship dashboard to view this update.<br/>
+                                                                    We advice you to be on the look out for other great apprenticeship
+                                                                    opportunities on Mozisha.
+                                                                    <br/>
+                                                                    <br/>
                                                                     <small style="font-size: 10px;">{{$mail_data['date_and_time']}}</small>
                                                                 </div>
                                                             </td>
@@ -146,7 +144,7 @@
                                                             <td align="center">
                                                                 <table class="center" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
                                                                     <tr>
-                                                                        <td class="pink-button text-button" style="background:#ff6666; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;"><div mc:edit="text_4"><a target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;"><span class="link-white" style="color:#ffffff; text-decoration:none;">My Dashboard</span></a></div>
+                                                                        <td class="pink-button text-button" style="background:#ff6666; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;"><div mc:edit="text_4"><a target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;"><span class="link-white" style="color:#ffffff; text-decoration:none;">Surf other opportunities</span></a></div>
 
                                                                         </td>
 
@@ -174,6 +172,7 @@
                         </div>
                         <!-- END Intro -->
 
+
                         <!-- Article / Image On The Left - Copy On The Right -->
                         <div mc:repeatable="Select" mc:variant="Article / Image On The Left - Copy On The Right">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#12325c">
@@ -184,7 +183,7 @@
                                                 <th class="column-top" width="280" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="images/image4.jpg" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
+                                                            <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="{{asset('user/img/moz.jpg')}}" width="280" height="210" mc:edit="image_5" style="max-width:280px;" border="0" alt="" /></td>
                                                         </tr>
                                                     </table>
                                                 </th>

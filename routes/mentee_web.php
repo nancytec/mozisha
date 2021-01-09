@@ -23,6 +23,7 @@ Route::middleware('role:mentee|administrator|superadministrator|developer')->gro
     Route::get('/mentee/profile/update',           [MenteeController::class, 'updateProfile'])->name('mentee.profile.update');
     Route::get('/mentee/apprenticeship/find',      [MenteeController::class, 'findApprenticeship'])->name('mentee.apprenticeship.find');
     Route::get('/apprenticeship/{id}/view',        [MenteeController::class, 'viewApprenticeship'])->name('mentee.apprenticeship.view');
+    Route::get('/business/{id}/view',              [MenteeController::class, 'viewBusinessProfile'])->name('business.profile');
     Route::get('/apprenticeship/{id}/success',     [MenteeController::class, 'applicationSuccess'])->name('mentee.apprenticeship.view');
 
     /**

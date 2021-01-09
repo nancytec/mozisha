@@ -14,23 +14,12 @@ use App\Models\PersonalInterest;
 use App\Models\UserDetail;
 use App\Models\UserEducation;
 use App\Models\UserWorkExperience;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class MenteeSidebar extends Component
 {
     public $user;
-
-    public $details_c;
-    public $about_c;
-    public $education_c;
-    public $workExperience_c;
-    public $tool_c;
-    public $industry_c;
-    public $language_c;
-    public $neededExperience_c;
-    public $interest_c;
-
-
 
     public $details_s;
     public $about_s;
@@ -47,6 +36,20 @@ class MenteeSidebar extends Component
 
     public function mount($user){
         $this->user = $user;
+        $this->refresh();
+
+    }
+    protected $listeners = ['refresh' => 'refresh'];
+
+    public function updated(){
+        if (Session::has('sidebarRefresh')){ //Checks if there's session that requests refresh
+            $this->refresh();
+            //Unset sidebarRefresh session
+            Session::forget('sidebarRefresh');
+        }
+    }
+
+    public function refresh(){
         $this->details_s          = $this->details();
         $this->language_s         = $this->language();
         $this->interest_s         = $this->interest();
@@ -57,7 +60,6 @@ class MenteeSidebar extends Component
         $this->industry_s         = $this->industry();
         $this->neededExperience_s = $this->neededExperience();
         $this->percentage_profile = ceil($this->calculatePercentProfile());
-
     }
 
     public function calculatePercentProfile(){
@@ -85,43 +87,68 @@ class MenteeSidebar extends Component
 
 
     public function education(){
-        return UserEducation::where('user_id', $this->user->id)->count();
+        if(UserEducation::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function workExperience(){
-        return UserWorkExperience::where('user_id', $this->user->id)->count();
+        if(UserWorkExperience::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function tool(){
-        return FamiliarTool::where('user_id', $this->user->id)->count();
+        if(FamiliarTool::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function industry(){
-        return NeededIndustry::where('user_id', $this->user->id)->count();
+        if(NeededIndustry::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function neededExperience(){
-        return NeededExperience::where('user_id', $this->user->id)->count();
+        if(NeededExperience::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
 
     public function details(){
-        return  UserDetail::where('user_id', $this->user->id)->count();
+        if(UserDetail::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function language(){
-        return Language::where('user_id', $this->user->id)->count();
+        if(Language::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function interest(){
-        return PersonalInterest::where('user_id', $this->user->id)->count();
+        if(PersonalInterest::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function about(){
-        return About::where('user_id', $this->user->id)->count();
+        if(About::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
-
-
 
 
     public function render()

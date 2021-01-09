@@ -14,14 +14,6 @@ use Livewire\Component;
 class MentorSidebar extends Component
 {
     public $user;
-    public $aprD_c;
-    public $aprH_c;
-    public $details_c;
-    public $company_c;
-    public $language_c;
-    public $interest_c;
-    public $about_c;
-
 
     public $aprD_s;
     public $aprH_s;
@@ -35,16 +27,22 @@ class MentorSidebar extends Component
 
     public function mount($user){
         $this->user = $user;
-        $this->aprD_s             = $this->apprenticeDuty();
-        $this->aprH_s             = $this->apprenticeHelp();
-        $this->details_s          = $this->details();
-        $this->company_s          = $this->company();
-        $this->language_s         = $this->language();
-        $this->interest_s         = $this->interest();
-        $this->about_s            = $this->about();
-        $this->percentage_profile = ceil($this->calculatePercentProfile());
-
+        $this->refresh();
     }
+
+    protected $listeners = ['refresh' => 'refresh'];
+
+     public function refresh(){
+         $this->aprD_s             = $this->apprenticeDuty();
+         $this->aprH_s             = $this->apprenticeHelp();
+         $this->details_s          = $this->details();
+         $this->company_s          = $this->company();
+         $this->language_s         = $this->language();
+         $this->interest_s         = $this->interest();
+         $this->about_s            = $this->about();
+         $this->percentage_profile = ceil($this->calculatePercentProfile());
+         $this->emitTo('new-apprenticeship', 'refresh');
+     }
 
     public function calculatePercentProfile(){
         $this->aprH_s     = $this->aprH_s     * 10;
@@ -64,34 +62,53 @@ class MentorSidebar extends Component
     }
 
 
-
-
     public function details(){
-        return  UserDetail::where('user_id', $this->user->id)->count();
+       if(UserDetail::where('user_id', $this->user->id)->count() > 0){
+           return  1;
+        }
+       return 0;
     }
 
     public function company(){
-        return CompanyInfo::where('user_id', $this->user->id)->count();
+        if(CompanyInfo::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function apprenticeDuty(){
-        return ApprenticeDuty::where('user_id', $this->user->id)->count();
+        if(ApprenticeDuty::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function apprenticeHelp(){
-        return ApprenticeHelp::where('user_id', $this->user->id)->count();
+        if(ApprenticeHelp::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function language(){
-        return Language::where('user_id', $this->user->id)->count();
+        if(Language::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function interest(){
-        return PersonalInterest::where('user_id', $this->user->id)->count();
+        if(PersonalInterest::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
     public function about(){
-        return About::where('user_id', $this->user->id)->count();
+        if(About::where('user_id', $this->user->id)->count() > 0){
+            return 1;
+        }
+        return 0;
     }
 
 

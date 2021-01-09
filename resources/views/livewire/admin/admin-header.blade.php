@@ -4,10 +4,10 @@
 
         <!-- Logo -->
         <div class="header-left" style="padding-top: 10px;">
-            <a href="index_admin.html" class="logo">
+            <a href="{{route('homepage')}}" class="logo">
                 <img src="{{asset('user/img/logo-purple.png')}}" alt="Logo">
             </a>
-            <a href="index_admin.html" class="logo logo-small">
+            <a href="{{route('homepage')}}" class="logo logo-small">
                 <img src="{{asset('user/img/logo-purple.png')}}" alt="Logo" width="30" height="30">
             </a>
         </div>

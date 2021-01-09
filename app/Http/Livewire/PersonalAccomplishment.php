@@ -27,6 +27,7 @@ class PersonalAccomplishment extends Component
 
     public function showInterestForm(){
         $this->showInterestForm = true;
+
     }
 
     public function hideInterestForm(){
@@ -53,14 +54,16 @@ class PersonalAccomplishment extends Component
     //Update the about table
     public function updateAccomplish()
     {
-        //Check if the user already has a record in the About table
-        $userAbout = MyAccomplishment::where(['user_id' => $this->user->id, 'accomplishment' => $this->accomplish])->count();
-        if ($userAbout < 1) { //if not exist
+        if(!empty($this->accomplish)){
+            //Check if the user already has an accomplishment with same name in the About table
+            $userAbout = MyAccomplishment::where(['user_id' => $this->user->id, 'accomplishment' => $this->accomplish])->count();
+            if ($userAbout < 1) { //if not exist
                 MyAccomplishment::create([
                     'user_id'                => $this->user->id,
                     'accomplishment'         => $this->accomplish,
                 ]);
 
+            }
         }
     }
 
@@ -101,13 +104,7 @@ class PersonalAccomplishment extends Component
 
     }
 
-
-
-
     public function updateInterest(){
-        //Update the language table
-//        $userLanguage = Language::where('user_id', $this->user->id)->get();
-
 
         if (!empty($this->interest)){
 
@@ -162,10 +159,7 @@ class PersonalAccomplishment extends Component
 
     }
 
-
-
     //Updates the Languages table
-
     public function updateProfile()
     {
         $this->validate([
@@ -181,6 +175,7 @@ class PersonalAccomplishment extends Component
 
 
         $this->refresh();
+        $this->emitTo('mentee-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
     }
 
@@ -189,6 +184,7 @@ class PersonalAccomplishment extends Component
 
           $this->refreshInterest();
           $this->refreshAccomplish();
+          $this->emitTo('mentor-sidebar', 'refresh');
 
     }
 

@@ -17,7 +17,7 @@ class CreateChatsTable extends Migration
             $table->id();
             $table->foreignId('sender_id')->constrained('users');
             $table->foreignId('receiver_id')->constrained('users');
-            $table->foreignId('connect_id')->constrained('chat_connects');
+            $table->string('connect_id_string');
             $table->text('message');
             $table->string('status')->default('Pending'); //Pending, Seen
             $table->timestamps();

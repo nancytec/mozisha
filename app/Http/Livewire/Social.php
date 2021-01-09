@@ -72,6 +72,7 @@ class Social extends Component
         $this->refresh();
         session()->flash('social_message', 'Social connects updated successfully.'); //displays a flash message
         $this->emit('alert', ['type' => 'success', 'message' => 'Social connects updated successfully.']);
+        session()->flash('message', 'Social connects updated successfully.'); //displays a flash message
 
     }
 

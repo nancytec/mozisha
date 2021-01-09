@@ -21,6 +21,7 @@ use App\Models\UserWorkExperience;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class ViewMenteeProfile extends Component
@@ -152,6 +153,7 @@ class ViewMenteeProfile extends Component
             'mentor_id'           => $mentor_id,
             'mentee_id'           => $this->user->id,
             'apprenticeship_id'   => $app->id,
+            'connect_id_string'   => Str::random(20).Carbon::now()->timestamp.Str::random(20),
             'initial_start_month' => $app->start_month,
             'initial_start_year'  => $app->start_year,
             'initial_end_month'   => $app->end_month,

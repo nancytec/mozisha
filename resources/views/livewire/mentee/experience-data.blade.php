@@ -26,8 +26,8 @@
                                     <hr>
                                     <small class="form-text text-muted">Share any work experience that a mentor might find relevant.<br>
                                         All fields in this section are required for this form
-                                        to be processed, we strongly advice you to supply valid information about your work experience, you can add other work experience as much as possible,
-                                        they are necessary for your profile to look more attractive and authentic to mentors.
+                                        to be processed, we strongly advice you to supply valid information about your work experience, you can work experiences as much as possible,
+                                        they are necessary for your profile to look more convincing and authentic to mentors.
                                     </small>
                                     <hr>
                                 </div>
@@ -359,7 +359,7 @@
 
             @if($showEditForm)
                 <!-- Profile Settings Form -->
-                    <form wire:submit.prevent="updateInfo({{$experience_id}})">
+                    <form id="edit-form" wire:submit.prevent="updateInfo({{$experience_id}})">
                         <div class="row form-row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
@@ -693,15 +693,22 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="checkbox" wire:model.lazy="new_status" value="Active" >
-                                    <label>I am currently working in this role</label>
+                                    <div>
+                                        @if($status == "Active")
+                                            <small style="color: #420175; font-weight: bold;">You currently work here, keep the box checked if you still work here.</small>
+                                        @else
+                                            <small style="color: #420175; font-weight: bold;">You no longer work here, check the box if you now work here.</small>
+                                        @endif
+                                    </div>
+                                    <input type="checkbox" wire:model.lazy="new_status" value="Active" checked>
+                                    <label>I am currently working here.</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="submit-section">
-                            <button type="submit" wire:loading.remove wire:target="updateInfo" class="btn btn-primary submit-btn" style="border-color: #9A4EAE;">Update Information</button>
-                            <button type="submit" wire:loading wire:target="updateInfo" class="btn btn-primary submit-btn"> <i class="fa fa-spinner fa-spin"></i>  Processing update..</button>
+                            <button type="submit" wire:loading.remove wire:target="updateInfo" class="btn btn-primary submit-btn" style="background-color: #420175; border-color: #420175;">Update Information</button>
+                            <button type="submit" wire:loading wire:target="updateInfo" class="btn btn-primary submit-btn" style="background-color: #420175; border-color: #420175;"> <i class="fa fa-spinner fa-spin"></i>  Processing update..</button>
                         </div>
                     </form>
                   <!-- /Profile Settings Form -->
@@ -716,13 +723,12 @@
                         <br>
                     </div>
 
-                    <div class="row form-row">
+                    <div class="row form-row form-group alert alert-success alert-dismissible fade show">
 
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-12" style="text-align: center;">
                             <div class="form-group">
-                                <label>Role Title</label>
-                                <h6><i>{{$experience->title}}</i></h6>
+                                <h4 style="text-decoration: underline;">{{strtoupper($experience->title)}}</h4>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
@@ -745,6 +751,22 @@
                                 <h6><i>{{$experience->location}}</i></h6>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>Status</label>
+                                @if($experience->status == 'Active')
+                                    <h6><i>Currently Work here.</i></h6>
+                                @else
+                                    <h6><i>Discontinued.</i></h6>
+                                @endif
+
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <hr>
+                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Desciption:</label><br>
@@ -755,7 +777,8 @@
                             <div class="form-group">
                                 <div class="change-avatar">
                                     <div class="upload-img">
-                                        <small wire:click="editData({{$experience->id}})" wire:loading.remove wire:target="editData" style="cursor: pointer;"><li class="fa fa-edit"></li> Edit experience</small>
+                                        <a wire:click="editData({{$experience->id}})" wire:loading.remove wire:target="editData" href="#edit-form"><li class="fa fa-edit"></li>  Edit</a>
+{{--                                        <small  style="cursor: pointer;">Edit experience</small>--}}
                                         <small  wire:loading wire:target="editData" style="cursor: pointer;"><i class="fa fa-spinner fa-spin"></i> Processing form...</small>
                                     </div>
                                 </div>

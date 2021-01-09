@@ -16,12 +16,10 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('slug');
             $table->string('image');
             $table->string('category');
-            $table->text('content_1');
-            $table->text('quote');
-            $table->string('reference');
-            $table->text('content_2');
+            $table->text('content');
             $table->string('status');
             $table->foreignId('user_id')->constrained('users');
 //            $table->string('user_role'); later

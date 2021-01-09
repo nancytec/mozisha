@@ -19,6 +19,7 @@ class MenteeDashboard extends Component
     public $mentorNo;
     public $requestNo;
 
+
     public function countAppointments(){
         $this->appointmentNo = NewSchedule::where(['mentee_id' => Auth::user()->id, 'status' => 'Active'])->count();
     }
@@ -37,6 +38,7 @@ class MenteeDashboard extends Component
         $this->countMentors();
         $this->countRequests();
     }
+
 
     public function showMentors(){
         $this->showRequests   = false;

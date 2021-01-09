@@ -6,7 +6,7 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </nav>
@@ -31,7 +31,7 @@
                                 <div class="form-group">
                                     <div class="change-avatar" style=" width: 40%; margin: auto;  text-align: center;">
 
-                                        <div class="profile-img">
+                                        <div class="profile-img" style=" margin: auto;">
                                             <img src="{{$user->ImagePath}}" style="border-radius: 50px;" alt="User Image">
                                         </div>
 
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="dash-widget-info"  wire:click="showMentors" style="cursor:pointer;" >
                                     <h3>{{$mentorNo}}</h3>
-                                    <h6>My Mentors</h6>
+                                    <h6>Active Mentors</h6>
                                 </div>
                             </div>
                         </div>

@@ -2,11 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\ApprenticeshipStatusChangeRequest;
+use App\Models\Connect;
 use App\Models\DutyResponse;
+use App\Models\MentorRating;
 use App\Models\NewSchedule;
 use App\Models\PeriodicDuty;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
+use App\Models\MentorAvailability;
 
 class MentorAppDashboard extends Component
 {
@@ -20,6 +24,8 @@ class MentorAppDashboard extends Component
     public $showAppProfile   = false;
     public $showViewTask     = false;
     public $showAppointments = false;
+    public $showApp          = false;
+    public $showRequests     = false;
 
     public $conn;
     public $task_id;
@@ -28,6 +34,56 @@ class MentorAppDashboard extends Component
     public $taskNo;
     public $appointmentNo;
     public $responseNo;
+
+
+    public $status;
+    public $requestCount;
+    public $rating;
+    public $ratingText;
+    public $availability;
+
+    public function updated()
+    {
+        if ($this->status){$this->updateStatus();}
+
+    }
+    //Availability
+    public function fetchAvailability()
+    {
+        $availability = MentorAvailability::where('connect_id', $this->conn->id)->first();
+        if ($availability){
+            $available_from = "$availability->from_hour:$availability->from_minute $availability->from_meridian";
+            $available_to  = "$availability->to_hour:$availability->to_minute $availability->to_meridian";
+            $this->availability = "$available_from to $available_to";
+        }
+    }
+
+    public function fetchRating()
+    {
+        $rating = MentorRating::where('connect_id', $this->conn->id)->first();
+        if ($rating)
+        {
+            $this->rating = $rating->rating;
+            if ($rating->rating == 5){$this->ratingText = "Excellent";}
+            if ($rating->rating == 4){$this->ratingText = "Very Good";}
+            if ($rating->rating == 3){$this->ratingText = "Good";}
+            if ($rating->rating == 2){$this->ratingText = "Fair";}
+            if ($rating->rating == 1){$this->ratingText = "Bad";}
+        }
+
+    }
+
+    public function updateStatus()
+    {
+        Connect::where('id', $this->conn->id)->update([
+            'status' => $this->status,
+        ]);
+        if ($this->status == 'Active'){
+            $this->emit('alert', ['type' => 'success', 'message' => 'Apprenticeship Activated']);
+            return;
+        }
+        $this->emit('alert', ['type' => 'success', 'message' => 'Apprenticeship ' . '  ' . $this->status]);
+    }
 
     public function countTask(){
        $this->taskNo =  PeriodicDuty::where('connect_id', $this->conn->id)->count();
@@ -47,9 +103,9 @@ class MentorAppDashboard extends Component
         Session::put('conn', $conn);
 
         //Initializing counters
-        $this->countTask();
-        $this->countResponse();
-        $this->countAppointments();
+        $this->refreshCounts();
+        $this->fetchRating();
+        $this->fetchAvailability();
     }
 
     /*
@@ -65,6 +121,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showSetGoal(){
@@ -76,6 +134,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showNewTask(){
@@ -87,6 +147,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showAllTask(){
@@ -98,6 +160,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showViewTask($task_id){
@@ -110,6 +174,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = true;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showResponses(){
@@ -121,6 +187,8 @@ class MentorAppDashboard extends Component
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
         $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = false;
     }
 
     public function showAppointments(){
@@ -131,14 +199,51 @@ class MentorAppDashboard extends Component
         $this->showResponses    = false;
         $this->showAppProfile   = false;
         $this->showViewTask     = false;
+        $this->showApp          = false;
         $this->showAppointments = true;
+        $this->showRequests     = false;
     }
 
+    public function showApprenticeship(){
+        $this->showDashboard    = false;
+        $this->showSetGoal      = false;
+        $this->showNewTask      = false;
+        $this->showAllTask      = false;
+        $this->showResponses    = false;
+        $this->showAppProfile   = false;
+        $this->showViewTask     = false;
+        $this->showAppointments = false;
+        $this->showApp          = true;
+        $this->showRequests     = false;
+    }
 
+    public function showStatusRequests(){
+        $this->showDashboard    = false;
+        $this->showSetGoal      = false;
+        $this->showNewTask      = false;
+        $this->showAllTask      = false;
+        $this->showResponses    = false;
+        $this->showAppProfile   = false;
+        $this->showViewTask     = false;
+        $this->showAppointments = false;
+        $this->showApp          = false;
+        $this->showRequests     = true;
+    }
 
+    public function countUnseenRequest()
+    {
+       $this->requestCount =  ApprenticeshipStatusChangeRequest::where(['connect_id' => $this->conn->id, 'seen' => 'No'])->count();
+    }
 
+    protected $listeners = ['refreshCounts' => 'refreshCounts'];
 
-
+    public function refreshCounts()
+    {
+        $this->countTask();
+        $this->countResponse();
+        $this->countAppointments();
+        $this->countUnseenRequest();
+    }
 
     public function render()
     {

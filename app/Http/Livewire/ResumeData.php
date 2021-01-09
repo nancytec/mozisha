@@ -20,13 +20,14 @@ class ResumeData extends Component
     public $resume;
     public $old_resume;
     public $old_resume_path;
-    public $old_languages;
+
     public $location;
     public $military;
     public $languages;
     public $other_language;
     public $showForm = false;
 
+    public $old_languages;
 
 
     public function showLanguageForm(){
@@ -73,12 +74,14 @@ class ResumeData extends Component
                     'resume'                 => $file['name'],
                     'resume_original_name'   => $file['original_name'],
                 ]);
+                $this->refreshSidebar();
             }else{ //if resume is not supplied
                 About::create([
                     'user_id'                => Auth::user()->id,
                     'military'               => $this->military,
                     'location'               => $this->location,
                 ]);
+                $this->refreshSidebar();
             }
 
         } else {
@@ -91,14 +94,25 @@ class ResumeData extends Component
                     'resume'                 => $file['name'],
                     'resume_original_name'   => $file['original_name'],
                 ]);
+                $this->refreshSidebar();
             }else{
-                //without resumr
+                //without resume
                 About::where('user_id', Auth::user()->id)->update([
                     'military'               => $this->military,
                     'location'               => $this->location,
                 ]);
+                $this->refreshSidebar();
             }
 
+        }
+    }
+
+    public function refreshSidebar(){
+        if(Auth::user()->hasRole('mentor')){
+            $this->emitTo('mentor-sidebar', 'refresh');
+        }
+        if(Auth::user()->hasRole('mentee')){
+            $this->emitTo('mentee-sidebar', 'refresh');
         }
     }
 
@@ -119,6 +133,7 @@ class ResumeData extends Component
 
                 $this->showForm = false;
                 $this->refresh();
+                $this->refreshSidebar();
                 $this->emit('alert', ['type' => 'success', 'message' => 'Language added successfully.']);
 
             }
@@ -128,11 +143,11 @@ class ResumeData extends Component
 
     public function removeLanguage($id){
 
-
             //Find if exist
             Language::where(['id' => $id])->delete();
 
             $this->refresh();
+            $this->refreshSidebar();
             $this->emit('alert', ['type' => 'success', 'message' => 'Language deleted successfully.']);
 
     }
@@ -140,10 +155,6 @@ class ResumeData extends Component
 
     //Updates the Languages table
     public function updateLanguage(){
-        //Update the language table
-//        $userLanguage = Language::where('user_id', $this->user->id)->get();
-
-
         if (!empty($this->languages)){
 
             $language = Language::where(['user_id' => Auth::user()->id, 'language' => $this->languages])->count();
@@ -198,16 +209,14 @@ class ResumeData extends Component
                 $this->user         = $userAccount;
 
 
-            $languages = Language::where('user_id', Auth::user()->id)->count();
-            if($languages > 0){
-                $languages = Language::where('user_id', Auth::user()->id)->get();
-                $this->old_languages = $languages;
-            }
+        }
 
+        if(Language::where('user_id', Auth::user()->id)){
+            $languages = Language::where('user_id', Auth::user()->id)->get();
+            $this->old_languages = $languages;
         }
 
     }
-
 
     public function storeFile()
         {
@@ -226,7 +235,6 @@ class ResumeData extends Component
 
             return $fileData;
         }
-
 
     protected function deleteOldFile($filename){
             Storage::delete('/public/'.$filename);

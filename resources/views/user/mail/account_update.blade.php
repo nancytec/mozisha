@@ -19,7 +19,7 @@
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
     <!--<![endif]-->
-    <title>Email template</title>
+    <title>Password Changed</title>
     <!--[if gte mso 9]>
     <style type="text/css" media="all">
         sup { font-size: 100% !important; }
@@ -102,9 +102,7 @@
                                             <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                    <tr>
-                                                        <td class="text-header" style="color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:16px; text-align:right;"><div mc:edit="text_1"><a class="link2" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:none;">Expanding capabilities</a></div></td>
-                                                    </tr>
+
                                                 </table>
                                             </th>
                                         </tr>
@@ -129,7 +127,7 @@
                                                         <tr>
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
 
-                                                                    Your account's password has been reset successfully, you can now login with your new pasword.</div>
+                                                                    Your account's password has been reset successfully, you can now login with your new password.</div>
                                                             </td>
                                                         </tr>
 
@@ -186,7 +184,7 @@
                                                         <tr>
                                                             <td class="text pb20" style="color:#ffffff; font-family:Arial,sans-serif; font-size:14px; line-height:26px; text-align:left; padding-bottom:20px;"><div mc:edit="text_6">Mozisha provides a secured and encrypted authentication system to
                                                                     secure your account, we advice you to keep all your account credentials secured. Mozisha will never expose your account's credentials to risk or
-                                                                    make use of your data without your consent.
+                                                                    make use of your data without your consent. Thanks
                                                                     </div></td>
                                                         </tr>
                                                         <!-- Button -->
@@ -239,7 +237,7 @@
                             <tr>
                                 <td class="text-footer3 p30-15" style="padding: 40px 30px 0px 30px; color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:18px; text-align:center;">
                                     <div mc:edit="text_38"><a class="link2-u" target="_blank" href="https://www.mozisha.com" style="color:#475c77; text-decoration:underline;"></a>
-                                        This message was sent to {{$mail_data['email']}} at your request..</div>
+                                        This message was sent to {{$mail_data['email']}} at request.</div>
                                 </td>
                             </tr>
                             <tr>

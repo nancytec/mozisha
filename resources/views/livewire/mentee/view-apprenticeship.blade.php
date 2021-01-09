@@ -6,8 +6,10 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('mentee.dashboard')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Apprenticeship Profile</li>
+                            <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('mentee.dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('mentee.apprenticeship.find')}}">{{$app->title}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Apprenticeship profile</li>
                         </ol>
                     </nav>
                     <h2 class="breadcrumb-title">Apprenticeship Information</h2>

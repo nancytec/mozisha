@@ -21,7 +21,7 @@
                         <div class="col-sm-12">
                             <h3 class="page-title">Blog</h3>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index_admin.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Blog</li>
                             </ul>
                         </div>
@@ -49,7 +49,7 @@
                                             <div class="course-content">
                                                 <span class="date">{{$blog->created_at->format('M d Y')}}</span>
                                                 <span class="course-title">{{ Str::limit($blog->title, $limit = 45, $end = '...') }}</span>
-                                                <p>{{ Str::limit($blog->content_1, $limit = 150, $end = '...') }}</p>
+                                                <p>{{ Str::limit($blog->content, $limit = 150, $end = '...') }}</p>
                                                 <div class="row">
                                                     <div class="col">
                                                         <a href="/blog/{{$blog->id}}/edit" class="text-success">

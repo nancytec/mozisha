@@ -19,10 +19,7 @@ class EditBlog extends Component
     public $image;
     public $new_image;
     public $category;
-    public $content_1;
-    public $quote;
-    public $reference;
-    public $content_2;
+    public $content;
     public $status;
 
     public function mount($blog){
@@ -35,10 +32,7 @@ class EditBlog extends Component
             'title'     => 'required|max:255',
             'image'     => 'nullable|image|max:3000',
             'category'  => 'required|max:255',
-            'content_1' => 'required|max:6000',
-            'quote'     => 'required|max:2000',
-            'reference' => 'required|max:255',
-            'content_2' => 'required|max:4000',
+            'content'   => 'required|max:6000',
             'status'    => 'required|max:255',
         ]);
     }
@@ -48,12 +42,17 @@ class EditBlog extends Component
             'title'     => 'required|max:255',
             'image'     => 'nullable|image|max:3000',
             'category'  => 'required|max:255',
-            'content_1' => 'required|max:6000',
-            'quote'     => 'required|max:2000',
-            'reference' => 'required|max:255',
-            'content_2' => 'required|max:4000',
+            'content' => 'required|max:6000',
             'status'    => 'required|max:255',
         ]);
+
+        //Check if the title exists apart from this
+        if(!$this->checkForExistingBlog())
+        {
+            session()->flash('error', 'The title exists, please modify it!.'); //displays a flash message
+            return;
+        }
+
         //Delete old image before storing the image and get the parameters
         if($this->image){
             $this->deleteOldFile($this->blog->image);
@@ -66,12 +65,10 @@ class EditBlog extends Component
 
         Blog::where('id', $this->blog->id)->update([
             'title'     => $this->title,
+            'slug'      => Str::slug($this->title),
             'image'     => $image['name'],
             'category'  => $this->category,
-            'content_1' => $this->content_1,
-            'quote'     => $this->quote,
-            'reference' => $this->reference,
-            'content_2' => $this->content_2,
+            'content'   => $this->content,
             'status'    => $this->status,
 
         ]);
@@ -80,15 +77,26 @@ class EditBlog extends Component
         session()->flash('message', 'Post updated successfully!.'); //displays a flash message
 
     }
+
+    public function checkForExistingBlog()
+    {
+        $checkBlog = Blog::where([
+            ['id', '!=', $this->blog->id],
+            ['title', '=', $this->title]
+        ])->first();
+
+        if ($checkBlog){
+            return false;
+        }
+        return true;
+    }
+
     public function refresh(){
         $blog = Blog::find($this->blog->id);
         $this->title      = $blog->title;
         $this->new_image  = $blog->image;
         $this->category   = $blog->category;
-        $this->content_1  = $blog->content_1;
-        $this->quote      = $blog->quote;
-        $this->reference  = $blog->reference;
-        $this->content_2  = $blog->content_2;
+        $this->content    = $blog->content;
         $this->status     = $blog->status;
     }
 

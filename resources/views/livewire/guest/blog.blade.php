@@ -43,17 +43,17 @@
                         <div class="col-md-6 col-lg-6" >
                             <div class="post-item flip-style">
                                 <div class="post-thumb">
-                                    <a href="/blog/{{$blog->id}}/view"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
+                                    <a href="/blog/{{$blog->slug}}"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
                                     <div class="post-content">
                                         <div class="flip-card post-content-inner" >
                                             <div class="front" wire:ignore.self>
                                                 <ul class="meta-post line-style">
                                                     <li>{{$blog->created_at->format('M d, Y')}}</li>
                                                 </ul>
-                                                <h6 class="title"><a href="/blog/{{$blog->id}}/view">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
+                                                <h6 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
                                             </div>
                                             <div class="back" wire:ignore.self>
-                                                <a href="/blog/{{$blog->id}}/view" class="read-more">Read More</a>
+                                                <a href="/blog/{{$blog->slug}}" class="read-more">Read More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                         <div class="swiper-slide">
                                             <div class="post-item">
                                                 <div class="post-thumb">
-                                                    <a href="/blog/{{$blog->id}}/view"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
+                                                    <a href="/blog/{{$blog->slug}}"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
                                                 </div>
                                             </div>
                                         </div>

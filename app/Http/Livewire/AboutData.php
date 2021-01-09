@@ -68,6 +68,10 @@ class AboutData extends Component
         $this->updateTool();
 
         $this->refresh();
+
+        $this->tool = '';
+        $this->emitTo('mentee-sidebar', 'refresh');
+
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
     }

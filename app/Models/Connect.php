@@ -15,8 +15,8 @@ class Connect extends Model
      * @var array
      */
     protected $fillable = [
-        'mentor_id', 'mentee_id', 'apprenticeship_id', 'initial_start_month', 'initial_start_year', 'initial_end_month',
-        'initial_end_year', 'apprentice_period', 'mentor_period', 'apprentice_service',  'status', 'rating'
+        'mentor_id', 'mentee_id', 'apprenticeship_id', 'connect_id_string', 'initial_start_month', 'initial_start_year', 'initial_end_month',
+        'initial_end_year', 'apprentice_period', 'mentor_period', 'apprentice_service',  'status', 'rating', 'reason', 'mentor_comment', 'mentee_comment'
     ];
 
     public function mentor(){

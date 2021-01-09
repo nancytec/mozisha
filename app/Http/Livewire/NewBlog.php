@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\NewBlogPostMail;
+use App\Models\MozishaSubscription;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic;
@@ -17,63 +20,79 @@ class NewBlog extends Component
     public $title;
     public $image;
     public $category;
-    public $content_1;
-    public $quote;
-    public $reference;
-    public $content_2;
+    public $content;
     public $status;
 
     public function updated($field){
         $this->validateOnly($field,[
-           'title'     => 'required|max:255',
+           'title'     => 'required|max:255|unique:blogs,title',
            'image'     => 'required|image|max:3000',
            'category'  => 'required|max:255',
-           'content_1' => 'required|max:6000',
-           'quote'     => 'required|max:2000',
-           'reference' => 'required|max:255',
-           'content_2' => 'required|max:4000',
+           'content'   => 'required|max:6000',
            'status'    => 'required|max:255',
         ]);
     }
 
     public function newBlog(){
         $this->validate([
-            'title'     => 'required|max:255',
+            'title'     => 'required|max:255|unique:blogs,title',
             'image'     => 'required|image|max:3000',
             'category'  => 'required|max:255',
-            'content_1' => 'required|max:6000',
-            'quote'     => 'required|max:2000',
-            'reference' => 'required|max:255',
-            'content_2' => 'required|max:4000',
+            'content'   => 'required|max:6000',
             'status'    => 'required|max:255',
         ]);
         //Store the image and get the parameters
         $image = $this->storeFile();
-        Blog::create([
+       $post =  Blog::create([
             'title'     => $this->title,
+            'slug'      => Str::slug($this->title),
             'image'     => $image['name'],
             'category'  => $this->category,
-            'content_1' => $this->content_1,
-            'quote'     => $this->quote,
-            'reference' => $this->reference,
-            'content_2' => $this->content_2,
+            'content'   => $this->content,
             'status'    => $this->status,
             'user_id'   => Auth::user()->id,
 
         ]);
 
+        //Mail subscribers
+        $this->mailSubscribers($post);
+
         $this->discard(); // Clearing user inputs area
         session()->flash('message', 'Post uploaded successfully!.'); //displays a flash message
 
     }
+
+    public function mailSubscribers($post)
+    {
+        //Mail the user concerning the event as a reminder.
+        $subs = MozishaSubscription::all();
+        if ($subs){
+            foreach ($subs as $sub){
+                $data = [
+                    'name' => $sub->name,
+                    'id'   => $post->slug,
+                    'title'  => $post->title,
+                    'details' => Str::limit($post->content, 250, $end='...'),
+                    'email' => $sub->email,
+                    'date' => $post->created_at->format('d M Y').',' . $post->created_at->format('h:iA'),
+                ];
+                try {
+                    Mail::to($sub->email)->send(new NewBlogPostMail($data));
+                }catch (\Exception $e){
+                    $this->emit('alert', ['type' => 'info', 'message' => 'Notification failed.']);
+                }
+            }
+
+
+        }
+
+    }
+
     public function discard(){
         $this->title      = '';
         $this->image      = '';
         $this->category   = '';
-        $this->content_1  = '';
-        $this->quote      = '';
-        $this->reference  = '';
-        $this->content_2  = '';
+        $this->content    = '';
         $this->status     = '';
     }
 

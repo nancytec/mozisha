@@ -12,6 +12,7 @@
             </div>
         </div>
     </div>
+    <x-alert />
     <!-- /Page Header -->
 
     <div class="row">
@@ -19,7 +20,8 @@
             <div class="card flex-fill">
                 <div class="card-header">
                     <h4 class="card-title">Social login</h4>
-                    <x-social_alert />
+
+
                 </div>
                 <div class="card-body">
                     <form action="#" wire:submit.prevent = "updateSocial">

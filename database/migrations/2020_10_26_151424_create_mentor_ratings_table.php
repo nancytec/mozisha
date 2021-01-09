@@ -19,6 +19,7 @@ class CreateMentorRatingsTable extends Migration
             $table->foreignId('mentee_id')->constrained('users'); //Rater
             $table->foreignId('connect_id')->constrained('connects');
             $table->string('rating'); // 5 = Excellent ,4 =Very Good, 3 = Good, 2 = Fair, 1 = Poor
+            $table->text('comment');
             $table->timestamps();
         });
     }

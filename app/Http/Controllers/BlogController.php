@@ -35,14 +35,14 @@ class BlogController extends Controller
         return view('admin/edit_blog', ['blog' => $blog]);
     }
 
-    public function userView($id){
-        $blog = Blog::find($id);
+    public function userView($slug){
+        $blog = Blog::where('slug', $slug)->first();
         $data = [
             'title'         => $blog->title .' | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
-            'keywords'      => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+            'description'   =>  $blog->title,
+            'keywords'      => $blog->title . ', mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => 'Home | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+            'dc_title'      => $blog->title . ' | Mozisha Blogs',
         ];
         return view('user/user_blog_view' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'blog' => $blog]);
 

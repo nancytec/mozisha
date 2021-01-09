@@ -21,8 +21,9 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="card-text">{{ Str::limit($task->details, $limit = 100, $end = '...') }}</p>
-                                    <a class="card-link" href="#" wire:click="viewTask({{$task->id}})"><i wire:loading wire:target="viewTask" class="fa fa-spinner fa-spin"></i> view task</a>
-                                    <a class="card-link" href="#">Remove</a>
+                                    <hr>
+                                    <a class="card-link" style="font-size: 85%;" href="#" wire:click="viewTask({{$task->id}})"><i wire:loading wire:target="viewTask" class="fa fa-spinner fa-spin"></i> View</a>
+{{--                                    <a class="card-link" href="#">Remove</a>--}}
                                 </div>
                             </div>
                         </div>

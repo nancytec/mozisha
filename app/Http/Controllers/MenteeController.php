@@ -95,6 +95,18 @@ class MenteeController extends Controller
         return view('user/mentee/find_apprenticeship', ['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'user' => $user]);
     }
 
+    public function viewBusinessProfile($mentor_id){
+        $user = User::find($mentor_id);
+        $data = [
+            'title'         => 'Business Profile | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+            'description'   => 'Business Profile on Mozisha, providing students with free, hands-on marketing experience to help businesses grow. Students - take courses online and gain practical experience with an apprenticeship. Businesses - search our talent pool and start saving time and money on your marketing efforts. Sign up today!',
+            'keywords'      => 'Business Profile, mozisha.com, mozisha.net,Find Apprenticeship, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
+            'dc_title'     => 'Business Profile | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+        ];
+        return view('user/mentee/view_mentors_profile', ['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'user' => $user]);
+    }
+
 
     public function viewApprenticeship($id){
         $app  = Apprenticeship::find($id);

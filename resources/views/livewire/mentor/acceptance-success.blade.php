@@ -29,10 +29,10 @@
                     <div class="card success-card">
                         <div class="card-body">
                             <div class="success-cont">
-                                <i class="fas fa-check" style="background-color: #9A4EAE; border-color: #9A4EAE;"></i>
+                                <i class="fas fa-check" style="background-color: #420175; border-color: #420175;"></i>
                                 <h3>Apprenticeship Accepted Successfully!</h3>
                                 <p>Apprenticeship initiated with <strong>{{$conn->mentee->name}}</strong><br> on <strong>{{$date}} {{$time}}</strong></p>
-                                <a href="/mentor/{{$conn->id}}/app" class="btn btn-primary view-i nv-btn" style="border-color: #9A4EAE; cursor: pointer;">View Platform</a>
+                                <a href="/mentor/{{$conn->id}}/app" class="btn btn-primary view-i nv-btn" style="background-color: #420175 !important; border-color: #420175; cursor: pointer;">View Platform</a>
                             </div>
                         </div>
                     </div>

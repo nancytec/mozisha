@@ -133,21 +133,27 @@
                                 <br>
                             </div>
                             <div class="col-12 col-md-6">
+
+
                                 <div class="form-group">
-                                    <label>Languages you speak <i wire:loading wire:target="removeLanguage" class="fa fa-spinner fa-spin"></i>
-                                        <i wire:loading wire:target="insertOtherLanguage" class="fa fa-spinner fa-spin"></i></label><br>
+                                    <div class="alert alert-success alert-dismissible fade show" style="text-align: center;" role="alert">
+                                        <label style="text-decoration: underline;">Languages you speak <i wire:loading wire:target="removeLanguage" class="fa fa-spinner fa-spin"></i>
+                                            <i wire:loading wire:target="insertOtherLanguage" class="fa fa-spinner fa-spin"></i></label><br>
+                                    </div>
                                     @if($old_languages)
-                                        <small>Click on any of the language(s) to remove from list</small>
-                                        <ul>
+                                        <ol class="alert alert-success alert-dismissible fade show" style="padding-left: 40px;" >
                                             @foreach($old_languages as $language)
-                                            <li wire:click="removeLanguage({{$language->id}})" style="cursor: pointer;" > <small>{{$language->language}} </small></li>
+                                            <li wire:click="removeLanguage({{$language->id}})" style="cursor: pointer; font-weight: bold;" > <small style="font-weight: bold;">{{$language->language}} </small></li>
                                             @endforeach
-                                        </ul>
+                                        </ol>
 
                                     @endif
                                 </div>
-                            </div>
 
+
+
+
+                            </div>
 
 
 

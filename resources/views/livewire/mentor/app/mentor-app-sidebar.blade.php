@@ -8,9 +8,9 @@
         @endif
         <div class="pro-progress">
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="background-color: #9A4EAE; width: {{$percentage_profile}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="background-color: #420175; width: {{$percentage_profile}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div class="tooltip" style="background-color: #9A4EAE;">{{$percentage_profile}}%</div>
+            <div class="tooltip" style="background-color: #420175;">{{$percentage_profile}}%</div>
         </div>
     </div>
 

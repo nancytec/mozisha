@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-md-12">
-            <h4 class="mb-4">Mentor Lists</h4>
+            <h4 class="mb-4">My Mentors</h4>
 
             <div class="card card-table">
                 <div class="card-body">
@@ -50,7 +50,7 @@
                                         @endif
 
 
-                                        <td class="text-center"><a href="/mentee/{{$connect->id}}/app" class="btn btn-sm bg-info-light"><i class="far fa-eye"></i> View</a></td>
+                                        <td class="text-center"><a href="/mentee/{{$connect->id}}/app" class="btn btn-sm bg-info-light"><i class="far fa-eye"></i> Dashboard</a></td>
                                     </tr>
                                 @endforeach
 

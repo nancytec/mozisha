@@ -54,6 +54,7 @@ class MentorAboutData extends Component
 
 
         $this->refresh();
+        $this->emitTo('mentor-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
     }
@@ -133,6 +134,7 @@ class MentorAboutData extends Component
         ApprenticeHelp::where(['id' => $id])->delete();
 
         $this->refresh();
+        $this->emitTo('mentor-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Field removed successfully.']);
 
     }
@@ -143,6 +145,7 @@ class MentorAboutData extends Component
         ApprenticeDuty::where(['id' => $id])->delete();
 
         $this->refresh();
+        $this->emitTo('mentor-sidebar', 'refresh');
         $this->emit('alert', ['type' => 'success', 'message' => 'Apprenticeship removed successfully.']);
 
     }

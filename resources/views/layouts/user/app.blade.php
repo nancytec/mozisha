@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:livewire="">
 <head>
-    <meta charset="utf-8">
-
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="description" content="{{$data['description']}}" />
     <meta name="keywords" content="{{$data['keywords']}}" />
@@ -11,12 +9,11 @@
     <meta name="robots" content="index,index" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>{{$data['title']}}</title>
 
     <!-- Favicons -->
     <link type="image/x-icon" href="{{asset('user/img/cdiya.png')}}" rel="icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('user/css/bootstrap.min.css')}}">
 
@@ -42,7 +39,7 @@
 </head>
 <style>
     .btn-primary{
-        background-color: #9A4EAE;
+        background-color: #420175;
     }
     @media only screen and (min-width: 768px) {
         /* For desktop: */
@@ -59,7 +56,7 @@
     }
 </style>
 <!-- Loader -->
-<body style="">
+<body>
 <!-- /Loader  -->
 <!-- Header -->
 <header class="header">
@@ -74,13 +71,13 @@
 							</span>
                 </a>
                 @if(Auth::user()->hasRole('mentor'))
-                    <a href="{{route('mentor.dashboard')}}" class="navbar-brand logo">
+                    <a href="{{route('homepage')}}" class="navbar-brand logo">
 
                         <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" alt="Logo">
                     </a>
                 @endif
                 @if(Auth::user()->hasRole('mentee'))
-                    <a href="{{route('mentee.dashboard')}}" class="navbar-brand logo">
+                    <a href="{{route('homepage')}}" class="navbar-brand logo">
 
                         <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive" alt="Logo">
                     </a>
@@ -90,7 +87,7 @@
             <div class="main-menu-wrapper">
                 @if(Auth::user()->hasRole('mentee'))
                 <div class="menu-header">
-                    <a href="{{route('mentee.dashboard')}}" class="menu-logo">
+                    <a href="{{route('homepage')}}" class="menu-logo">
                         <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive"  alt="Logo">
                         <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
                     </a>
@@ -101,7 +98,7 @@
                 @endif
                 @if(Auth::user()->hasRole('mentor'))
                         <div class="menu-header">
-                            <a href="{{route('mentor.dashboard')}}" class="menu-logo">
+                            <a href="{{route('homepage')}}" class="menu-logo">
                                 <img src="{{asset('user/img/logo-purple.png')}}" class="img-responsive"  alt="Logo">
                                 <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
                             </a>
@@ -113,6 +110,7 @@
                 @if(Auth::user()->hasRole('mentor'))
                     <ul class="main-nav">
                         <!-- <li class="">
+
                             <a href="index-2.html">Home</a>
                         </li> -->
 
@@ -121,7 +119,10 @@
                             <ul class="submenu">
                                 <li class=""><a href="{{route('mentor.dashboard')}}">Dashboard</a></li>
                                 <li class=""><a href="{{route('mentor.apprenticeship.new')}}">Post Apprenticeship</a></li>
-                                <li class=""><a target="_blank" href="{{route('chat')}}">Messenger</a></li>
+
+                                @if(Session::get('conn'))
+                                <li class=""><a target="_blank" href="http://127.0.0.1:8000/chatroom/{{Session::get('conn')->mentor_id}}/{{Session::get('conn')->mentee_id}}/{{Session::get('conn')->connect_id_string}}">Messenger</a></li>
+                                @endif
                                 <li class="has-submenu">
                                     <a href="#">Modules</a>
                                     <ul class="submenu">
@@ -151,9 +152,9 @@
                             </ul>
                         </li>
 
-                        <li class="">
-                            <a href="index.html"> Support </a>
-                        </li>
+                        @if(Session::get('conn'))
+                            <li class=""><a target="_blank" href="https://chat.mozisha.com/chatroom/{{Session::get('conn')->mentor_id}}/{{Session::get('conn')->mentee_id}}/{{Session::get('conn')->connect_id_string}}">Messenger</a></li>
+                        @endif
                         <li class="">
                             <a href="{{route('logout')}}"> Logout </a>
                         </li>
@@ -171,7 +172,10 @@
                             <ul class="submenu">
                                 <li class=""><a href="{{route('mentee.dashboard')}}">Dashboard</a></li>
                                 <li class=""><a href="{{route('mentee.apprenticeship.find')}}">Find Apprenticeship</a></li>
-                                <li class=""><a target="_blank" href="{{route('chat')}}">Messenger</a></li>
+                                @if(Session::get('conn'))
+
+                                <li class=""><a target="_blank" href="http://127.0.0.1:8000/chatroom/{{Session::get('conn')->mentee_id}}/{{Session::get('conn')->mentor_id}}/{{Session::get('conn')->connect_id_string}}">Messenger</a></li>
+                                @endif
                                 <li class="has-submenu">
                                     <a href="invoices.html">Modules</a>
                                     <ul class="submenu">
@@ -204,6 +208,7 @@
                         <li class="">
                             <a href="#">Support</a>
                         </li>
+
                         <li class="">
                             <a href="{{route('logout')}}">Logout </a>
                         </li>
@@ -335,13 +340,24 @@
     @livewire('new-apprenticeship', ['user' => $user])
 </div>
 
+
+<div class="modal fade" wire:ignore.self tabindex="-1" id="mentor-availability" aria-hidden="true" role="dialog">
+    @livewire('mentor-availability')
+</div>
+
 <div class="modal fade" wire:ignore.self tabindex="-1" id="mentor_new_meeting" aria-hidden="true" role="dialog">
-    @livewire('mentor-new-meeting')
+@livewire('mentor-new-meeting')
 </div>
 
 <div class="modal fade" wire:ignore.self tabindex="-1" id="mentee_new_meeting" aria-hidden="true" role="dialog">
     @livewire('mentee-new-meeting')
 </div>
+
+@if(Session::get('conn'))
+<div class="modal fade" wire:ignore.self tabindex="-1" id="app_rating" aria-hidden="true" role="dialog">
+    @livewire('apprenticeship-rating')
+</div>
+@endif
 
 
 <!-- /Edit Details Modal -->

@@ -6,18 +6,19 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('mentee.dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item active"  aria-current="page">Find Apprenticeship</li>
                         </ol>
                     </nav>
                     @if($apps_no < 2)
-                        <h2 class="breadcrumb-title">{{$apps_no}} match found for : Mentors In  Nigeria</h2>
+                        <h2 class="breadcrumb-title">{{$apps_no}} match found for : Mentors In  Africa</h2>
                     @else
-                        <h2 class="breadcrumb-title">{{$apps_no}} matches found for : Mentors In  Nigeria</h2>
+                        <h2 class="breadcrumb-title">{{$apps_no}} matches found for : Mentors In  Africa</h2>
                     @endif
 
                 </div>
-                <div class="col-md-4 col-12 d-md-block d-none">
+                <div class="col-md-4 col-12 d-md-block d-none" wire:ignore>
                     <div class="sort-by">
                         <span class="sort-title">Sort by</span>
                         <span class="sortby-fliter">
@@ -47,72 +48,63 @@
                     <div class="card search-filter">
                         <div class="card-header">
                             <h4 class="card-title mb-0">Search Filter</h4>
+{{--                            <h4 class="card-title mb-0" wire:loading ><i class="fa fa-spinner fa-spin"></i> Sorting...</h4>--}}
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" wire:ignore.self>
                             <div class="filter-widget">
-                                <div class="cal-icon">
-                                    <input type="text" class="form-control datetimepicker" placeholder="Select Date">
+                                <div class="">
+                                    <input type="search" class="form-control" wire:model="appTitle"  wire:ignore placeholder="Search Program">
                                 </div>
                             </div>
-                            <div class="filter-widget">
-                                <h4>Gender</h4>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="gender_type" checked>
-                                        <span class="checkmark"></span> Male
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="gender_type">
-                                        <span class="checkmark"></span> Female
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="filter-widget">
-                                <h4>Select Courses</h4>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist" checked>
-                                        <span class="checkmark"></span> Digital Marketer
+                            <hr>
 
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist" checked>
-                                        <span class="checkmark"></span> UNIX, Calculus, Trigonometry
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist">
-                                        <span class="checkmark"></span> Computer Programming
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist">
-                                        <span class="checkmark"></span> ASP.NET,Computer Gaming
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist">
-                                        <span class="checkmark"></span> HTML, Css
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="custom_check">
-                                        <input type="checkbox" name="select_specialist">
-                                        <span class="checkmark"></span> VB, VB.net
-                                    </label>
-                                </div>
-                            </div>
+                            <!-----To be processed by filterResult() in the future -->
+                            <form>
+
+{{--                            <div class="filter-widget" wire:ignore>--}}
+{{--                                <h4>Company</h4>--}}
+{{--                                <select class="select form-control {{$errors->has('timing')? 'is-invalid' : '' }}"   wire:model.lazy="company" >--}}
+{{--                                    <option value="">Select Company</option>--}}
+{{--                                    @if($companies)--}}
+{{--                                        @foreach($companies as $company)--}}
+{{--                                            <option value="{{$company->company}}">{{$company->company}}</option>--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="filter-widget" wire:ignore>--}}
+{{--                                <h4>Select Course</h4>--}}
+{{--                                <select  class="select form-control {{$errors->has('course')? 'is-invalid' : '' }}"  wire:model.lazy="course">--}}
+{{--                                    <option value="">Select</option>--}}
+{{--                                    @if($courses)--}}
+{{--                                        @foreach($courses as $course)--}}
+{{--                                            <option value="{{$course->title}}">{{$course->title}}</option>--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
+{{--                                </select>--}}
+{{--                                @error('course') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror--}}
+{{--                            </div>--}}
+
+{{--                            <div class="filter-widget">--}}
+{{--                                <h4>Mentor</h4>--}}
+{{--                                <select class="select form-control {{$errors->has('timing')? 'is-invalid' : '' }}"   wire:model.lazy="mentor" >--}}
+{{--                                    <option value="">Select Mentor</option>--}}
+{{--                                    @if($mentors)--}}
+{{--                                        @foreach($mentors as $mentor)--}}
+{{--                                            <option value="{{$mentor->mentor_name}}">{{$mentor->mentor_name}}</option>--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
+{{--                                </select>--}}
+{{--                                @error('mentor') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror--}}
+{{--                            </div>--}}
                             <div class="btn-search">
-                                <button type="button" style="background-color: #420175; border-color: #420175;" class="btn btn-block">Search</button>
+
+                                <button onclick="event.preventDefault()"  type="button" wire:loading style="background-color: #420175; border-color: #420175;" class="btn btn-block"> <i class="fa fa-spinner fa-spin"></i> Filtering...</button>
+                                <button onclick="event.preventDefault()" wire:loading.remove style="background-color: #420175; border-color: #420175;" class="btn btn-block"> Filter</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                     <!-- /Search Filter -->
 
@@ -120,7 +112,7 @@
 
                 <div class="col-md-12 col-lg-8 col-xl-9">
 
-                    @if($apps)
+                    @if($apps_no)
                         @foreach($apps as $app)
                         <!-- Mentor Widget -->
                         <div class="card">
@@ -133,7 +125,7 @@
                                             </a>
                                         </div>
                                         <div class="user-info-cont">
-                                            <h4 class="usr-name"><a href="profile.html">{{$app->creator->name}}</a></h4>
+                                            <h4 class="usr-name"><a href="/business/{{$app->creator->id}}/view">{{$app->creator->name}}</a></h4>
                                             <p class="mentor-type">{{$app->title}}</p>
                                             <div class="rating">
                                                 <i class="fas fa-star filled"></i>
@@ -166,6 +158,12 @@
                         <!-- /Mentor Widget -->
                         @endforeach
                             {{ $apps->links('components.user.pagination-links') /* For pagination links */}}
+                    @else
+                            <div class="card alert alert-danger alert-dismissible fade show" >
+                                <div class="card-body" >
+                                    <h5 style="">No apprenticeship available, you can search for other apprenticeship programs...</h5>
+                                </div>
+                            </div>
                     @endif
 
 {{--                    <div class="load-more text-center">--}}

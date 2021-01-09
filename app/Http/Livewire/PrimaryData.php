@@ -101,9 +101,18 @@ class PrimaryData extends Component
         ]);
 
         $this->refresh();
-
+        $this->refreshSidebar();
         $this->emit('alert', ['type' => 'success', 'message' => 'Profile updated successfully.']);
 
+    }
+
+    public function refreshSidebar(){
+        if(Auth::user()->hasRole('mentor')){
+            $this->emitTo('mentor-sidebar', 'refresh');
+        }
+        if(Auth::user()->hasRole('mentee')){
+            $this->emitTo('mentee-sidebar', 'refresh');
+        }
     }
 
     public function storeImage($imageFile)

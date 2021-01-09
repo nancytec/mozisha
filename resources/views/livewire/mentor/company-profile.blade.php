@@ -6,7 +6,7 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('mentor.dashboard')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Mentor Profile</li>
                         </ol>
                     </nav>

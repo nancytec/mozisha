@@ -41,7 +41,7 @@
                                         <form wire:submit.prevent="updateBlog">
                                             <div class="form-group">
                                                 <label>Blog Title</label>
-                                                <input class="form-control" wire:model="title" type="text" placeholder="Title of the post">
+                                                <input class="form-control" wire:model.lazy="title" type="text" placeholder="Title of the post">
                                                 @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                             </div>
                                             <div class="form-group">
@@ -50,10 +50,14 @@
                                                     <input class="form-control" wire:model="image" type="file">
                                                     @if($image)
                                                         <img src="{{$image->temporaryUrl()}}" class="img-fluid" />
-                                                    @endif
-                                                    @if($new_image)
+                                                    @else
                                                         <img src="{{$blog->ImagePath}}" class="img-fluid" />
                                                     @endif
+{{--                                                    @if($new_image)--}}
+{{--                                                       --}}
+{{--                                                    @else--}}
+
+
                                                     <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png. Maximum 10 images only.</small>
                                                     @error('image') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
@@ -65,7 +69,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Blog Category</label>
-                                                        <select class="select form-control" wire:model="category" tabindex="-1" aria-hidden="true">
+                                                        <select class="form-control" wire:model.lazy="category" tabindex="-1" aria-hidden="true">
                                                             <option value="">Select Category</option>
                                                             <option value="Software_development">Software Development</option>
                                                             <option value="Entrepreneurship">Entrepreneurship</option>
@@ -81,34 +85,20 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Content 1</label>
-                                                <textarea cols="30" wire:model="content_1" rows="6" class="form-control" placeholder="First section of the content."></textarea>
-                                                @error('content_1') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                <label>Content</label>
+                                                <textarea cols="30" wire:model.lazy="content" rows="6" class="form-control" placeholder="First section of the content."></textarea>
+                                                @error('content') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label>Quote</label>
-                                                <textarea cols="30" wire:model="quote" rows="3" class="form-control" placeholder="Post Quotation"></textarea>
-                                                @error('quote') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Quote reference</label>
-                                                <input type="text" class="form-control" wire:model="reference" placeholder="Reference to the quoted person">
-                                                @error('reference') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Content 2</label>
-                                                <textarea cols="30" wire:model="content_2" rows="" class="form-control" placeholder="Second section of the content."></textarea>
-                                                @error('content_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                                            </div>
+
                                             <div class="form-group">
                                                 <label class="display-block w-100">Blog Status</label>
                                                 <div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input class="custom-control-input" id="active" name="active-blog" wire:model="status" value="Active" type="radio" checked="">
+                                                        <input class="custom-control-input" id="active" name="active-blog" wire:model.lazy="status" value="Active" type="radio" checked="">
                                                         <label class="custom-control-label" for="active">Active</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input class="custom-control-input" id="inactive" name="active-blog" wire:model="status" value="Inactive" type="radio">
+                                                        <input class="custom-control-input" id="inactive" name="active-blog" wire:model.lazy="status" value="Inactive" type="radio">
                                                         <label class="custom-control-label" for="inactive">Inactive</label>
                                                     </div>
                                                 </div>

@@ -133,7 +133,7 @@ class MentorAppAllTask extends Component
             'file_original_name' => $file['original_name'],
         ]);
 
-        //Mail the user concerning the new task
+        //Mail the user concerning the update
         $data = [
             'email'         => $this->user->email,
             'name'          => $this->user->name,

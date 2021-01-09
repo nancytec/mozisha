@@ -40,7 +40,7 @@ class UserController extends Controller
 
             if ($googleUser)
             {
-                    Auth::login($googleUser);
+                        Auth::login($googleUser);
 
                     if(Auth::user()->hasRole('mentor')){
                         return redirect()->route('mentor.dashboard');
@@ -179,4 +179,39 @@ class UserController extends Controller
         ];
         return view('user/auth/select_password', ['google_id' => $google_id, 'setting' => $this->setting, 'social' => $this->social, 'data' => $data]);
     }
+
+
+    //User Validation Through an API Request
+    public function validateUser(Request $request)
+    {
+        if (request()->expectsJson())
+        {
+            //if some of d require data is empty
+            if(empty($request->email) || empty($request->password)){
+                return response()->json([
+                    'responseType'    => 'error',
+                    'message'         => 'Required parameter missing',
+                ]);
+            }
+
+            //else if none of d field is empty
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 'Active']))
+            {
+                // If Authentication is passed...
+                $user = User::where('email', $request->email)->first();
+                return response()->json([
+                    'responseType'    => 'success',
+                    'message'         => 'Validation Successful',
+                    'data'            => $user,
+                ]);
+            }
+            // If Authentication failed...
+            return response()->json([
+                'responseType'    => 'error',
+                'message'         => 'Unknown user',
+            ]);
+
+         }
+        return false;
+     }
 }

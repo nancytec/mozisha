@@ -18,6 +18,7 @@ class CreateConnectsTable extends Migration
             $table->foreignId('mentor_id')->constrained('users');
             $table->foreignId('mentee_id')->constrained('users');
             $table->string('apprenticeship_id')->constrained('apprenticeships');
+            $table->string('connect_id_string');
             $table->string('initial_start_month'); //The date the montor uploaded in the apprenticeship tale
             $table->string('initial_start_year');
             $table->string('initial_end_month');
@@ -27,6 +28,9 @@ class CreateConnectsTable extends Migration
             $table->string('apprentice_service')->nullable(); // service to be rendered
             $table->string('status')->default('Active'); //Active, completed, suspended or terminated.
             $table->string('rating')->nullable(); // Excellent(5), good(4), fair(3), bad(2), or poor(1).
+            $table->string('reason')->nullable(); // Reason for changing the status.
+            $table->string('mentor_comment')->nullable(); // Comment on the apprenticeship by the mentor.
+            $table->string('apprentice_comment')->nullable(); // Comment on the apprenticeship by the apprentice.
             $table->timestamps();
         });
     }

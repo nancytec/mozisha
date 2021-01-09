@@ -128,7 +128,7 @@ class Settings extends Component
         //Clearing user inputs after submission
         $this->refresh();
         $this->emit('alert', ['type' => 'success', 'message' => 'Website information updated successfully.']);
-//        session()->flash('message', 'Website information updated successfully.'); //displays a flash message
+        session()->flash('message', 'Website information updated successfully.'); //displays a flash message
     }
 
 

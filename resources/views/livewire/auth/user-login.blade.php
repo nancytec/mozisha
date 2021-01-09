@@ -41,7 +41,7 @@
 
                         <button wire:loading.remove wire:target="login" class="btn btn-primary login-btn" type="submit" style="background-color: #420175; border-radius: 50px;">Login</button>
                         <button style="border-radius: 50px; background-color: #420175; border-color: #420175;" wire:loading wire:target="login" class="btn btn-primary login-btn" type="submit"> <i class="fa fa-spinner fa-spin"></i> &nbsp; Processing</button>
-                        <p style="font-size: 10px; text-align: center;">By continuing, you agree to Acadium’s <u>Terms of Service</u>.</p>
+                        <p style="font-size: 10px; text-align: center;">By continuing, you agree to Mozisha’s <u>Terms of Service</u>.</p>
                         <div class="text-right" style="margin-top: -13px;">
                             <a class="forgot-link" href="{{route('password.reset')}}" style="font-size: 10px;">Forgot Password ?</a>
                         </div>
