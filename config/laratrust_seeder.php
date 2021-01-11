@@ -30,6 +30,16 @@ return [
             'profile' => 'r,u'
         ],
 
+        'writer' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u'
+        ],
+
+        'editor' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u'
+        ],
+
         'mentor' => [
             'profile' => 'r,u',
         ],

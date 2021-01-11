@@ -48,7 +48,8 @@
                 <br>
                 <div style="color: maroon">
                     <small>Blog's link (Copy to share)</small>
-                    <input type="text" value="https://mozisha.com/blog/{{$blog->slug}}" class="form-control" disabled>
+                    <input type="text" value="https://mozisha.com/blog/{{$blog->slug}}" id="link" class="form-control">
+                    <button type="button" style="margin-top: 5px;" class="btn btn-primary" onclick="copyText()"  >Copy Link</button>
                 </div>
                 <br>
                 <div>
@@ -181,3 +182,14 @@
     </div>
 </section>
 <!--  acton section end  -->
+<script>
+    function copyText() {
+        var copyText = document.getElementById("link");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+
+        // Display a success toast, with a title
+        toastr.success(copyText.value, 'Link copied successfully!')
+    }
+</script>

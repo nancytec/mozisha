@@ -9,6 +9,8 @@ use App\Models\EventSubscription;
 use App\Models\Setting;
 use App\Models\Social;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -25,11 +27,17 @@ class EventController extends Controller
     public function home()
     {
         $data = [
-            'title'         => 'Events | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
+            'title'         => 'Mozisha Events | The learning community dedicated to building responsible entrepreneurs|',
             'description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
-            'keywords'      => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+            'keywords'      => 'mozisha events, events on mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => 'Events | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+            'dc_title'      => 'Mozisha Events | The learning community dedicated to building respectful and responsible entrepreneurs',
+
+            'sm_title'         => 'Events on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
+            'sm_url'           => route('events'),
+
         ];
         return view('user/event/home' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data]);
     }
@@ -42,6 +50,11 @@ class EventController extends Controller
             'keywords'      => 'Past Events on Mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Past Events on Mozisha | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+
+            'sm_title'         => 'Past Events on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
+            'sm_url'           => route('past.events'),
         ];
         return view('user/event/past_events' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data]);
     }
@@ -100,11 +113,16 @@ class EventController extends Controller
     {
         $event = Event::where('slug', $slug)->first();
         $data = [
-            'title'         => $event->theme.' | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => $event->theme.'| The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => $event->theme,
+            'description'   => Str::limit($event->details, $limit = 300, $end = '...'),
             'keywords'      => $event->theme.', mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => $event->theme.' | Mozisha Events',
+            'dc_title'      => $event->theme,
+            //Social media metadatas
+            'sm_title'       => $event->theme,
+            'sm_description' => Str::limit($event->details, $limit = 300, $end = '...'),
+            'sm_image'       => $event->ImagePath,
+            'sm_url'         => 'https://mozisha.com/event/'.$event->slug,
         ];
         return view('user/event/view_event' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'event' => $event]);
     }
@@ -113,11 +131,17 @@ class EventController extends Controller
     {
         $event = Event::where('slug', $slug)->first();
         $data = [
-            'title'         => $event->theme.' | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => $event->theme.' | The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => $event->theme,
+            'description'   => Str::limit($event->details, $limit = 300, $end = '...'),
             'keywords'      => $event->theme.',mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => $event->theme,
+
+            //Social media metadata
+            'sm_title'       => $event->theme,
+            'sm_description' => Str::limit($event->content, $limit = 300, $end = '...'),
+            'sm_image'       => $event->ImagePath,
+            'sm_url'         => 'https://mozisha.com/event/subscribe/'.$slug,
         ];
         return view('user/event/subscribe_event' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'event' => $event]);
     }
@@ -126,11 +150,17 @@ class EventController extends Controller
     {
 
         $data = [
-            'title'         => 'Become our patron  | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'Become our patron |The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
-            'keywords'      => ' Become our patron ,mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+            'title'         => 'Become Mozisha patron | The learning community dedicated to building responsible entrepreneurs|',
+            'description'   => 'Become Mozisha patron | The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'keywords'      => 'Become Mozisha patron ,mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => 'Become our patron | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
+            'dc_title'      => 'Become Mozisha patron | The learning community dedicated to building respectful and responsible entrepreneurs',
+
+            'sm_title'         => 'Become Mozisha patron | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_description'   => 'Become Mozisha patron |The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
+            'sm_url'           => route('events.patron')
+
         ];
         return view('user/event/event_patron' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data,]);
     }

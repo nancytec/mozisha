@@ -8,6 +8,9 @@
                 <li class="active">
                     <a href="{{route('admin.home')}}"><span>Dashboard</span></a>
                 </li>
+                @if(Auth::user()->hasRole('administrator') ||
+                    Auth::user()->hasRole('superadministrator') ||
+                    Auth::user()->hasRole('developer'))
                 <li class="submenu">
                     <a href="#"><span>Users</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
@@ -17,9 +20,12 @@
                         <li><a class="" href="{{route('admin.register')}}"> New </a></li>
                     </ul>
                 </li>
+
+
                 <li class="">
                     <a href="{{route('admin.settings')}}"><span>Settings</span></a>
                 </li>
+                @endif
                 <hr>
                 <li class="menu-title">
                     <span><i class="fe fe-document"></i> Menus</span>
@@ -31,6 +37,9 @@
                         <li><a class="" href="{{route('blog.list')}}"> Blogs </a></li>
                     </ul>
                 </li>
+                @if(Auth::user()->hasRole('administrator') ||
+               Auth::user()->hasRole('superadministrator') ||
+               Auth::user()->hasRole('developer'))
                 <li class="submenu">
                     <a href="#"><span>Team</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
@@ -38,7 +47,11 @@
                         <li><a class="" href="{{route('team.list')}}"> List </a></li>
                     </ul>
                 </li>
+                @endif
                 <hr>
+                @if(Auth::user()->hasRole('administrator') ||
+               Auth::user()->hasRole('superadministrator') ||
+               Auth::user()->hasRole('developer'))
                 <li class="menu-title">
                     <span><i class="fe fe-document"></i> Components</span>
                 </li>
@@ -61,6 +74,7 @@
                         <li><a class="" href="{{route('subscribers')}}"> Subscribers</a></li>
                     </ul>
                 </li>
+                @endif
             </ul>
         </div>
     </div>

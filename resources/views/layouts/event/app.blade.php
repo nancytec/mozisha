@@ -2,6 +2,19 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <meta property="og:title" content="{{$data['sm_title']}}">
+    <meta property="og:description" content="{{$data['sm_description']}}">
+    <meta property="og:image" content="{{$data['sm_image']}}">
+    <meta property="og:url" content="{{$data['sm_url']}}">
+
+    <meta property="twitter:title" content="{{$data['sm_title']}}">
+    <meta property="twitter:description" content="{{$data['sm_description']}}">
+    <meta property="twitter:image" content="{{$data['sm_image']}}">
+    <meta property="twitter:url" content="{{$data['sm_url']}}">
+
+
     <meta name="description" content="{{$data['description']}}" />
     <meta name="keywords" content="{{$data['keywords']}}" />
     <meta name="DC.title" content="{{$data['dc_title']}}" />
@@ -9,6 +22,12 @@
     <meta name="robots" content="index,index" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+
+
+
+
+
     <title>{{$data['title']}}</title>
 
     <!-- Google Fonts -->

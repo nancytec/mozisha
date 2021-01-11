@@ -62,6 +62,14 @@ class UserController extends Controller
                         return redirect()->route('admin.home');
                     }
 
+                    if(Auth::user()->hasRole('writer')){
+                        return redirect()->route('admin.home');
+                    }
+
+                    if(Auth::user()->hasRole('editor')){
+                        return redirect()->route('admin.home');
+                    }
+
             } else {
 
                 //check if the user is registered without google, the create google_id
@@ -93,6 +101,14 @@ class UserController extends Controller
                     }
 
                     if(Auth::user()->hasRole('developer')){
+                        return redirect()->route('admin.home');
+                    }
+
+                    if(Auth::user()->hasRole('writer')){
+                        return redirect()->route('admin.home');
+                    }
+
+                    if(Auth::user()->hasRole('editor')){
                         return redirect()->route('admin.home');
                     }
 

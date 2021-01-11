@@ -22,11 +22,11 @@ Route::get('/',               [UserPageController::class, 'home'])->name('homepa
 
 Route::get('/login',          [LoginController::class, 'login'])->name('user.login');
 
-Route::get('/reset',          [LoginController::class, 'reset'])->name('password.reset');
+Route::get('/reset',           [LoginController::class, 'reset'])->name('password.reset');
 
-Route::get('/about',          [UserPageController::class, 'about'])->name('about');
+Route::get('/about',           [UserPageController::class, 'about'])->name('about');
 
-Route::post('/getUser',          [UserController::class, 'validateUser']); //User validation API
+Route::post('/getUser',        [UserController::class, 'validateUser']); //User validation API
 
 
 /*

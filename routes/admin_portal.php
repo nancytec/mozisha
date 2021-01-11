@@ -20,38 +20,40 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware('role:superadministrator|administrator|developer')->group(function (){
+Route::middleware('role:superadministrator|administrator|developer|writer|editor')->group(function (){
 
     Route::get('/executive', function () {
         return view('admin/dashboard');
     })->name('admin.home');
 
+    Route::middleware('role:superadministrator|administrator|developer')->group(function () {
 
-    Route::get('/admin/settings', [SettingController::class, 'settings'])->name('admin.settings');
+        Route::get('/admin/settings', [SettingController::class, 'settings'])->name('admin.settings');
+        Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
+        Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+        Route::get('/admin/mentors', [MentorController::class, 'mentors'])->name('admin.mentors');
 
-    Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
+        /*
+         *
+         * Team routes
+         *
+         */
+        Route::get('/team/add',       [TeamController::class, 'newMember'])->name('team.add');
+        Route::get('/team/list',      [TeamController::class, 'list'])->name('team.list');
+        Route::get('/team/{id}/edit', [TeamController::class, 'edit'])->name('team.edit');
 
-    Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
-
-    Route::get('/admin/mentors', [MentorController::class, 'mentors'])->name('admin.mentors');
+    });
 
     /*
      *
      * Blog routes
      *
      */
-    Route::get('/blog/new', [BlogController::class, 'newBlog'])->name('blog.new');
-    Route::get('/blog/list', [BlogController::class, 'blogs'])->name('blog.list');
+    Route::get('/post/blog', [BlogController::class, 'newBlog'])->name('blog.new');
+    Route::get('/post/list', [BlogController::class, 'blogs'])->name('blog.list');
     Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
 
-    /*
-     *
-     * Team routes
-     *
-     */
-    Route::get('/team/add',       [TeamController::class, 'newMember'])->name('team.add');
-    Route::get('/team/list',      [TeamController::class, 'list'])->name('team.list');
-    Route::get('/team/{id}/edit', [TeamController::class, 'edit'])->name('team.edit');
+
 });
 
 

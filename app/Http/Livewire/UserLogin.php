@@ -53,6 +53,12 @@ class UserLogin extends Component
         // Redirects to the Admin portal
         if ($user->hasRole('developer')){return redirect()->intended('/executive');}
 
+        // Redirects to the Admin portal
+        if ($user->hasRole('writer')){return redirect()->intended('/executive');}
+
+        // Redirects to the Admin portal
+        if ($user->hasRole('editor')){return redirect()->intended('/executive');}
+
         // Redirects home if user has no assigned role
         return redirect()->route('homepage');
 

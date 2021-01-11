@@ -70,7 +70,8 @@
                             </p>
                             <div style="color: maroon">
                                 <small>Event's link (Copy to share)</small>
-                                <input type="text" value="https://mozisha.com/event/{{$event->slug}}" class="form-control" disabled>
+                                <input type="text" value="https://mozisha.com/event/{{$event->slug}}" id="link" class="form-control" >
+                                <button style="margin-top: 5px;" type="button" class="btn btn-primary" onclick="copyText()"  >Copy Link</button>
                             </div>
                         </div>
                     </div>
@@ -150,3 +151,14 @@
 
 
 </div>
+<script>
+    function copyText() {
+        var copyText = document.getElementById("link");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+
+        // Display a success toast, with a title
+        toastr.success(copyText.value, 'Link copied successfully!')
+    }
+</script>

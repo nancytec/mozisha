@@ -32,6 +32,8 @@
                                         <option value="">Select Role</option>
                                         <option value="mentor">Mentor</option>
                                         <option value="mentee">Apprentice</option>
+                                        <option value="writer">Writer</option>
+                                        <option value="editor">Editor</option>
                                         <option value="administrator">Admin</option>
                                         <option value="superadministrator">SuperAdmin</option>
                                     </select>
