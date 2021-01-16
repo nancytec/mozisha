@@ -135,17 +135,17 @@
                     <div class="client">
                         <div class="client-container client-container1">
                             <div class="swiper-wrapper">
-                                {{--                                <div class="swiper-slide">--}}
-                                {{--                                    <div class="client-logo">--}}
-                                {{--                                        <img class="lazy" src="{{asset('user/home/assets/images/banner/client/01.png')}}" alt="Client Logo">--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
+                                                                <div class="swiper-slide">
+                                                                    <div class="client-logo">
+                                                                        <img class="lazy" src="{{asset('user/home/assets/images/banner/client/isabelle.jpg')}}" alt="Client Logo">
+                                                                    </div>
+                                                                </div>
 
-                                {{--                                <div class="swiper-slide">--}}
-                                {{--                                    <div class="client-logo">--}}
-                                {{--                                        <img class="lazy" src="{{asset('user/home/assets/images/banner/client/02.png')}}" alt="Client Logo">--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
+                                                                <div class="swiper-slide">
+                                                                    <div class="client-logo">
+                                                                        <img class="lazy" src="{{asset('user/home/assets/images/banner/client/fast_beauty.png')}}" alt="Client Logo">
+                                                                    </div>
+                                                                </div>
 
                                 {{--                                <div class="swiper-slide">--}}
                                 {{--                                    <div class="client-logo">--}}
@@ -654,6 +654,73 @@
         </div>
     </section>
     <!--  Event section end  -->
+
+
+
+    <!--  customer satisfection section start-->
+    <section class="bz-customer-satisfection-section borderbottom pt--60 pb--60 pt_lg--100 pb_lg--5">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-11 col-lg-5 p-0 mt-lg-5 order-lg-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="bz-section-header pl_lg--60">
+                        <h6 class="subtitle">Some important facts</h6>
+                        <h2 class="title">Entrepreneurs/Business satisfaction <br>is our first priority</h2>
+                        <p class="desc">Mozisha proudly announced that we have been active for more than 10 years in the field of business. From the start we have built several entrepreneurs and businesses. Mozisha is also gifted with supporters who are totally satisfied with our services. We are lucky to be a part of this innovation!</p>
+
+                    </div>
+                </div>
+                <div class="col-lg-7 p-0 order-lg-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="image">
+                        <img class="thumbnail" src="{{asset('user/home/assets/images/CEO.jpeg')}}" alt="image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--testimonial-->
+        <div class="container">
+            <div class="bz-testimonial-container row">
+                <div class="col-lg-8 order-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="swiper-container testimonial-massage">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-content">
+                                    <p>Mozisha mentoring programme played a huge role in assisting me with preparing my application
+                                    for the MasterCard Foundation Scholarship. Indeed, the support and guidance from my mentor made it possible
+                                        that today i am an MCF Scholar. This is Anuoluwa with a grateful heart
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="testimonial-control-btn-group">
+                            <div class="swiper-button-next testimonial-swiper-button-next swiper-button-white"><i class="fa fa-angle-right"></i></div>
+                            <div class="swiper-button-prev testimonial-swiper-button-prev swiper-button-white"><i class="fa fa-angle-left"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="swiper-container testimonial-thumbs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="thumb">
+                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/testy1.jpg')}}" alt="image">
+                                </div>
+                                <div class="thumb-content">
+                                    <h6 class="name">Anuoluwa Akinsola</h6>
+                                    <p class="m-0 designation">MCF Scholar, American University of Beirut, Lebanon.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  customer satisfection section end-->
 
 
     <!--  blog section start  -->

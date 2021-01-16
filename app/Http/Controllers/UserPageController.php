@@ -24,13 +24,13 @@ class UserPageController extends Controller
     public function home(){
         $data = [
             'title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'   => 'The learning community dedicated to building  responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'      => 'mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Home | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
 
             'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
         ];
@@ -40,7 +40,7 @@ class UserPageController extends Controller
     public function about(){
         $data = [
             'title'            => 'About Mozisha | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'      => 'The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'      => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'         => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'         => 'About Mozisha | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
@@ -59,7 +59,7 @@ class UserPageController extends Controller
     public function coursesMore(){
         $data = [
             'title'         => 'Courses | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'      => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                 The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Courses | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
