@@ -28,13 +28,13 @@ class EventController extends Controller
     {
         $data = [
             'title'         => 'Mozisha Events | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'   => 'The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'      => 'mozisha events, events on mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
-                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => 'Mozisha Events | The learning community dedicated to building respectful and responsible entrepreneurs',
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
+            'dc_title'      => 'Mozisha Events | The learning community dedicated to building responsible entrepreneurs',
 
             'sm_title'         => 'Events on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_description'   => 'The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('events'),
 
@@ -46,13 +46,13 @@ class EventController extends Controller
     {
         $data = [
             'title'         => 'Past Events on Mozisha | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'Past Events on Mozisha, The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'   => 'Past Events on Mozisha, The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'      => 'Past Events on Mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
-                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Past Events on Mozisha | Mozisha | The learning community dedicated to building respectful and responsible entrepreneurs',
 
             'sm_title'         => 'Past Events on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_description'   => 'The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('past.events'),
         ];
@@ -116,7 +116,7 @@ class EventController extends Controller
             'title'         => $event->theme,
             'description'   => Str::limit($event->details, $limit = 300, $end = '...'),
             'keywords'      => $event->theme.', mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
-                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => $event->theme,
             //Social media metadatas
             'sm_title'       => $event->theme,
@@ -134,7 +134,7 @@ class EventController extends Controller
             'title'         => $event->theme,
             'description'   => Str::limit($event->details, $limit = 300, $end = '...'),
             'keywords'      => $event->theme.',mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
-                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => $event->theme,
 
             //Social media metadata
@@ -151,13 +151,13 @@ class EventController extends Controller
 
         $data = [
             'title'         => 'Become Mozisha patron | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'Become Mozisha patron | The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'description'   => 'Become Mozisha patron | The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'keywords'      => 'Become Mozisha patron ,mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
-                               The learning community dedicated to building respectful and responsible entrepreneurs and empowering all learners, learning platform',
-            'dc_title'      => 'Become Mozisha patron | The learning community dedicated to building respectful and responsible entrepreneurs',
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
+            'dc_title'      => 'Become Mozisha patron | The learning community dedicated to buildingresponsible entrepreneurs',
 
             'sm_title'         => 'Become Mozisha patron | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'Become Mozisha patron |The events platform dedicated to building respectful and responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_description'   => 'Become Mozisha patron |The events platform dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('events.patron')
 
