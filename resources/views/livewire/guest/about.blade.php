@@ -5,7 +5,6 @@
             <div class="container">
                 <div class="page-header-text">
                     <h2>About Us</h2>
-                    <p class="mb-0">We help you expand your capabilities.</p>
                 </div>
             </div>
         </div>

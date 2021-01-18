@@ -16,7 +16,8 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'image', 'category', 'content', 'slug',
+        'title', 'image', 'category', 'content', 'slug', 'continue_1', 'continue_image_1', 'view',
+        'continue_2', 'continue_image_2', 'quote', 'quote_by',
         'status', 'user_id', 'status',
     ];
 
@@ -28,6 +29,16 @@ class Blog extends Model
     public function getImagePathAttribute(){
 
         return Storage::disk('public')->url($this->image);
+
+    }
+    public function getContinue1ImagePathAttribute(){
+
+        return Storage::disk('public')->url($this->continue_image_1);
+
+    }
+    public function getContinue2ImagePathAttribute(){
+
+        return Storage::disk('public')->url($this->continue_image_2);
 
     }
 

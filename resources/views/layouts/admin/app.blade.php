@@ -12,6 +12,7 @@
     <meta name="robots" content="index,index" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
     <title>Administrative panel - Mozisha</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('user/img/cdiya.png')}}">
@@ -81,6 +82,13 @@
         <script>
             window.livewire.on('alert', param => {
                 toastr[param['type']](param['message'], param['type']);
+            });
+        </script>
+
+        <script src="https://cdn.tiny.cloud/1/vgsxkb3lxsc9m2ire6z0r4tlp1elrjc6tn84xuyhterweko7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea',
             });
         </script>
 </body>

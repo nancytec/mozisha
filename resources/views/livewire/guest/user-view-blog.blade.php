@@ -19,7 +19,7 @@
             <div class="post-content">
                 <h1 class="title" style="font-size: 150%;">{{$blog->title}}</h1>
                 <ul class="meta-post border-style d-flex flex-wrap list-unstyled">
-                    <li>By <a class="admin" href="#">Admin</a></li>
+                    <li>By <a class="admin" href="#">{{$blog->creator->name}}</a></li>
                     <li>{{$blog->created_at->format('d M, Y')}}</li>
                     <li><a href="#">{{$blog->created_at->diffForHumans()}}</a></li>
                 </ul>
@@ -31,12 +31,12 @@
                         <div class="swiper-slide">
                             <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">
                         </div>
-                        <div class="swiper-slide">
-                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">
-                        </div>
+{{--                        <div class="swiper-slide">--}}
+{{--                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">--}}
+{{--                        </div>--}}
 
                     </div>
                 </div>
@@ -46,6 +46,53 @@
                 <p>{{$blog->content}}</p>
                 <hr>
                 <br>
+                @if($blog->continue_image_1)
+                <div class="post-thumb">
+                    <div class="thumb-slider-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="thumbnail" src="{{$blog->Continue1ImagePath}}" alt="thumb">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <br>
+                <p>{{$blog->continue_1}}</p>
+                <hr>
+                <br>
+                @if($blog->continue_image_2)
+                    <div class="post-thumb">
+                        <div class="thumb-slider-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img class="thumbnail" src="{{$blog->Continue2ImagePath}}" alt="thumb">
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                <br>
+                @if($blog->quote)
+                <div class="post-content">
+                    <blockquote>
+                        <p>"{{$blog->quote}}"</p>
+                        <a href="#" class="b-au"> <span>Reference: </span> {{$blog->quote_by}}</a>
+                        <i class="qoute-icon lni-quotation"></i>
+                    </blockquote>
+                 </div>
+                @endif
+
+                <p>{{$blog->continue_2}}</p>
+                <hr>
+                <br>
+
+
+
                 <div style="color: maroon">
                     <small>Blog's link (Copy to share)</small>
                     <input type="text" value="https://mozisha.com/blog/{{$blog->slug}}" id="link" class="form-control">
@@ -54,7 +101,9 @@
                 <br>
                 <div>
                     <a href="{{url()->previous()}}" class="da-custom-btn btn-border-radius40"><span>Go back</span></a>
+                    <a href="{{route('blog')}}" class="da-custom-btn btn-border-radius40"><span>Explore More</span></a>
                 </div>
+
 {{--                <blockquote>--}}
 {{--                    <p>{{$blog->quote}}</p>--}}
 {{--                    <a href="#" class="b-au">Composed by <span>{{$blog->reference}}</span></a>--}}
@@ -62,6 +111,8 @@
 {{--                </blockquote>--}}
 {{--                <p>{{$blog->content_2}}</p>--}}
             </div>
+
+
 
         </div>
 

@@ -39,7 +39,7 @@ class Blog extends Component
         $this->eleNo     = Blogs::Where(['status' => 'Active', 'category' => 'E-learning'])->count();
         $this->freNo     = Blogs::Where(['status' => 'Active', 'category' => 'Freelancing'])->count();
         $this->busNo     = Blogs::Where(['status' => 'Active', 'category' => 'Business'])->count();
-        ;
+
     }
 
 

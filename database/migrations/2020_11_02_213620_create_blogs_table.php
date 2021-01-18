@@ -20,6 +20,13 @@ class CreateBlogsTable extends Migration
             $table->string('image');
             $table->string('category');
             $table->text('content');
+            $table->text('continue_1')->nullable();
+            $table->string('continue_image_1')->nullable();
+            $table->text('continue_2')->nullable();
+            $table->string('continue_image_2')->nullable();
+            $table->text('quote')->nullable();
+            $table->integer('view')->default(0);
+            $table->string('quote_by')->nullable();
             $table->string('status');
             $table->foreignId('user_id')->constrained('users');
 //            $table->string('user_role'); later

@@ -38,8 +38,11 @@
     <link rel="stylesheet" href="{{asset('user/home/assets/css/swiper.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/home/assets/css/iconmind/style.css')}}">
     <link rel="stylesheet" href="{{asset('user/home/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('user/home/assets/css/blog-style.css')}}">
+    <link rel="stylesheet" href="{{asset('user/home/assets/css/business.css')}}">
     <link rel="stylesheet" href="{{asset('user/home/assets/css/digital-agency.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('user/home/assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('admin/css/toastr.css')}}">
     <!--Laravel livewire styles  -->
@@ -116,6 +119,20 @@
                         </div>
                     @endif
                     @if(Auth::user()->hasRole('developer'))
+                        <div class="signin-option">
+                            <a href="{{route('admin.home')}}">Admin</a>
+                            <span>/</span>
+                            <a href="{{route('logout')}}">Sign out</a>
+                        </div>
+                    @endif
+                    @if(Auth::user()->hasRole('writer'))
+                        <div class="signin-option">
+                            <a href="{{route('admin.home')}}">Admin</a>
+                            <span>/</span>
+                            <a href="{{route('logout')}}">Sign out</a>
+                        </div>
+                    @endif
+                    @if(Auth::user()->hasRole('editor'))
                         <div class="signin-option">
                             <a href="{{route('admin.home')}}">Admin</a>
                             <span>/</span>

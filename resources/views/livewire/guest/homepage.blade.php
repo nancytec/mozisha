@@ -524,10 +524,9 @@
     <section class="bz-pricing-section bg-ash borderbottom  pt--60 pb--60 pt_lg--100 pb_lg--100">
         <div class="col-11 col-lg-5 m-auto pb--30 pb_lg--60">
             <div class="bz-section-header center-styled text-center">
-                <h6 class="subtitle  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="color: #420175 !important;">Trusted by approved companies, Why won’t You?</h6>
-                <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Find out what an apprenticeship <br>can do for you.</h2>
+              <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Find out what Mozisha apprenticeship <br>can do for you.</h2>
                 <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                    Whether you're looking to gain entrepreneural/work experience or you're a business seeking an apprentice, Mozisha apprenticeship is here for you.</p>
+                    Whether you're looking to gain entrepreneurial/work experience or you're a business seeking an apprentice, Mozisha apprenticeship is here for you.</p>
             </div>
         </div>
         <div class="container">
@@ -663,15 +662,23 @@
             <div class="row">
                 <div class="col-11 col-lg-5 p-0 mt-lg-5 order-lg-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                     <div class="bz-section-header pl_lg--60">
-                        <h6 class="subtitle">Some important facts</h6>
-                        <h2 class="title">Entrepreneurs/Business satisfaction <br>is our first priority</h2>
-                        <p class="desc">Mozisha proudly announced that we have been active for more than 10 years in the field of business. From the start we have built several entrepreneurs and businesses. Mozisha is also gifted with supporters who are totally satisfied with our services. We are lucky to be a part of this innovation!</p>
+
+                        <h2 class="title">Testimonials</h2>
+                        <p class="desc">Mozisha mentoring programme played a huge role in assisting me with preparing my application
+                            for the MasterCard Foundation Scholarship. Indeed, the support and guidance from my mentor made it possible
+                            that today i am an MCF Scholar. This is Anuoluwa with a grateful heart
+                        </p>
+                        <br>
+                        <div class="thumb-content">
+                            <h6 class="name">Anuoluwa Akinsola</h6>
+                            <p class="m-0 designation">MCF Scholar, American University of Beirut, Lebanon.</p>
+                        </div>
 
                     </div>
                 </div>
                 <div class="col-lg-7 p-0 order-lg-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                     <div class="image">
-                        <img class="thumbnail" src="{{asset('user/home/assets/images/CEO.jpeg')}}" alt="image">
+                        <img class="thumbnail" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/testy1.jpg')}}" alt="image">
                     </div>
                 </div>
             </div>
@@ -679,100 +686,59 @@
         </div>
 
         <!--testimonial-->
-        <div class="container">
-            <div class="bz-testimonial-container row">
-                <div class="col-lg-8 order-last  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="swiper-container testimonial-massage">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testimonial-content">
-                                    <p>Mozisha mentoring programme played a huge role in assisting me with preparing my application
-                                    for the MasterCard Foundation Scholarship. Indeed, the support and guidance from my mentor made it possible
-                                        that today i am an MCF Scholar. This is Anuoluwa with a grateful heart
-                                    </p>
-                                </div>
-                            </div>
 
-                        </div>
-                        <!-- Add Arrows -->
-                        <div class="testimonial-control-btn-group">
-                            <div class="swiper-button-next testimonial-swiper-button-next swiper-button-white"><i class="fa fa-angle-right"></i></div>
-                            <div class="swiper-button-prev testimonial-swiper-button-prev swiper-button-white"><i class="fa fa-angle-left"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 order-first  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <div class="swiper-container testimonial-thumbs">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="thumb">
-                                    <img class="lazy" src="{{asset('user/home/assets/images/customer-satisfection/testimonial/testy1.jpg')}}" alt="image">
-                                </div>
-                                <div class="thumb-content">
-                                    <h6 class="name">Anuoluwa Akinsola</h6>
-                                    <p class="m-0 designation">MCF Scholar, American University of Beirut, Lebanon.</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!--  customer satisfection section end-->
 
 
+@if($blogs)
     <!--  blog section start  -->
-    <section class="blog-section  pt--60 pb--60 pt_lg--100 pb_lg--100">
-        <div class="container p-0">
-            <div class="col-11 col-lg-5 m-auto ml-lg-0">
-                <div class="bz-section-header pb--30 pb_lg--60">
-                    <h6 class="subtitle  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="color: #420175;">Recent Blog Post</h6>
-                    <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Latest From The Blog</h2>
-                    <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                        To get up to date about our new projects and research browse through
-                        our blog. All posts are relevat and updated with latest trends in entrepreneureship.</p>
+        <section class="popular-post-section">
+            <div class="container">
+                <div class="section-header mb-5 pb-1 pb-sm-0">
+                    <h3>Recent Blog Posts</h3>
+                    <p>Stay up-to-date with the latest information.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
+            <div class="container container1400 right200">
+                <div class="popular-post-wrapper">
+                    <div class="popular-post-container bh-popular-post-container1">
+                        <div class="swiper-wrapper">
 
-                @if($blogs)
-                    @foreach($blogs as $blog)
-                        <div class="col-lg-4  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                            <div class="post-item flip-style">
-                                <div class="post-thumb">
-                                    <a href="/blog/{{$blog->slug}}"><img class="lazy" src="{{$blog->ImagePath}}" alt="thumb"></a>
+                            @foreach($blogs as $blog)
+                            <div class="swiper-slide">
+                                <div class="post-item style2">
+                                    <div class="post-thumb">
+                                        <a href="/blog/{{$blog->slug}}"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
+                                    </div>
                                     <div class="post-content">
-                                        <div class="flip-card post-content-inner">
-                                            <div class="front">
-                                                <ul class="meta-post line-style">
-                                                    <li>{{$blog->created_at->format('M d, Y')}}</li>
-                                                </ul>
-                                                <h6 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
-                                            </div>
-                                            <div class="back" style="background-color: #420175 !important;">
-                                                <a href="/blog/{{$blog->slug}}" class="read-more">Read More</a>
-                                            </div>
-                                        </div>
+                                        <a href="/blog/{{$blog->slug}}" class="catagory lifestyle">{{$blog->category}}</a>
+                                        <h4 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 30, $end='...') }}</a></h4>
+                                        <ul class="meta-post d-flex flex-wrap">
+                                            <li>By <a href="#">{{$blog->creator->name}}</a></li>
+                                            <li>{{$blog->created_at->format('d')}} {{$blog->created_at->format('M')}},{{$blog->created_at->format('Y')}}</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+
+
                         </div>
-                    @endforeach
-                @endif
-
+                    </div>
+                    <!-- navigation -->
+                    <div class="popular-slide-next-btn">
+                        <i class="icon-Arrow-OutRight"></i>
+                    </div>
+                    <div class="popular-slide-prev-btn">
+                        <i class="icon-Arrow-OutLeft"></i>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 pt-5 text-center  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                <a href="{{route('blog')}}" class="da-custom-btn btn-border-radius40"><span>View More</span></a>
-            </div>
-        </div>
-    </section>
-    <!--  blog section end  -->
+        </section>
 
+@endif
 
     <!--  acton section start -->
     <section class="bz-action-section pt--80 pb--80 pt_lg--120 pb_lg--120" style="background-color: #420175 !important;">
