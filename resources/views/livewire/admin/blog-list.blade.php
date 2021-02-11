@@ -49,7 +49,7 @@
                                             <div class="course-content">
                                                 <span class="date">{{$blog->created_at->format('M d Y')}}</span>
                                                 <span class="course-title">{{ Str::limit($blog->title, $limit = 45, $end = '...') }}</span>
-                                                <p>{{ Str::limit($blog->content, $limit = 150, $end = '...') }}</p>
+                                                <p>{!! Str::limit($blog->content, $limit = 150, $end = '...')  !!}</p>
                                                 <div class="row">
                                                     <div class="col">
                                                         <a href="/blog/{{$blog->id}}/edit" class="text-success">

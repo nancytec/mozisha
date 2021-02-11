@@ -4,7 +4,7 @@
         <div class="page-header-content">
             <div class="container">
                 <div class="page-header-text">
-                    <h2>Blog Section</h2>
+                    <h2>{{$category}}</h2>
                     <p>Browse through our content filled blog</p>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                                             <li>{{$blog->created_at->format('M d, Y')}}</li>
                                             <li><a href="#">{{$blog->view}} views</a></li>
                                         </ul>
-                                        <p class="excerpt">{!! Str::limit($blog->content, 250, $end='...') !!}</p>
+                                        <p class="excerpt">{{Str::limit($blog->content, 250, $end='...') }}</p>
                                         <a href="/blog/{{$blog->slug}}" class="btn-transparent">Learn More <i class="fas fa-angle-double-right"></i></a>
                                         >
                                     </div>

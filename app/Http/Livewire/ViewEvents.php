@@ -3,11 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\Event;
+use App\Models\Team;
 use Livewire\Component;
 
 class ViewEvents extends Component
 {
     public $event;
+    public $ceo;
     public $others;
     public $showForm = false;
 
@@ -15,6 +17,12 @@ class ViewEvents extends Component
     {
         $this->event = $event;
         $this->fetchOthers();
+        $this->fetchCeo();
+    }
+
+    public function fetchCeo()
+    {
+       $this->ceo =  Team::where('position', 'Chief Executive Officer')->first();
     }
 
     public function showEventForm()

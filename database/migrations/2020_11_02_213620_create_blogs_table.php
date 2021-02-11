@@ -24,6 +24,8 @@ class CreateBlogsTable extends Migration
             $table->string('continue_image_1')->nullable();
             $table->text('continue_2')->nullable();
             $table->string('continue_image_2')->nullable();
+            $table->text('continue_3')->nullable();
+            $table->string('continue_image_3')->nullable();
             $table->text('quote')->nullable();
             $table->integer('view')->default(0);
             $table->string('quote_by')->nullable();

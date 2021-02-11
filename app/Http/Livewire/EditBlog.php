@@ -26,6 +26,9 @@ class EditBlog extends Component
     public $continue_2;
     public $continue_image_2;
     public $new_continue_image_2;
+    public $continue_3;
+    public $continue_image_3;
+    public $new_continue_image_3;
     public $quote;
     public $quote_by;
     public $status;
@@ -128,6 +131,15 @@ class EditBlog extends Component
         $this->refresh();
     }
 
+    public function removeContinue3Image()
+    {
+        $this->deleteOldFile($this->blog->continue_image_3);
+        Blog::where('id', $this->blog->id)->update([
+            'continue_image_3' => '',
+        ]);
+        $this->refresh();
+    }
+
     public function checkForExistingBlog()
     {
         $checkBlog = Blog::where([
@@ -143,18 +155,20 @@ class EditBlog extends Component
 
     public function refresh(){
         $blog = Blog::find($this->blog->id);
-        $this->title            = $blog->title;
-        $this->new_image        = $blog->image;
-        $this->category         = $blog->category;
-        $this->content          = $blog->content;
-        $this->status           = $blog->status;
-        $this->continue_1       = $blog->continue_1;
-        $this->new_continue_image_1 = $blog->continue_image_1;
-        $this->continue_2       = $blog->continue_2;
-        $this->new_continue_image_2 = $blog->continue_image_2;
-        $this->quote            = $blog->quote;
-        $this->quote_by         = $blog->quote_by;
-        $this->blog = $blog;
+        $this->title                    = $blog->title;
+        $this->new_image                = $blog->image;
+        $this->category                 = $blog->category;
+        $this->content                  = $blog->content;
+        $this->status                   = $blog->status;
+        $this->continue_1               = $blog->continue_1;
+        $this->new_continue_image_1     = $blog->continue_image_1;
+        $this->continue_2               = $blog->continue_2;
+        $this->new_continue_image_2     = $blog->continue_image_2;
+        $this->continue_3               = $blog->continue_3;
+        $this->new_continue_image_3     = $blog->continue_image_3;
+        $this->quote                    = $blog->quote;
+        $this->quote_by                 = $blog->quote_by;
+        $this->blog                     = $blog;
     }
 
     public function formatImage($new_image, $old_image)

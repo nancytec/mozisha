@@ -5,12 +5,10 @@ namespace App\Http\Livewire;
 use App\Models\Blog as Blogs;
 use Livewire\Component;
 
-class UserViewBlog extends Component
+class BlogCategory extends Component
 {
-    public $blog;
-    public $randomBlogs;
-
     public $category = 'all';
+
     public $softDevNo;
     public $entNo;
     public $collNo;
@@ -20,24 +18,20 @@ class UserViewBlog extends Component
     public $freNo;
     public $busNo;
 
-    public  function fetchRandomBlogs()
-    {
-        $this->randomBlogs = Blogs::where([
-            ['status', '=', 'Active'],
-            ['id', '!=', $this->blog->id]
-        ])->inRandomOrder()->limit(6)->get();
+    public $raw_category;
+
+    public function updated(){
+
     }
 
-    public function mount($blog){
-        $this->blog = $blog;
-        Blogs::where('id', $this->blog->id)->update([
-            'view'  => $this->blog->view+1,
-        ]);
-        $this->countCategories();
-        $this->fetchRandomBlogs();
-    }
-    public function countCategories()
+    public function countCategories($category)
     {
+        $this->raw_category = $category;
+    }
+
+    public function mount()
+    {
+        //count records
         $this->softDevNo = Blogs::Where(['status' => 'Active', 'category' => 'Software_development'])->count();
         $this->entNo     = Blogs::Where(['status' => 'Active', 'category' => 'Entrepreneurship'])->count();
         $this->collNo    = Blogs::Where(['status' => 'Active', 'category' => 'Collaboration'])->count();
@@ -46,10 +40,22 @@ class UserViewBlog extends Component
         $this->eleNo     = Blogs::Where(['status' => 'Active', 'category' => 'E-learning'])->count();
         $this->freNo     = Blogs::Where(['status' => 'Active', 'category' => 'Freelancing'])->count();
         $this->busNo     = Blogs::Where(['status' => 'Active', 'category' => 'Business'])->count();
+
     }
+
 
     public function render()
     {
-        return view('livewire.guest.user-view-blog');
+        if($this->category == 'all' || $this->category == ''){
+            return view('livewire.guest.blog-category', [
+                'blogs' => Blogs::Where(['status' => 'Active', 'category'=> $this->raw_category])->orderBy('created_at','desc')->paginate(20),
+                'randBlogs' => Blogs::Where('status', 'Active')->inRandomOrder()->orderBy('created_at','desc')->limit(5)->get(),
+            ]);
+        }else{
+            return view('livewire.guest.blog-category', [
+                'blogs' => Blogs::Where(['status' => 'Active', 'category' => $this->category])->orderBy('created_at','desc')->paginate(20),
+                'randBlogs' => Blogs::Where('status', 'Active')->inRandomOrder()->orderBy('created_at','desc')->limit(5)->get(),
+            ]);
+        }
     }
 }

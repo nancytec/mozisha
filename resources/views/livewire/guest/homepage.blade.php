@@ -181,7 +181,7 @@
                 <div class="col-lg-6 mb--60 mb-lg-0 order-lg-last wow fadeInRight" data-wow-duration="1s" data-wow-delay="0s">
                     <div class="bz-section-header">
                         <h2 class="title">Why Choose <br> Mozisha.</h2>
-                        <p class="desc pb--30 mb-0">Mozisha, We believe that every young person should be provided with access to
+                        <p class="desc pb--30 mb-0" style="text-align: justify;">At Mozisha, We believe that every young person should be provided with access to
                             opportunities for a dignified and fulfilling life.We also believe that expanding youth education and
                             enterpreneural capabilities is the most efficient way to tackle the perenial challenge of high youth
                             unemployment accross africa, Thus with focus on education and entreprneurship, Mozisha strives to facilitate
@@ -247,7 +247,7 @@
             <div class="bz-section-header pb--30 pb_lg--60">
                 <h2 class="title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">Mozisha Partnership</h2>
 
-                <p  class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
+                <p  class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s" style="text-align: left;">
                     Mozisha works with Government, private and international development actors to develop and
                     <br> implement programmes that expand opportunities
                     for youths across africa.</p>
@@ -383,149 +383,149 @@
 
 
 
-    <!-- project-section-start -->
-    <section class="bz-project-section borderbottom pt--60 pb--60 pt_lg--100 pb_lg--100">
-        <div class="col-lg-8 m-auto">
-            <div class="bz-section-header center-styled text-center  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                <h2 class="title">Courses categories</h2>
-            </div>
-        </div>
-        <div class="section-wrapper">
-            <ul id="filters" class="button-group  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                <li class="button is-checked" data-filter="*">All Courses</li>
-                <li class="button" data-filter=".development">Content creation</li>
-                <li class="button" data-filter=".design">Fashion</li>
-                <li class="button" data-filter=".photoshop">Software development</li>
-                <li class="button" data-filter=".ui">Graphics design</li>
-                <li class="button" data-filter=".java">Networking</li>
-            </ul>
-            <div class="bz-project-container">
-                <div class="element-item development photoshop   wow fadeInUpCustom" data-wow-duration="1s" data-wow-delay="0.3s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/01.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Development</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--    <!-- project-section-start -->--}}
+{{--    <section class="bz-project-section borderbottom pt--60 pb--60 pt_lg--100 pb_lg--100">--}}
+{{--        <div class="col-lg-8 m-auto">--}}
+{{--            <div class="bz-section-header center-styled text-center  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">--}}
+{{--                <h2 class="title">Courses categories</h2>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="section-wrapper">--}}
+{{--            <ul id="filters" class="button-group  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">--}}
+{{--                <li class="button is-checked" data-filter="*">All Courses</li>--}}
+{{--                <li class="button" data-filter=".development">Content creation</li>--}}
+{{--                <li class="button" data-filter=".design">Fashion</li>--}}
+{{--                <li class="button" data-filter=".photoshop">Software development</li>--}}
+{{--                <li class="button" data-filter=".ui">Graphics design</li>--}}
+{{--                <li class="button" data-filter=".java">Networking</li>--}}
+{{--            </ul>--}}
+{{--            <div class="bz-project-container">--}}
+{{--                <div class="element-item development photoshop   wow fadeInUpCustom" data-wow-duration="1s" data-wow-delay="0.3s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/01.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Development</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item design ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/02.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Design</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item design ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/02.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Design</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item photoshop ui java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/03.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">e-Commerce</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item photoshop ui java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/03.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">e-Commerce</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item development java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/04.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">UX research</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item development java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/04.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">UX research</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item photoshop ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/05.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Consultancy</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item photoshop ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/05.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Consultancy</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item development design java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/06.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Design</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item development design java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/06.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Design</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item design ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/07.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Design</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="element-item design ui  wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/07.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Design</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="element-item photoshop java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s" data-category="transition">
-                    <div class="project-item">
-                        <div class="project-thumb">
-                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/08.jpg')}}" alt="project"></a>
-                            <div class="project-content">
-                                <div class="project-content-inner">
-                                    <p class="cata">Consultancy</p>
-                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center;" data-wow-duration="1s" data-wow-delay="0s">
-                <a href="https://learn.mozisha.com" target="_blank" class="da-custom-btn btn-border-radius40" style="background-color: #420175 !important; color: white; border-color: #420175 !important;" ><span >Explore platform</span></a>
-            </div>
-        </div>
-    </section>
-    <!-- project-section-end -->
+{{--                <div class="element-item photoshop java  wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s" data-category="transition">--}}
+{{--                    <div class="project-item">--}}
+{{--                        <div class="project-thumb">--}}
+{{--                            <a href="project_details.html"><img class="lazy" src="{{asset('user/home/assets/images/project/08.jpg')}}" alt="project"></a>--}}
+{{--                            <div class="project-content">--}}
+{{--                                <div class="project-content-inner">--}}
+{{--                                    <p class="cata">Consultancy</p>--}}
+{{--                                    <h6 class="title"><a href="single.html">Simple and Effective</a></h6>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="text-align: center;" data-wow-duration="1s" data-wow-delay="0s">--}}
+{{--                <a href="https://learn.mozisha.com" target="_blank" class="da-custom-btn btn-border-radius40" style="background-color: #420175 !important; color: white; border-color: #420175 !important;" ><span >Explore platform</span></a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- project-section-end -->--}}
 
 
     <!-- pricing-table-section start -->
     <section class="bz-pricing-section bg-ash borderbottom  pt--60 pb--60 pt_lg--100 pb_lg--100">
         <div class="col-11 col-lg-5 m-auto pb--30 pb_lg--60">
             <div class="bz-section-header center-styled text-center">
-              <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Find out what Mozisha apprenticeship <br>can do for you.</h2>
-                <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" style="text-align: left;">Find out what Mozisha apprenticeship <br>can do for you.</h2>
+                <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="text-align: left;">
                     Whether you're looking to gain entrepreneurial/work experience or you're a business seeking an apprentice, Mozisha apprenticeship is here for you.</p>
             </div>
         </div>
@@ -537,7 +537,7 @@
                         <h2 class="price" style="color: #420175;font-weight: bold;">Get a mentor.</h2>
                         <p class="per-time">Looking for a platform to gain valuable experience.</p>
                     </div>
-                    <div class="pricing-body">
+                    <div class="pricing-body"  style="text-align: left;">
                         <ul class="item-listing">
                             <li ><i class="fa fa-check-circle" ></i>Start your path as an apprentice.</li>
                             <li><i class="fa fa-check-circle"></i>Sign up.</li>
@@ -559,7 +559,7 @@
                         <h2 class="price">Get an apprentice.</h2>
                         <p class="per-time">Looking for a platform to grow my business.</p>
                     </div>
-                    <div class="pricing-body">
+                    <div class="pricing-body" style="text-align: left;">
                         <ul class="item-listing">
                             <li><i class="fa fa-check-circle"></i>Start your path as a mentor.</li>
                             <li><i class="fa fa-check-circle"></i>Sign up</li>
@@ -605,7 +605,7 @@
 
 
 
-    <!--  Evemnt section start  -->
+    <!--  Event section start  -->
     <section class="blog-section  pt--60 pb--60 pt_lg--100 pb_lg--100">
         <div class="container p-0">
             <div class="col-11 col-lg-5 m-auto ml-lg-0">
@@ -654,8 +654,6 @@
     </section>
     <!--  Event section end  -->
 
-
-
     <!--  customer satisfection section start-->
     <section class="bz-customer-satisfection-section borderbottom pt--60 pb--60 pt_lg--100 pb_lg--5">
         <div class="container position-relative">
@@ -664,7 +662,7 @@
                     <div class="bz-section-header pl_lg--60">
 
                         <h2 class="title">Testimonials</h2>
-                        <p class="desc">Mozisha mentoring programme played a huge role in assisting me with preparing my application
+                        <p class="desc"  style="text-align: left;">Mozisha mentoring programme played a huge role in assisting me with preparing my application
                             for the MasterCard Foundation Scholarship. Indeed, the support and guidance from my mentor made it possible
                             that today i am an MCF Scholar. This is Anuoluwa with a grateful heart
                         </p>
@@ -692,51 +690,55 @@
 
 
 @if($blogs)
-    <!--  blog section start  -->
-        <section class="popular-post-section">
-            <div class="container">
-                <div class="section-header mb-5 pb-1 pb-sm-0">
-                    <h3>Recent Blog Posts</h3>
-                    <p>Stay up-to-date with the latest information.</p>
+
+    <!--  Event section start  -->
+        <section class="blog-section  pt--60 pb--60 pt_lg--100 pb_lg--100">
+            <div class="container p-0">
+                <div class="col-11 col-lg-5 m-auto ml-lg-0">
+                    <div class="bz-section-header pb--30 pb_lg--60">
+                        <h6 class="subtitle  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="color: #420175;">Event updates</h6>
+                        <h2 class="title  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Recent Blog Posts</h2>
+                        <p class="desc  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                            Stay up-to-date with the latest information.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="container container1400 right200">
-                <div class="popular-post-wrapper">
-                    <div class="popular-post-container bh-popular-post-container1">
-                        <div class="swiper-wrapper">
+            <div class="container">
+                <div class="row">
 
-                            @foreach($blogs as $blog)
-                            <div class="swiper-slide">
-                                <div class="post-item style2">
+                    @if($blogs)
+                        @foreach($blogs as $blog)
+                            <div class="col-lg-4  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
+                                <div class="post-item flip-style">
                                     <div class="post-thumb">
-                                        <a href="/blog/{{$blog->slug}}"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="/blog/{{$blog->slug}}" class="catagory lifestyle">{{$blog->category}}</a>
-                                        <h4 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 30, $end='...') }}</a></h4>
-                                        <ul class="meta-post d-flex flex-wrap">
-                                            <li>By <a href="#">{{$blog->creator->name}}</a></li>
-                                            <li>{{$blog->created_at->format('d')}} {{$blog->created_at->format('M')}},{{$blog->created_at->format('Y')}}</li>
-                                        </ul>
+                                        <a href="/blog/{{$blog->slug}}"><img class="lazy" src="{{$blog->ImagePath}}" alt="thumb"></a>
+                                        <div class="post-content">
+                                            <div class="flip-card post-content-inner">
+                                                <div class="front">
+                                                    <ul class="meta-post line-style">
+                                                        <li>{{$blog->created_at->format('d M, Y')}}</li>
+                                                    </ul>
+                                                    <h6 class="title"><a href="/blog/{{$blog->slug}}">{{Str::limit($blog->title, 54, $end='...') }}</a></h6>
+                                                </div>
+                                                <div class="back" style="background-color: #420175 !important;">
+                                                    <a href="/blog/{{$blog->slug}}" class="read-more">Explore Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                        @endforeach
+                    @endif
 
-
-                        </div>
-                    </div>
-                    <!-- navigation -->
-                    <div class="popular-slide-next-btn">
-                        <i class="icon-Arrow-OutRight"></i>
-                    </div>
-                    <div class="popular-slide-prev-btn">
-                        <i class="icon-Arrow-OutLeft"></i>
-                    </div>
+                </div>
+                <div class="col-12 pt-5 text-center  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <a href="{{route('events')}}" class="da-custom-btn btn-border-radius40"><span>Explore Events</span></a>
                 </div>
             </div>
         </section>
+        <!--  Event section end  -->
 
 @endif
 

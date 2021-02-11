@@ -34,7 +34,10 @@
                                     <a title="" href="https://www.facebook/mozisha"><i class="fa fa-linkedin-square"></i></a>
                                     <a title="" href="mailto:kene@mozisha.com"><i class="fa fa-google-plus-square"></i></a>
                                 </div>
-                                <span><i class="fa fa-user"></i> <a href="#" title="">Kenechukwu Obinasom</a></span>
+                                @if($ceo)
+                                    <span><i class="fa fa-user"></i> <a href="#" title="">{{$ceo->last_name}} {{$ceo->first_name}}</a></span>
+                                @endif
+
                                 <span><i class="fa fa-user"></i> <a href="#" title="">CEO</a></span>
                                 <span><i class="fa fa-user"></i> <a href="#" title="">Mozisha International</a></span>
                             </div>
@@ -66,7 +69,7 @@
                                 </div>
                             </div>
                             <p style="text-align: justify">
-                                {{$event->details}}
+                                {!! $event->details !!}
                             </p>
                             <div style="color: maroon">
                                 <small>Event's link (Copy to share)</small>

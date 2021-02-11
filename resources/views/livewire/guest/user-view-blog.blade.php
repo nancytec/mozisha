@@ -2,8 +2,9 @@
     <div class="page-header-content">
         <div class="container">
             <div class="page-header-text thumbnail">
-                <h2>Blog Details</h2>
-                <p>Authored by: {{$blog->creator->name}}</p>
+                <p style="font-size: 130%; line-height: 1.3em;">{{$blog->title}}</p>
+                <hr>
+                <p style="font-size: 80%;">Authored by: {{$blog->creator->name}}</p>
             </div>
         </div>
     </div>
@@ -12,8 +13,12 @@
 
 
 
+
+
+
 <!--service list section start-->
-<section class="inner-page single-page borderbottom">
+<section class="inner-page about-page borderbottom pb--60 pb_lg--80">
+
     <div class="container">
         <div class="entry-content">
             <div class="post-content">
@@ -23,205 +28,205 @@
                     <li>{{$blog->created_at->format('d M, Y')}}</li>
                     <li><a href="#">{{$blog->created_at->diffForHumans()}}</a></li>
                 </ul>
+                <div class="entry-footer d-flex flex-wrap align-items-center justify-content-between align-items-center">
+                    <ul class="tags list-unstyled pl-0 d-flex flex-wrap align-items-center mb-5 mb-lg-0">
+                        <li>Categories:</li>
+                        <li><a href="/blog/category/Software_development">Software Dev <span style="color: maroon;">{{$softDevNo}}</span></a></li>
+                        <li><a href="/blog/category/Entrepreneurship">Entrepreneurship <span style="color: maroon;">{{$entNo}}</span></a></li>
+                        <li><a href="/blog/category/Collaboration">Collaboration <span style="color: maroon;">{{$collNo}}</span></a></li>
+                        <li><a href="/blog/category/Marketing">Marketing <span style="color: maroon;">{{$markNo}}</span></a></li>
+                        <li><a href="/blog/category/Seminars">Seminars <span style="color: maroon;">{{$semNo}}</span></a></li>
+                        <li><a href="/blog/category/E-learning">E-learning <span style="color: maroon;">{{$eleNo}}</span></a></li>
+                        <li><a href="/blog/category/Freelancing">Freelancing <span style="color: maroon;">{{$freNo}}</span></a></li>
+                        <li><a href="/blog/category/Business">Business <span style="color: maroon;">{{$busNo}}</span></a></li>
+                    </ul>
 
-             </div>
-            <div class="post-thumb">
-                <div class="thumb-slider-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">
-                        </div>
-{{--                        <div class="swiper-slide">--}}
-{{--                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">--}}
-{{--                        </div>--}}
-{{--                        <div class="swiper-slide">--}}
-{{--                            <img class="thumbnail" src="{{$blog->ImagePath}}" alt="thumb">--}}
-{{--                        </div>--}}
-
-                    </div>
                 </div>
             </div>
-
-            <div class="post-content">
-                <p>{{$blog->content}}</p>
-                <hr>
-                <br>
-                @if($blog->continue_image_1)
-                <div class="post-thumb">
-                    <div class="thumb-slider-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="thumbnail" src="{{$blog->Continue1ImagePath}}" alt="thumb">
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                @endif
-                <br>
-                <p>{{$blog->continue_1}}</p>
-                <hr>
-                <br>
-                @if($blog->continue_image_2)
-                    <div class="post-thumb">
-                        <div class="thumb-slider-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img class="thumbnail" src="{{$blog->Continue2ImagePath}}" alt="thumb">
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                <br>
-                @if($blog->quote)
-                <div class="post-content">
-                    <blockquote>
-                        <p>"{{$blog->quote}}"</p>
-                        <a href="#" class="b-au"> <span>Reference: </span> {{$blog->quote_by}}</a>
-                        <i class="qoute-icon lni-quotation"></i>
-                    </blockquote>
-                 </div>
-                @endif
-
-                <p>{{$blog->continue_2}}</p>
-                <hr>
-                <br>
-
-
-
-                <div style="color: maroon">
-                    <small>Blog's link (Copy to share)</small>
-                    <input type="text" value="https://mozisha.com/blog/{{$blog->slug}}" id="link" class="form-control">
-                    <button type="button" style="margin-top: 5px;" class="btn btn-primary" onclick="copyText()"  >Copy Link</button>
-                </div>
-                <br>
-                <div>
-                    <a href="{{url()->previous()}}" class="da-custom-btn btn-border-radius40"><span>Go back</span></a>
-                    <a href="{{route('blog')}}" class="da-custom-btn btn-border-radius40"><span>Explore More</span></a>
-                </div>
-
-{{--                <blockquote>--}}
-{{--                    <p>{{$blog->quote}}</p>--}}
-{{--                    <a href="#" class="b-au">Composed by <span>{{$blog->reference}}</span></a>--}}
-{{--                    <i class="qoute-icon lni-quotation"></i>--}}
-{{--                </blockquote>--}}
-{{--                <p>{{$blog->content_2}}</p>--}}
-            </div>
-
-
-
         </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="main-content">
+                    <div class="post-list">
 
-{{--        <div class="mas-section">--}}
-{{--            <h6 class="section-title"><span>05</span> Comments</h6>--}}
-{{--            <ul class="comments-list">--}}
-{{--                <li class="comments">--}}
-{{--                    <div class="thumb">--}}
-{{--                        <img src="assets/images/single-page/comment/01.jpg" alt="thumb">--}}
+
+
+                        <h1 class="title" style="font-size: 150%;">{{$blog->title}}</h1>
+                        <hr>
+                        <div class="post-item style2">
+                            <div class="post-thumb">
+                                <a href="#"><img src="{{$blog->ImagePath}}" alt="thumb"></a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-content-inner">
+
+                                    <h6 class="title"><a href="single.html">{{$blog->title}}</a></h6>
+                                    <ul class="meta-post border-style d-flex flex-wrap list-unstyled">
+                                        <li>By <a class="admin" href="#">{{$blog->creator->name}}</a></li>
+                                        <li>{{$blog->created_at->format('d M, Y')}}</li>
+                                        <li><a href="#">26 comments</a></li>
+                                    </ul>
+                                    <div class="swiper-wrapper">
+                                        <div style="margin-top: 20px; width: 100%;">
+                                            <p>{!! $blog->content !!}</p>
+                                        </div>
+                                    </div>
+
+                                    @if($blog->continue_image_1)
+                                        <div class="swiper-wrapper">
+                                            <div style=" width: 100%;">
+                                                <div class="swiper-slide">
+                                                    <img class="thumbnail img-responsive" src="{{$blog->Continue1ImagePath}}" alt="thumb">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($blog->continue_1)
+                                        <div class="swiper-wrapper">
+                                            <div style=" width: 100%;">
+                                                <p>{!! $blog->continue_1 !!}</p>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($blog->continue_image_2)
+                                        <div class="swiper-wrapper">
+                                            <div style="width: 100%;">
+                                                <div class="swiper-slide">
+                                                    <img class="thumbnail img-responsive" src="{{$blog->Continue2ImagePath}}" alt="thumb">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($blog->continue_2)
+                                        <div class="swiper-wrapper">
+                                            <div style="width: 100%;">
+                                                <p>{!! $blog->continue_2 !!}</p>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($blog->continue_image_3)
+                                        <div class="swiper-wrapper">
+                                            <div style=" width: 100%;">
+                                                <div class="swiper-slide">
+                                                    <img class="thumbnail img-responsive" src="{{$blog->Continue3ImagePath}}" alt="thumb">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($blog->continue_3)
+                                        <div class="swiper-wrapper">
+                                            <div style=" width: 100%;">
+                                                <p>{!! $blog->continue_3 !!}</p>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    <div style="color: maroon">
+                                        <small>Blog's link (Copy to share)</small>
+                                        <input type="text" value="https://mozisha.com/blog/{{$blog->slug}}" id="link" class="form-control">
+                                        <button type="button" style="margin-top: 5px;" class="btn btn-primary" onclick="copyText()"  >Copy Link</button>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <a href="{{url()->previous()}}" class="da-custom-btn btn-border-radius40"><span>Go back</span></a>
+                                        <a href="{{route('blog')}}" class="da-custom-btn btn-border-radius40"><span>Explore More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!--sidebar-->
+            <div class="col-lg-3">
+                <div class="sidebar">
+                    <div class="widget">
+{{--                        <form action="#" class="search-form">--}}
+{{--                            <input type="text" name="search" placeholder="Search...">--}}
+{{--                            <i class="fas fa-search"></i>--}}
+{{--                        </form>--}}
+                    </div>
+
+                    <div class="widget">
+                        <h6 class="widget-title">Catagories</h6>
+                        <ul class="list-unstyled pl-0 cata-post-list">
+                            <li><a href="/blog/category/Software_development">Software Dev <span style="color: maroon;">{{$softDevNo}}</span></a></li>
+                            <li><a href="/blog/category/Entrepreneurship">Entrepreneurship <span style="color: maroon;">{{$entNo}}</span></a></li>
+                            <li><a href="/blog/category/Collaboration">Collaboration <span style="color: maroon;">{{$collNo}}</span></a></li>
+                            <li><a href="/blog/category/Marketing">Marketing <span style="color: maroon;">{{$markNo}}</span></a></li>
+                            <li><a href="/blog/category/Seminars">Seminars <span style="color: maroon;">{{$semNo}}</span></a></li>
+                            <li><a href="/blog/category/E-learning">E-learning <span style="color: maroon;">{{$eleNo}}</span></a></li>
+                            <li><a href="/blog/category/Freelancing">Freelancing <span style="color: maroon;">{{$freNo}}</span></a></li>
+                            <li><a href="/blog/category/Business">Business <span style="color: maroon;">{{$busNo}}</span></a></li>
+                        </ul>
+                    </div>
+
+
+{{--                    <div class="widget">--}}
+{{--                        <h6 class="widget-title">Tags</h6>--}}
+{{--                        <ul class="list-unstyled pl-0 tag-list">--}}
+{{--                            <li><a href="#">Web Design</a></li>--}}
+{{--                            <li><a href="#">Marketing</a></li>--}}
+{{--                            <li><a href="#">UI/UX</a></li>--}}
+{{--                            <li><a href="#">Developement</a></li>--}}
+{{--                            <li><a href="#">Photography</a></li>--}}
+{{--                            <li><a href="#">E-commerce</a></li>--}}
+{{--                            <li><a href="#">WordPress</a></li>--}}
+{{--                        </ul>--}}
 {{--                    </div>--}}
-{{--                    <div class="content">--}}
-{{--                        <div class="comment-heading">--}}
-{{--                            <a class="name" href="#">Johan Miami</a> <span>Jan 18, 2017 at 05:30 AM</span>--}}
-{{--                            <a href="#" class="reply">Reply</a>--}}
-{{--                        </div>--}}
-{{--                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat </p>--}}
-
-{{--                    </div>--}}
-{{--                </li>--}}
-
-{{--                <li class="comments">--}}
-{{--                    <div class="thumb">--}}
-{{--                        <img src="assets/images/single-page/comment/02.jpg" alt="thumb">--}}
-{{--                    </div>--}}
-{{--                    <div class="content">--}}
-{{--                        <div class="comment-heading">--}}
-{{--                            <a class="name" href="#">Johan Miami</a> <span>Jan 18, 2017 at 05:30 AM</span>--}}
-{{--                            <a href="#" class="reply">Reply</a>--}}
-{{--                        </div>--}}
-{{--                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat </p>--}}
-{{--                    </div>--}}
-
-{{--                    <ul class="comment-sub-list">--}}
-{{--                        <li class="comments">--}}
-{{--                            <div class="thumb">--}}
-{{--                                <img src="assets/images/single-page/comment/03.jpg" alt="thumb">--}}
-{{--                            </div>--}}
-{{--                            <div class="content">--}}
-{{--                                <div class="comment-heading">--}}
-{{--                                    <a class="name" href="#">Johan Miami</a> <span>Jan 18, 2017 at 05:30 AM</span>--}}
-{{--                                    <a href="#" class="reply">Reply</a>--}}
-{{--                                </div>--}}
-{{--                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat </p>--}}
-{{--                            </div>--}}
-{{--                            <ul class="comment-sub-list">--}}
-{{--                                <li class="comments">--}}
-{{--                                    <div class="thumb">--}}
-{{--                                        <img src="assets/images/single-page/comment/01.jpg" alt="thumb">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="content">--}}
-{{--                                        <div class="comment-heading">--}}
-{{--                                            <a class="name" href="#">Johan Miami</a> <span>Jan 18, 2017 at 05:30 AM</span>--}}
-{{--                                            <a href="#" class="reply">Reply</a>--}}
-{{--                                        </div>--}}
-{{--                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat </p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="comments">--}}
-{{--                    <div class="thumb">--}}
-{{--                        <img src="assets/images/single-page/comment/01.jpg" alt="thumb">--}}
-{{--                    </div>--}}
-{{--                    <div class="content">--}}
-{{--                        <div class="comment-heading">--}}
-{{--                            <a class="name" href="#">Johan Miami</a> <span>Posted On Jan 18, 2017 at 05:30 AM</span>--}}
-{{--                            <a href="#" class="reply">Reply</a>--}}
-{{--                        </div>--}}
-{{--                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat </p>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--            </ul><!-- /.comments-list -->--}}
-{{--        </div><!-- /.ccr-section -->--}}
 
 
-{{--        <div class="mas-section mb--60 mb-0">--}}
-{{--            <h4 class="section-title">Leave a Comment--}}
-{{--            </h4>--}}
+                    <div class="widget">
+                        <h6 class="widget-title">Recent Post</h6>
+                        <div class="recent-post">
+                            <div class="recent-post-container">
+                                <div class="swiper-wrapper">
 
+                                    @if($randomBlogs)
+                                        @foreach($randomBlogs as $post)
+                                    <div class="swiper-slide">
+                                        <div class="post-item">
+                                            <div class="post-thumb">
+                                                <a href="/blog/{{$post->slug}}"><img src="{{$post->ImagePath}}" alt="thumb"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        @endforeach
+                                    @endif
 
-{{--            <div class="comment-response">--}}
-{{--                <form action="#">--}}
-{{--                    <div class="form-input  row">--}}
-{{--                        <div class="col-lg-4">--}}
-{{--                            <input type="text" class="name" name="name" placeholder="Your Name">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-4">--}}
-{{--                            <input type="text" class="email" name="E-mail" placeholder="Your Email">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-4">--}}
-{{--                            <input type="text" class="email" name="website" placeholder="Website">--}}
-{{--                        </div>--}}
-
-
-
-{{--                    </div>--}}
-{{--                    <textarea name="massage" id="massage" placeholder="Your Massage"></textarea>--}}
-
-{{--                    <input type="submit" value="Submit">--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="recent-post-next-btn"><i class="fas fa-angle-left"></i></div>
+                            <div class="recent-post-prev-btn"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!--service list section end-->
 
+
+<!--service list section start-->
+<section class="inner-page single-page borderbottom">
+    @livewire('comment-form', ['blog' => $blog])
+</section>
+<!--service list section end-->
 
 <!--  acton section start -->
 <section class="bz-action-section pt--80 pb--80 pt_lg--120 pb_lg--120" style="background-color: #420175 !important;">

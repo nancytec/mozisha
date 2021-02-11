@@ -17,7 +17,7 @@ class Blog extends Model
      */
     protected $fillable = [
         'title', 'image', 'category', 'content', 'slug', 'continue_1', 'continue_image_1', 'view',
-        'continue_2', 'continue_image_2', 'quote', 'quote_by',
+        'continue_2', 'continue_image_2', 'continue_3', 'continue_image_3', 'quote', 'quote_by',
         'status', 'user_id', 'status',
     ];
 
@@ -42,5 +42,9 @@ class Blog extends Model
 
     }
 
+    public function getContinue3ImagePathAttribute(){
 
+        return Storage::disk('public')->url($this->continue_image_3);
+
+    }
 }

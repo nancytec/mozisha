@@ -25,6 +25,8 @@ class NewBlog extends Component
     public $continue_image_1;
     public $continue_2;
     public $continue_image_2;
+    public $continue_3;
+    public $continue_image_3;
     public $quote;
     public $quote_by;
     public $status;
@@ -34,6 +36,8 @@ class NewBlog extends Component
     public $continue_1_image;
     public $continue_2_input;
     public $continue_2_image;
+    public $continue_3_input;
+    public $continue_3_image;
     public $quote_input;
     public $quote_by_input;
 
@@ -44,6 +48,10 @@ class NewBlog extends Component
     public function showContinue_2(){$this->continue_2_input = true;}
 
     public function showContinueImage_2(){$this->continue_2_image = true;}
+
+    public function showContinue_3(){$this->continue_3_input = true;}
+
+    public function showContinueImage_3(){$this->continue_3_image = true;}
 
     public function showQuote(){$this->quote_input = true; $this->quote_by_input = true;}
 
@@ -58,6 +66,8 @@ class NewBlog extends Component
            'continue_image_1'   => 'nullable|image|max:3000',
            'continue_2'         => 'nullable|max:4000',
            'continue_image_2'   => 'nullable|image|max:3000',
+           'continue_3'         => 'nullable|max:4000',
+           'continue_image_3'   => 'nullable|image|max:3000',
            'quote'              => 'nullable|max:1000',
            'quote_by'           => 'nullable|max:255',
            'status'             => 'required|max:255',

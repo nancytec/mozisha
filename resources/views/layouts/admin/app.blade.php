@@ -90,6 +90,16 @@
             tinymce.init({
                 selector: '#mytextarea',
             });
+            tinymce.init({
+                selector: '#mytextarea_1',
+            });
+            tinymce.init({
+                selector: '#mytextarea_2',
+            });
+            tinymce.init({
+                selector: '#mytextarea_3',
+            });
+
         </script>
 </body>
 

@@ -19,7 +19,7 @@
             <div class="container pl-5 pr-5 p-lg-0">
                 <div class="bz-section-header inner-style2">
                     <h2 class="title">About Mozisha<br>International Limited</h2>
-                    <p class="desc mb-0">
+                    <p class="desc mb-0" style="text-align: justify;">
                         Mozisha is an innovation driven company providing products and services
                         that expand opportunities for youth across Africa. We believe that every
                         young person should be provided with access to opportunities for a dignified
@@ -45,14 +45,14 @@
                 <div class="col-lg-5 pb-5 pb-lg-0">
                     <div class="bz-section-header">
                         <h2 class="title">What you need <br>to know about Mozisha</h2>
-                        <p class="desc mb-3">We take a multi- pronged approach to solving the unemployment
+                        <p class="desc mb-3" style="text-align: justify;">We take a multi- pronged approach to solving the unemployment
                             problem by targeting both the supply and the demand of labour. Through access to
                             relevant and practical education, we help to develop young students into competent
                             talents in line with the demands of the contemporary labour market. On the other hand,
                             we also work to raise new entrepreneurs who would create businesses to mop
                             up excess labour supply in the system.
                         </p>
-                        <ul class="list-unstyled pl-0 mb-0">
+                        <ul class="list-unstyled pl-0 mb-0"  style="text-align: left;">
                             <li ><i class="fa fa-check-circle"></i>Apprenticeship</li>
                             <li><i class="fa fa-check-circle"></i>E-learning </li>
                             <li><i class="fa fa-check-circle"></i>Freelancing </li>
@@ -78,7 +78,7 @@
             <div class="container pl-5 pr-5 p-lg-0">
                 <div class="bz-section-header inner-style2">
                     <h2 class="title">Apprenticeship</h2>
-                    <p class="desc mb-0">
+                    <p class="desc mb-0"  style="text-align: left;">
                         We match learners with established businesses in order to deepen<br>
                         their entrepreneurial knowledge and skills while they work in a online
                         setting through Mozisha Apprenticeship.
@@ -90,7 +90,7 @@
             <div class="container pl-5 pr-5 p-lg-0">
                 <div class="bz-section-header inner-style2">
                     <h2 class="title">E-learning</h2>
-                    <p class="desc mb-0">
+                    <p class="desc mb-0" style="text-align: left;">
                         We provide top notch vocational skills training through our <br>array of online courses.
 
                     </p>
@@ -100,7 +100,7 @@
             <div class="container pl-5 pr-5 p-lg-0">
                 <div class="bz-section-header inner-style2">
                     <h2 class="title">Freelancing</h2>
-                    <p class="desc mb-0">
+                    <p class="desc mb-0" style="text-align: left;">
                         Users can monetize their knowledge and skills on our freelancing platform.
 
                     </p>
@@ -110,7 +110,7 @@
             <div class="container pl-5 pr-5 p-lg-0">
                 <div class="bz-section-header inner-style2">
                     <h2 class="title">Collaboration</h2>
-                    <p class="desc mb-0">
+                    <p class="desc mb-0" style="text-align: left;">
                         Mozisha’s collaboration provides users with a platform to network and share<br> ideas with other young people across Africa.
 
                     </p>

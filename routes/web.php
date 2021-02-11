@@ -51,7 +51,9 @@ Route::get('/free/more',       [UserPageController::class, 'freeMore'])->name('f
 
 
 
-Route::get('/blog',           [UserPageController::class, 'blog'])->name('blog');
+Route::get('/blog',                        [UserPageController::class, 'blog'])->name('blog');
+Route::get('/blog/category/{category}',    [UserPageController::class, 'blogCategory'])->name('blog.category');
+
 
 Route::get('/team',           [UserPageController::class, 'team'])->name('team');
 

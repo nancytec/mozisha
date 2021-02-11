@@ -49,9 +49,11 @@ Route::middleware('role:superadministrator|administrator|developer|writer|editor
      * Blog routes
      *
      */
-    Route::get('/post/blog', [BlogController::class, 'newBlog'])->name('blog.new');
-    Route::get('/post/list', [BlogController::class, 'blogs'])->name('blog.list');
+    Route::get('/post/blog',      [BlogController::class, 'newBlog'])->name('blog.new');
+    Route::post('post/save',      [BlogController::class, 'store'])->name('blog.save');
+    Route::get('/post/list',      [BlogController::class, 'blogs'])->name('blog.list');
     Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::patch('/blog/{blog}/update', [BlogController::class, 'update'])->name('blog.update');
 
 
 });

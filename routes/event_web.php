@@ -24,7 +24,7 @@ Route::get('/event/subscribe/{slug}', [EventController::class, 'subscribeEvent']
 Route::middleware('role:superadministrator|administrator|developer')->group(function (){
     Route::get('/events/add', [EventController::class, 'addEvent'])->name('events.add');
     Route::get('/events/upcoming', [EventController::class, 'upcomingEvents'])->name('events.upcoming');
-    Route::get('/event/{id}', [EventController::class, 'edit'])->name('event.edit');
+    Route::get('/event/{id}/edit', [EventController::class, 'edit'])->name('event.edit');
     Route::get('/events/past', [EventController::class, 'pastEvents'])->name('events.past');
     Route::get('/event/{id}/subscribers', [EventController::class, 'eventBookings'])->name('event.subscribers');
     Route::get('/admin/events/patrons', [EventController::class, 'eventPatrons'])->name('admin.events.patrons');

@@ -38,16 +38,18 @@
                                 <div class="row">
                                     <div class="col-12 blog-details">
                                         <x-alert />
-                                        <form wire:submit.prevent="updateBlog">
+                                        <form method="post" enctype="multipart/form-data" action="/blog/{{$blog->id}}/update">
+                                            @csrf
+                                            @method('patch')
                                             <div class="form-group">
                                                 <label>Blog Title</label>
-                                                <input class="form-control" wire:model.lazy="title" type="text" placeholder="Title of the post">
+                                                <input class="form-control" wire:model.lazy="title" type="text" name="title" placeholder="Title of the post">
                                                 @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Blog Image(Landscape)</label>
                                                 <div>
-                                                    <input class="form-control" wire:model="image" type="file">
+                                                    <input class="form-control" wire:model="image" name="image" type="file">
                                                     @if($image)
                                                         <img src="{{$image->temporaryUrl()}}" class="img-fluid" />
                                                     @else
@@ -58,7 +60,7 @@
 {{--                                                    @else--}}
 
 
-                                                    <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png. Maximum 10 images only.</small>
+                                                    <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png.</small>
                                                     @error('image') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                                 <small wire:loading wire:target="image" class="form-text text-muted"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i>&nbsp;&nbsp; Please wait...</small>
@@ -69,7 +71,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Blog Category</label>
-                                                        <select class="form-control" wire:model.lazy="category" tabindex="-1" aria-hidden="true">
+                                                        <select class="form-control" wire:model.lazy="category" name="category" tabindex="-1" aria-hidden="true">
                                                             <option value="">Select Category</option>
                                                             <option value="Software_development">Software Development</option>
                                                             <option value="Entrepreneurship">Entrepreneurship</option>
@@ -84,35 +86,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" wire:ignore>
                                                 <label>Content</label>
-                                                <textarea cols="30" wire:model.lazy="content" rows="6" class="form-control" placeholder="First section of the content."></textarea>
-                                                @error('content') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                <textarea cols="30" wire:model.lazy="content" id="mytextarea"  name="main_content" rows="6" class="form-control" placeholder="First section of the content."></textarea>
+                                                @error('main_content') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                             </div>
 
+                                            <br>
                                             <div class="form-group">
-                                                <label>Quotation</label>
-                                                <textarea style="border: 1px solid #420175" cols="30" wire:model.lazy="quote" rows="6" class="form-control" placeholder="Any quote related to the content."></textarea>
-                                                @error('quote') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                <h2 style="color: #420175">First image within content</h2>
+                                                <hr>
                                             </div>
                                             <div class="form-group">
-                                                <label>Quotation Reference(Name)</label>
-                                                <input type="text" style="border: 1px solid #420175" class="form-control" wire:model.lazy="quote_by" placeholder="Who composed this quote?">
-                                                @error('quote_by') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Content Continuation</label>
-                                                <textarea cols="30" wire:model.lazy="continue_1" rows="6" class="form-control" placeholder="Second section of the content."></textarea>
-                                                @error('continue_1') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label>Additional Image(Landscape)</label>
+                                                <label>Image(1)(Landscape)</label>
                                                 <div>
-                                                    <input class="form-control" wire:model="continue_image_1" type="file">
+                                                    <input class="form-control" wire:model="continue_image_1" name="continue_image_1" type="file">
                                                     @if($continue_image_1)
                                                         <img src="{{$continue_image_1->temporaryUrl()}}" class="img-fluid" />
                                                     @else
@@ -129,18 +117,21 @@
                                                 <small wire:loading wire:target="continue_image_1" class="form-text text-muted"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i>&nbsp;&nbsp; Please wait...</small>
 
                                             </div>
-
-                                            <div class="form-group">
-                                                <label>Final Content</label>
-                                                <textarea cols="30" wire:model.lazy="continue_2" rows="6" class="form-control" placeholder="Final section of the content."></textarea>
-                                                @error('continue_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
-
+                                            <div class="form-group" wire:ignore>
+                                                <label>Content Continue(1)</label>
+                                                <textarea cols="30" wire:model.lazy="continue_1" id="mytextarea_1"  name="continue_1" rows="6" class="form-control" placeholder="Second section of the content."></textarea>
+                                                @error('continue_1') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                             </div>
 
+                                            <br>
                                             <div class="form-group">
-                                                <label>Final Image(Landscape)</label>
+                                                <h2 style="color: #420175">Second Image within content</h2>
+                                                <hr>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image(2)(Landscape)</label>
                                                 <div>
-                                                    <input class="form-control" wire:model="continue_image_2" type="file">
+                                                    <input class="form-control" wire:model="continue_image_2" name="continue_image_2" type="file">
                                                     @if($continue_image_2)
                                                         <img src="{{$continue_image_2->temporaryUrl()}}" class="img-fluid" />
                                                     @else
@@ -149,24 +140,62 @@
                                                             <small class="text-muted" wire:click="removeContinue2Image" style="cursor: pointer;"><li class="fa fa-crosshairs"></li> Remove Image</small>
                                                         @endif
                                                     @endif
-                                                    <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png. Maximum 10 images only.</small>
+                                                    <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png. </small>
                                                     @error('continue_image_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                                 </div>
                                                 <small wire:loading wire:target="continue_image_2" class="form-text text-muted"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i>&nbsp;&nbsp; Please wait...</small>
 
                                             </div>
 
+                                            <div class="form-group" wire:ignore>
+                                                <label>Continue Content(2)</label>
+                                                <textarea cols="30" wire:model.lazy="continue_2" id="mytextarea_2"  name="continue_2" rows="6" class="form-control" placeholder="Final section of the content."></textarea>
+                                                @error('continue_2') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+
+                                            </div>
+
+
+                                            <br>
+                                            <div class="form-group">
+                                                <h2 style="color: #420175">Third image within content</h2>
+                                                <hr>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image(3)(Landscape)</label>
+                                                <div>
+                                                    <input class="form-control" wire:model="continue_image_3"  name="continue_image_3" type="file">
+                                                    @if($continue_image_3)
+                                                        <img src="{{$continue_image_3->temporaryUrl()}}" class="img-fluid" />
+                                                    @else
+                                                        @if($blog->continue_image_3)
+                                                            <img src="{{$blog->Continue3ImagePath}}" class="img-fluid" />
+                                                            <small class="text-muted" wire:click="removeContinue3Image" style="cursor: pointer;"><li class="fa fa-crosshairs"></li> Remove Image</small>
+                                                        @endif
+                                                    @endif
+                                                    <small class="form-text text-muted">Max. file size: 3MB. Allowed images: jpg, gif, png. </small>
+                                                    @error('continue_image_3') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                </div>
+                                                <small wire:loading wire:target="continue_image_3" class="form-text text-muted"><i class="fa fa-spin"><i class="fa fa-spinner"></i></i>&nbsp;&nbsp; Please wait...</small>
+
+                                            </div>
+
+                                            <div class="form-group" wire:ignore>
+                                                <label>Continue Content(3)</label>
+                                                <textarea cols="30" wire:model.lazy="continue_3" id="mytextarea_3"  name="continue_3" rows="6" class="form-control" placeholder="Final section of the content."></textarea>
+                                                @error('continue_3') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+
+                                            </div>
 
 
                                             <div class="form-group">
                                                 <label class="display-block w-100">Blog Status</label>
                                                 <div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input class="custom-control-input" id="active" name="active-blog" wire:model.lazy="status" value="Active" type="radio" checked="">
+                                                        <input class="custom-control-input" id="active" name="status" wire:model.lazy="status" value="Active" type="radio" checked="">
                                                         <label class="custom-control-label" for="active">Active</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input class="custom-control-input" id="inactive" name="active-blog" wire:model.lazy="status" value="Inactive" type="radio">
+                                                        <input class="custom-control-input" id="inactive" name="status" wire:model.lazy="status" value="Inactive" type="radio">
                                                         <label class="custom-control-label" for="inactive">Inactive</label>
                                                     </div>
                                                 </div>
@@ -174,7 +203,7 @@
                                             <div class="m-t-20 text-center">
                                                 <button style="border-color: #420175; background-color: #420175;" type="submit" wire:loading wire:target="updateBlog" class="btn btn-primary btn-lg"><i class="fa fa-spinner fa-spin"></i> Processing update..</button>
                                                 <button class="btn btn-primary btn-lg" wire:loading.remove wire:target="updateBlog" style="background-color: #420175; border-color: #420175;">Update Blog</button>
-                                            </div>
+                                                <a href="/blog/{{$blog->slug}}" target="_blank" class="btn btn-outline-primary" >View post</a>                                            </div>
                                         </form>
                                     </div>
                                 </div>

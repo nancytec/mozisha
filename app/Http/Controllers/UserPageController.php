@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Setting;
 use App\Models\Social;
 use Illuminate\Http\Request;
@@ -138,6 +139,23 @@ class UserPageController extends Controller
         ];
         return view('user/blog' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data]);
     }
+
+    public function blogCategory($category){
+        $data = [
+            'title'            => $category . ' | The learning community dedicated to building responsible entrepreneurs|',
+            'description'      => $category . ' Blogs ',
+            'keywords'         => $category. ', mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+                               The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
+            'dc_title'         => 'Mozisha Blogs',
+
+            'sm_title'         => $category . ' | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_description'   => $category . ' Blogs',
+            'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
+            'sm_url'           => route('blog.category', $category),
+        ];
+        return view('user/blog_category' ,['setting' => $this->setting, 'social' => $this->social, 'data' => $data, 'category' => $category]);
+    }
+
 
     public function team(){
         $data = [

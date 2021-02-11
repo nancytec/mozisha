@@ -56,7 +56,7 @@
                                                         <p>{{ Str::limit($event->details, $limit = 150, $end = '...') }}</p>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <a href="/event/{{$event->id}}" class="text-success">
+                                                                <a href="/event/{{$event->id}}/edit" class="text-success">
                                                                     <i class="far fa-edit"></i> View/Edit
                                                                 </a>
                                                             </div>
