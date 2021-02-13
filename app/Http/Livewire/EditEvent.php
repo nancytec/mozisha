@@ -34,6 +34,9 @@ class EditEvent extends Component
     public $event_id;
     use WithFileUploads;
 
+    public $platform;
+    public $link;
+
     public function mount($event)
     {
         $this->old_image        = $event->ImagePath;
@@ -50,6 +53,8 @@ class EditEvent extends Component
         $this->end_hour         = $event->end_hour;
         $this->end_meridian     = $event->end_meridian;
         $this->end_date         = $event->end_date;
+        $this->platform         = $event->platform;
+        $this->link             = $event->link;
 
         $this->location         = $event->location;
         $this->details          = $event->details;
@@ -89,6 +94,8 @@ class EditEvent extends Component
             'end_hour'       => 'required|max:255',
             'end_meridian'   => 'required|max:255',
             'end_date'       => 'required|max:255',
+            'platform'       => 'nullable|max:255',
+            'link'           => 'nullable|max:1000'
         ]);
     }
 
@@ -108,6 +115,9 @@ class EditEvent extends Component
             'end_hour'       => 'required|max:255',
             'end_meridian'   => 'required|max:255',
             'end_date'       => 'required|max:255',
+            'platform'       => 'nullable|max:255',
+            'link'           => 'nullable|max:1000'
+
         ]);
 
         //Check if the theme exists apart from this
@@ -155,6 +165,8 @@ class EditEvent extends Component
             'end_hour'          => $this->end_hour,
             'end_meridian'      => $this->end_meridian,
             'end_date'          => $this->end_date,
+            'platform'          => $this->platform,
+            'link'              => $this->link
         ]);
 
         session()->flash('message', 'Event updated successfully!.'); //displays a flash message

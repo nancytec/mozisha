@@ -140,6 +140,9 @@
                             <h3>SUBSCRIBE TO THIS EVENT</h3>
                             <p>Subscribe to this event to be a part of it,you'll get notified first of any available subsequent update concerning the event.</p>
                             <a class="button" href="/event/subscribe/{{$event->slug}}" title="" style="background-color: #420175;">SUBSCRIBE NOW</a>
+                            @if($event->platform && $event->link)
+                            <a class="button" target="_blank" href="{{$event->link}}" title="" style="background-color: #420175;">JOIN EVENT NOW</a>
+                            @endif
 
                         </div>
 

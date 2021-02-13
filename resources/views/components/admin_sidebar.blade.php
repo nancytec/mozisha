@@ -72,8 +72,10 @@
                     <ul style="display: none;">
                         <li><a class="" href="{{route('admin.events.patrons')}}"> Patrons</a></li>
                         <li><a class="" href="{{route('subscribers')}}"> Subscribers</a></li>
+                        <li><a class="" href="{{route('broadcast.new')}}"> Broadcast</a></li>
                     </ul>
                 </li>
+
                 @endif
             </ul>
         </div>

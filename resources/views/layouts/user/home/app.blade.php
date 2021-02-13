@@ -167,11 +167,11 @@
 
             <!-- social-media -->
             <ul class="social-media-list d-flex m-0 p-0 list-unstyled">
-                <li><a href="https://{{$social->facebook}}"><i class="fa fa-facebook-f"></i></a></li>
-                <li><a href="https://{{$social->twitter}}"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://{{$social->linkedIn}}"><i class="fa fa-linkedin-in"></i></a></li>
-                <li><a href="https://{{$social->instagram}}"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://api.whatsapp.com/send?phone={{$social->whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a target="_blank" href="{{$social->facebook}}"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a target="_blank" href="{{$social->twitter}}"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="{{$social->linkedin}}"><i class="fa fa-linkedin-in"></i></a></li>
+                <li><a target="_blank" href="{{$social->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                <li><a  href="https://api.whatsapp.com/send?phone={{$social->whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
             </ul>
         </div>
     </div>
@@ -181,7 +181,7 @@
         <div class="row m-0 align-items-center">
             <div class="col-lg-2 p-0 d-flex align-items-center justify-content-between">
                 <div class="logo">
-                    <a class="navbar-brand" href="{{'homepage'}}"><img class="lazy" src="{{asset('user/home/assets/images/logo-black.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="{{route('homepage')}}"><img class="lazy" src="{{asset('user/home/assets/images/logo-black.png')}}" alt="logo"></a>
                     <a class="navbar-brand navbar-brand2" href="{{route('homepage')}}"><img class="lazy" src="{{asset('user/home/assets/images/logo-white.png')}}" alt="logo"></a>
                 </div>
                 <div class="menu-bar d-lg-none" style="background-color: #420175 !important;">
@@ -453,11 +453,11 @@
 
                 <!-- social-media -->
                 <ul class="social-media-list d-flex flex-wrap m-0 p-0 list-unstyled">
-                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-vimeo-v"></i></a></li>
+                    <li><a target="_blank" href="{{$social->facebook}}"><i class="fa fa-facebook-f"></i></a></li>
+                    <li><a target="_blank" href="{{$social->twitter}}"><i class="fa fa-twitter"></i></a></li>
+                    <li><a target="_blank" href="{{$social->linkedin}}"><i class="fa fa-linkedin-in"></i></a></li>
+                    <li><a target="_blank" href="{{$social->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone={{$social->whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
                 </ul>
             </div>
         </div>

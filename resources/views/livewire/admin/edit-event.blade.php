@@ -405,11 +405,32 @@
                                             </div>
 
 
-
+                                            <div class="col-12 ">
                                             <div class="form-group">
                                                 <label>Details</label>
                                                 <textarea cols="30" wire:model.lazy="details" rows="6" class="form-control  {{$errors->has('details')? 'is-invalid' : '' }}" placeholder="Details of the event..."></textarea>
                                                 @error('details') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                            </div>
+                                            </div>
+
+                                            <div class="col-12 ">
+                                                <div class="form-group">
+                                                    <small class="form-text text-muted">Platform</small>
+                                                    <select class="form-control {{$errors->has('platform')? 'is-invalid' : '' }}" wire:model.lazy="platform">
+                                                        <option value="">Select platform</option>
+                                                        <option value="Google_Meet">Google Meet</option>
+                                                        <option value="Zoom">Zoom</option>
+                                                    </select>
+                                                    @error('platform') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 ">
+                                                <div class="form-group">
+                                                    <label>Joining Link</label>
+                                                    <textarea cols="20" wire:model.lazy="link" rows="3" class="form-control  {{$errors->has('link')? 'is-invalid' : '' }}" placeholder="Link to join the event..."></textarea>
+                                                    @error('link') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                                </div>
                                             </div>
 
                                             <div class="form-group">

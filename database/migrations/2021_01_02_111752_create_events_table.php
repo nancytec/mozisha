@@ -34,6 +34,8 @@ class CreateEventsTable extends Migration
             $table->string('status')->default('Active');//could be suspended, active, canceled
             $table->string('end_meridian');
             $table->string('end_date');
+            $table->string('platform')->nullable();
+            $table->text('link')->nullable();
             $table->timestamps();
         });
     }

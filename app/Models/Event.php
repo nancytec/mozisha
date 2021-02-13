@@ -28,7 +28,9 @@ class Event extends Model
         'end_minute',
         'end_hour',
         'end_meridian',
-        'end_date'
+        'end_date',
+        'platform',
+        'link'
     ];
 
     public function creator()
