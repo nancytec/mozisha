@@ -21,7 +21,7 @@ class Homepage extends Component
     {
        $this->events =  Event::where([
             ['status', '=', 'Active'],
-            ['start_time_stamp', '>', time()]
+//            ['start_time_stamp', '>', time()]
         ])->limit(3)->get();
     }
 

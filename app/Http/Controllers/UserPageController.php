@@ -24,14 +24,14 @@ class UserPageController extends Controller
 
     public function home(){
         $data = [
-            'title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building  responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
-            'keywords'      => 'mozisha, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
+            'title'         => 'Mozisha | A one-stop platform for personal, career and business development.\'',
+            'description'   => 'A one-stop platform for personal, career and business development.',
+            'keywords'      => 'mozisha, mozisha.net, mozisha.com, mozisha, mozisha international,A one-stop platform for personal, career and business development., mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building  responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Home | Mozisha | The learning community dedicated to building  responsible entrepreneurs',
 
-            'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'Mozisha | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
         ];
@@ -40,14 +40,14 @@ class UserPageController extends Controller
 
     public function about(){
         $data = [
-            'title'            => 'About Mozisha | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'      => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'            => 'About Mozisha | A one-stop platform for personal, career and business development.',
+            'description'      => 'A one-stop platform for personal, career and business development.',
             'keywords'         => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building  responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'         => 'About Mozisha | Mozisha | The learning community dedicated to building responsible entrepreneurs',
 
-            'sm_title'         => 'About Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'About Mozisha | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('about'),
 
@@ -59,14 +59,14 @@ class UserPageController extends Controller
 
     public function coursesMore(){
         $data = [
-            'title'         => 'Courses | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => 'Courses | A one-stop platform for personal, career and business development.',
+            'description'   => 'A one-stop platform for personal, career and business development.',
             'keywords'      => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                 The learning community dedicated to building  responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Courses | Mozisha | The learning community dedicated to building responsible entrepreneurs',
 
-            'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building  responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'Mozisha | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
 
@@ -76,14 +76,14 @@ class UserPageController extends Controller
 
     public function appMore(){
         $data = [
-            'title'         => 'Apprenticeship platform | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building  responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => 'Apprenticeship platform | A one-stop platform for personal, career and business development.',
+            'description'   => 'A one-stop platform for personal, career and business development.',
             'keywords'      => 'Apprenticeship platform, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                 The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Apprenticeship platform | Mozisha | The learning community dedicated to building responsible entrepreneurs',
 
-            'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building  responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'Mozisha | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
         ];
@@ -91,14 +91,14 @@ class UserPageController extends Controller
     }
     public function colMore(){
         $data = [
-            'title'         => 'Collaboration platform | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => 'Collaboration platform | A one-stop platform for personal, career and business development.',
+            'description'   => 'A one-stop platform for personal, career and business development.',
             'keywords'      => 'Collaboration platform, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                 The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Collaboration platform | Mozisha | The learning community dedicated to building responsible entrepreneurs',
 
-            'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'Mozisha | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
         ];
@@ -107,15 +107,15 @@ class UserPageController extends Controller
 
     public function freeMore(){
         $data = [
-            'title'         => 'Freelancing platform | Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => 'Freelancing platform | A one-stop platform for personal, career and business development.',
+            'description'   => 'A one-stop platform for personal, career and business development.',
             'keywords'      => 'Freelancing platform, mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                 The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Freelancing platform | Mozisha | The learning community dedicated to building  responsible entrepreneurs',
 
 
             'sm_title'         => 'Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('homepage'),
         ];
@@ -126,14 +126,14 @@ class UserPageController extends Controller
 
     public function blog(){
         $data = [
-            'title'            => 'Mozisha Blogs | The learning community dedicated to building responsible entrepreneurs|',
-            'description'      => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'            => 'Mozisha Blogs | A one-stop platform for personal, career and business development.',
+            'description'      => 'A one-stop platform for personal, career and business development.',
             'keywords'         => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'         => 'Mozisha Blogs',
 
-            'sm_title'         => 'Mozisha Blogs | The learning community dedicated to building responsible entrepreneurs|',
-            'sm_description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'sm_title'         => 'Mozisha Blogs | A one-stop platform for personal, career and business development.',
+            'sm_description'   => 'A one-stop platform for personal, career and business development.',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('blog'),
         ];
@@ -142,13 +142,13 @@ class UserPageController extends Controller
 
     public function blogCategory($category){
         $data = [
-            'title'            => $category . ' | The learning community dedicated to building responsible entrepreneurs|',
+            'title'            => $category . ' | A one-stop platform for personal, career and business development.',
             'description'      => $category . ' Blogs ',
             'keywords'         => $category. ', mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'         => 'Mozisha Blogs',
 
-            'sm_title'         => $category . ' | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_title'         => $category . ' | A one-stop platform for personal, career and business development.',
             'sm_description'   => $category . ' Blogs',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('blog.category', $category),
@@ -176,13 +176,13 @@ class UserPageController extends Controller
 
     public function soon(){
         $data = [
-            'title'         => 'Coming soon on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
-            'description'   => 'The learning community dedicated to building responsible entrepreneurs and empowering all learners and also get the support you need to achieve your professional goals with an Mozisha apprenticeship',
+            'title'         => 'Coming soon on Mozisha | A one-stop platform for personal, career and business development.',
+            'description'   => 'A one-stop platform for personal, career and business development.',
             'keywords'      => 'mozisha.net, mozisha.com, mozisha, mozisha international, mozisha official website, about mozisha, services of mozisha international,
                                The learning community dedicated to building responsible entrepreneurs and empowering all learners, learning platform',
             'dc_title'      => 'Home | Mozisha | The learning community dedicated to building responsible entrepreneurs',
 
-            'sm_title'         => 'Coming soon on Mozisha | The learning community dedicated to building responsible entrepreneurs|',
+            'sm_title'         => 'Coming soon on Mozisha | A one-stop platform for personal, career and business development.',
             'sm_description'   => 'This feature is coming soon on Mozisha ',
             'sm_image'         => 'https://mozisha.com/user/img/moz.jpg',
             'sm_url'           => route('coming_soon'),

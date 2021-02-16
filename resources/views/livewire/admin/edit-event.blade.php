@@ -79,14 +79,14 @@
                                                     <small class="form-text text-muted">Hour(12hrs format).</small>
                                                     <select class="form-control {{$errors->has('start_hour')? 'is-invalid' : '' }}" wire:model.lazy="start_hour">
                                                         <option value="">Select hour</option>
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                        <option value="3">05</option>
-                                                        <option value="3">06</option>
-                                                        <option value="3">07</option>
-                                                        <option value="3">08</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
                                                         <option value="09">09</option>
                                                         <option value="10">10</option>
                                                         <option value="11">11</option>
@@ -296,14 +296,14 @@
                                                     <small class="form-text text-muted">Hour(12hrs format).</small>
                                                     <select class="form-control {{$errors->has('end_hour')? 'is-invalid' : '' }}" wire:model.lazy="end_hour">
                                                         <option value="">Select hour</option>
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                        <option value="3">05</option>
-                                                        <option value="3">06</option>
-                                                        <option value="3">07</option>
-                                                        <option value="3">08</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
                                                         <option value="09">09</option>
                                                         <option value="10">10</option>
                                                         <option value="11">11</option>

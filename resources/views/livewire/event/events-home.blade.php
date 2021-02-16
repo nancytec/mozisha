@@ -99,7 +99,7 @@
                                         </li>
                                         <li>
                                             <div class="time-box">
-                                                <span class="seconds">{{$up->start_time_zone}}</span><p class="seconds_ref">ZONE</p>
+                                                <span class="seconds" style="font-size: 70%;">{{$up->start_time_zone}}</span><p class="seconds_ref">ZONE</p>
                                             </div>
                                         </li>
 

@@ -19,7 +19,7 @@ class UpcomingEvents extends Component
             'events' =>
                 Event::where([
                     ['status', '=', 'Active'],
-                    ['start_time_stamp', '>', time()]
+//                    ['start_time_stamp', '>', time()]
                 ])->latest()->paginate(15),
             ]);
     }

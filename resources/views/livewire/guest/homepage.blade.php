@@ -99,7 +99,7 @@
                             <div class="slider-content-area">
                                 <div class="container p-0">
                                     <div class="slider-content text-center">
-                                        <div class="large-text" style="font-size: 250%;">A one-spot platform for personal, <br>career and business development.</div>
+                                        <div class="large-text" style="font-size: 250%;">A one-stop platform for personal, <br>career and business development.</div>
                                         <p class="small-text">Acquire the knowledge, skills and networks you need in order <br>
                                             to discover, develop and maximise your potential.</p>
                                         <div class="button-area text-center" >

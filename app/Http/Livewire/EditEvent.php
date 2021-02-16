@@ -127,10 +127,10 @@ class EditEvent extends Component
         }
 
         //Event Date and Time validation
-        if (!$this->validateTime()){
-            session()->flash('error', 'Date format error!.'); //displays a flash message
-            return;
-        }
+//        if (!$this->validateTime()){
+//            session()->flash('error', 'Date format error!.'); //displays a flash message
+//            return;
+//        }
 
 
         //set a default value for status

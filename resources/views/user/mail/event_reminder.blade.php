@@ -128,7 +128,12 @@
                                                             <td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; padding-bottom:25px;"><div mc:edit="text_3">Hi {{$mail_data['name']}},<br/>
 
                                                                     This is to remind you of an upcoming event titled " {{$mail_data['title']}} " on Mozisha scheduled for {{$mail_data['time']}},
-                                                                    {{$mail_data['date']}}. you've previously subscribed to this event
+                                                                    {{$mail_data['date']}}. See details below,
+                                                                    <br>
+                                                                    Event platform: {{$mail_data['platform']}}<br>
+                                                                    Event Link: {{$mail_data['link']}}
+                                                                    <br>
+                                                                    you've subscribed to this event
                                                                     and you'll constantly be updated'. For more details you can contact us at info@mozisha.com and we'll respond quickly.
                                                                 <br>
                                                                     Thanks<br>

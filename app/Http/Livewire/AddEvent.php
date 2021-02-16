@@ -75,10 +75,10 @@ class AddEvent extends Component
             'end_date'       => 'required|max:255',
         ]);
 
-        if (!$this->validateTime()){
-            session()->flash('error', 'Date format error!.'); //displays a flash message
-            return;
-        }
+//        if (!$this->validateTime()){
+//            session()->flash('error', 'Date format error!.'); //displays a flash message
+//            return;
+//        }
         //set a default value for status
         if(empty($this->status)){$this->status = 'Active';}
 
